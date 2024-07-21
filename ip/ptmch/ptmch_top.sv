@@ -17,12 +17,21 @@ module ptmch_top(
     // Reset/Clock
     input  logic          RESET_N,
     input  logic          CLK160M,
- //   input  logic        CLK100M,
+    input  logic          CLK100M,
     // SPI Interface
     input  logic          SPI_CS,
     input  logic          SPI_CLK,
     input  logic          SPI_MOSI,
-    output logic [ 4: 0]  TRG_PLS
+    output logic [ 4: 0]  TRG_PLS,
+    // Avalone Slave I/F
+    input  logic          REG_BEGINTRANSFER,
+    input  logic [15: 0]  REG_ADDRESS,
+    input  logic          REG_CS,
+    input  logic          REG_READ,
+    input  logic          REG_WRITE,
+    output logic [31: 0]  REG_READDATA,
+    input  logic [31: 0]  REG_WRITEDATA,
+    output logic          REG_WAITREQUEST
 );
 //==================================================================================================
 //  PARAMETER declarations
@@ -31,11 +40,23 @@ module ptmch_top(
 //==================================================================================================
 //  Internal Signal
 //==================================================================================================
+    logic [ 4: 0] n_trg_pls;
+    logic [31: 0] n_prgexct;
+    logic [31: 0] n_rdstat;
+    logic [31: 0] n_blkers;
+    logic [31: 0] n_pdread;
+    logic [31: 0] n_qrstat;
+    
+    logic [31: 0] n_reg_readdata;
+    logic         n_reg_waitrequest;
 
 //==================================================================================================
-//  output Port
+//  assign
 //==================================================================================================
-
+    assign TRG_PLS = n_trg_pls;
+    // Avalone Bus Interface
+    assign REG_READDATA        = n_reg_readdata;
+    assign REG_WAITREQUEST     = n_reg_waitrequest;
 //==================================================================================================
 //  Structural coding
 //==================================================================================================
@@ -46,7 +67,36 @@ ptmch_trg trg_inst(
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),
-    .TRG_PLS(TRG_PLS)
+    .TRG_PLS(n_trg_pls)
+);
+
+ptmch_cnt cnt_inst(
+    .RESET_N(RESET_N),
+    .CLK100M(CLK100M),
+    .PRGEXCT(n_prgexct),
+    .RDSTAT(n_rdstat),
+    .BLKERS(n_blkers),
+    .PDREAD(n_pdread),
+    .WRSTAT(n_qrstat),
+    .TRG_PLS(n_trg_pls)
+);
+
+ptmch_reg reg_inst(
+    .RESET_N(RESET_N),
+    .CLK100M(CLK100M),
+    .PRGEXCT(n_prgexct),
+    .RDSTAT(n_rdstat),
+    .BLKERS(n_blkers),
+    .PDREAD(n_pdread),
+    .WRSTAT(n_qrstat),
+    .REG_BEGINTRANSFER(REG_BEGINTRANSFER),
+    .REG_ADDRESS(REG_ADDRESS),
+    .REG_CS(REG_CS),
+    .REG_READ(REG_READ),
+    .REG_WRITE(REG_WRITE),
+    .REG_READDATA(n_reg_readdata),
+    .REG_WRITEDATA(REG_WRITEDATA),
+    .REG_WAITREQUEST(n_reg_waitrequest)
 );
 
 endmodule

@@ -9,6 +9,22 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element CLK100M
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element TRG_PLS_component_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
    element altpll_0
    {
       datum _sortIndex
@@ -46,6 +62,30 @@
       datum baseAddress
       {
          value = "67110912";
+         type = "String";
+      }
+   }
+   element de0_nano_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element de0_nano_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element de0_nano_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -175,7 +215,7 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface name="altpll_0_c1" internal="altpll_0.c1" type="clock" dir="start" />
+ <interface name="clk100m_clk" internal="CLK100M.clk" type="clock" dir="start" />
  <interface name="clk_50_clk_in" internal="clk_50.clk_in" type="clock" dir="end">
   <port name="clk_50" internal="in_clk" />
  </interface>
@@ -211,6 +251,37 @@
    dir="end">
   <port name="in_port_to_the_sw" internal="in_port" />
  </interface>
+ <interface
+   name="trg_pls_component_0_spi_clk"
+   internal="TRG_PLS_component_0.SPI_CLK"
+   type="clock"
+   dir="end" />
+ <interface
+   name="trg_pls_component_0_spi_cs"
+   internal="TRG_PLS_component_0.SPI_CS"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="trg_pls_component_0_spi_mosi"
+   internal="TRG_PLS_component_0.SPI_MOSI"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="trg_pls_component_0_trg_pls"
+   internal="TRG_PLS_component_0.TRG_PLS"
+   type="conduit"
+   dir="end" />
+ <module name="CLK100M" kind="clock_source" version="18.1" enabled="1">
+  <parameter name="clockFrequency" value="100000000" />
+  <parameter name="clockFrequencyKnown" value="false" />
+  <parameter name="inputClockFrequency" value="100000000" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   name="TRG_PLS_component_0"
+   kind="TRG_PLS_component"
+   version="1.0"
+   enabled="1" />
  <module name="altpll_0" kind="altpll" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_INCLK_INTERFACE_CLOCK_RATE" value="50000000" />
@@ -385,8 +456,8 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module name="cpu" kind="altera_nios2_gen2" version="18.1" enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="5" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="5" />
   <parameter name="AUTO_DEVICE" value="EP4CE22F17C6" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
@@ -404,7 +475,7 @@
   <parameter name="dataAddrWidth" value="27" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='altpll_0.pll_slave' start='0x4001050' end='0x4001060' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x4001060' end='0x4001068' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='TRG_PLS_component_0.reg' start='0x0' end='0x40000' type='TRG_PLS_component.reg' /><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='altpll_0.pll_slave' start='0x4001050' end='0x4001060' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x4001060' end='0x4001068' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -443,7 +514,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="27" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x4001000' end='0x4001020' type='altera_avalon_timer.s1' /><slave name='sw.s1' start='0x4001030' end='0x4001040' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x4001040' end='0x4001050' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='TRG_PLS_component_0.reg' start='0x0' end='0x40000' type='TRG_PLS_component.reg' /><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x4001000' end='0x4001020' type='altera_avalon_timer.s1' /><slave name='sw.s1' start='0x4001030' end='0x4001040' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x4001040' end='0x4001050' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -609,7 +680,7 @@
   <parameter name="casLatency" value="3" />
   <parameter name="clockRate" value="100000000" />
   <parameter name="columnWidth" value="9" />
-  <parameter name="componentName">de0_nano_system_sdram</parameter>
+  <parameter name="componentName" value="$${FILENAME}_sdram" />
   <parameter name="dataWidth" value="16" />
   <parameter name="generateSimulationModel" value="true" />
   <parameter name="initNOPDelay" value="0.0" />
@@ -677,6 +748,15 @@
   <parameter name="baseAddress" value="0x04001050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="cpu.data_master"
+   end="TRG_PLS_component_0.reg">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="avalon" version="18.1" start="cpu.data_master" end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x02000000" />
@@ -689,6 +769,15 @@
    end="cpu.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04000800" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="cpu.instruction_master"
+   end="TRG_PLS_component_0.reg">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -727,12 +816,23 @@
   <parameter name="baseAddress" value="0x04001000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="clock"
+   version="18.1"
+   start="altpll_0.c0"
+   end="TRG_PLS_component_0.CLK100M" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="cpu.clk" />
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="sw.clk" />
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="key.clk" />
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="timer.clk" />
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="jtag_uart.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="sdram.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="jtag_uart.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="timer.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="key.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="sw.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="CLK100M.clk_in" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="altpll_0.c1"
+   end="TRG_PLS_component_0.CLK160M" />
  <connection
    kind="clock"
    version="18.1"
@@ -750,6 +850,16 @@
  <connection kind="interrupt" version="18.1" start="cpu.irq" end="jtag_uart.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="TRG_PLS_component_0.RESET_N" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="CLK100M.clk_in_reset" />
  <connection
    kind="reset"
    version="18.1"

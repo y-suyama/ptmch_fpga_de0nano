@@ -47,41 +47,35 @@ module de0_nano_top(
 //  Internal Signal
 //=======================================================
 logic w_reset_n;
-logic w_spi_clk;
-logic w_clk160m;
+logic w_clk100m;
+logic [ 4: 0] w_trg_pls;
 //=======================================================
 //  assign
 //=======================================================
 assign w_reset_n = KEY[0];
+assign TRG_PLS   = w_trg_pls;
 //=======================================================
 //  Structural coding
 //=======================================================
 de0_nano_system u0_inst (
-    .reset_n                     (w_reset_n),
-    .in_port_to_the_key          (KEY),
-    .zs_addr_from_the_sdram      (DRAM_ADDR),
-    .zs_ba_from_the_sdram        (DRAM_BA),
-    .zs_cas_n_from_the_sdram     (DRAM_CAS_N),
-    .zs_cke_from_the_sdram       (DRAM_CKE),
-    .zs_cs_n_from_the_sdram      (DRAM_CS_N),
-    .zs_dq_to_and_from_the_sdram (DRAM_DQ),
-    .zs_dqm_from_the_sdram       (DRAM_DQM),
-    .zs_ras_n_from_the_sdram     (DRAM_RAS_N),
-    .zs_we_n_from_the_sdram      (DRAM_WE_N),
-    .in_port_to_the_sw           (SW),
-    .clk_50                      (CLK50M),
-    .altpll_0_c1_clk             (w_clk160m) 
-);
-
-ptmch_top ptmch_inst(
-    // Reset/Clock
-    .RESET_N(w_reset_n),
-    .CLK160M(w_clk160m),
-    // SPI Interface
-    .SPI_CS(SPI_CS),
-    .SPI_CLK(SPI_CLK),
-    .SPI_MOSI(SPI_MOSI),
-    .TRG_PLS(TRG_PLS)
+    .reset_n                                   (w_reset_n),
+    .in_port_to_the_key                        (KEY),
+    .zs_addr_from_the_sdram                    (DRAM_ADDR),
+    .zs_ba_from_the_sdram                      (DRAM_BA),
+    .zs_cas_n_from_the_sdram                   (DRAM_CAS_N),
+    .zs_cke_from_the_sdram                     (DRAM_CKE),
+    .zs_cs_n_from_the_sdram                    (DRAM_CS_N),
+    .zs_dq_to_and_from_the_sdram               (DRAM_DQ),
+    .zs_dqm_from_the_sdram                     (DRAM_DQM),
+    .zs_ras_n_from_the_sdram                   (DRAM_RAS_N),
+    .zs_we_n_from_the_sdram                    (DRAM_WE_N),
+    .in_port_to_the_sw                         (SW),
+    .clk_50                                    (CLK50M),
+    .trg_pls_component_0_spi_clk_clk           (SPI_CLK),
+    .trg_pls_component_0_spi_cs_spi_cs         (SPI_CS),
+    .trg_pls_component_0_spi_mosi_spi_mosi     (SPI_MOSI),
+    .trg_pls_component_0_trg_pls_monitorsignal (w_trg_pls),
+    .clk100m_clk_clk(w_clk100m)
 );
 
 ledpwm ledpwm_inst(

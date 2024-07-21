@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="00cecd2db2948f1fbcd1"/>
+    <hash md5_digest_80b="6e4fab25f4524247d6f9"/>
   </project>
   <file_info>
     <file device="EP4CE22F17C6" path="DE0_Nano.sof" usercode="0xFFFFFFFF"/>
@@ -139,8 +139,8 @@
   <sld_infos>
     <sld_info hpath="de0_nano_system:u0_inst" name="u0_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721468321"/>
-        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721469354"/>
+        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721566532"/>
+        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721567497"/>
       </assignment_values>
       <parameters/>
     </sld_info>

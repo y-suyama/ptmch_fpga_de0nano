@@ -17,7 +17,6 @@ module ptmch_trg(
     // Reset/Clock
     input  logic          RESET_N,
     input  logic          CLK160M,
- //   input  logic        CLK100M,
     // Logic Interface
     input  logic          SPI_CS,
     input  logic          SPI_CLK,

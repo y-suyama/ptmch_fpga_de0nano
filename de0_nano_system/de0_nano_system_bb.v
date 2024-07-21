@@ -1,6 +1,6 @@
 
 module de0_nano_system (
-	altpll_0_c1_clk,
+	clk100m_clk_clk,
 	clk_50,
 	reset_n,
 	in_port_to_the_key,
@@ -13,9 +13,13 @@ module de0_nano_system (
 	zs_dqm_from_the_sdram,
 	zs_ras_n_from_the_sdram,
 	zs_we_n_from_the_sdram,
-	in_port_to_the_sw);	
+	in_port_to_the_sw,
+	trg_pls_component_0_spi_clk_clk,
+	trg_pls_component_0_spi_cs_spi_cs,
+	trg_pls_component_0_spi_mosi_spi_mosi,
+	trg_pls_component_0_trg_pls_monitorsignal);	
 
-	output		altpll_0_c1_clk;
+	output		clk100m_clk_clk;
 	input		clk_50;
 	input		reset_n;
 	input	[1:0]	in_port_to_the_key;
@@ -29,4 +33,8 @@ module de0_nano_system (
 	output		zs_ras_n_from_the_sdram;
 	output		zs_we_n_from_the_sdram;
 	input	[3:0]	in_port_to_the_sw;
+	input		trg_pls_component_0_spi_clk_clk;
+	input		trg_pls_component_0_spi_cs_spi_cs;
+	input		trg_pls_component_0_spi_mosi_spi_mosi;
+	output	[4:0]	trg_pls_component_0_trg_pls_monitorsignal;
 endmodule

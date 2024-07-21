@@ -44,15 +44,15 @@
 
 module de0_nano_system_mm_interconnect_0_router_001_default_decode
   #(
-     parameter DEFAULT_CHANNEL = 1,
+     parameter DEFAULT_CHANNEL = 2,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 4 
+               DEFAULT_DESTID = 5 
    )
   (output [89 - 87 : 0] default_destination_id,
-   output [7-1 : 0] default_wr_channel,
-   output [7-1 : 0] default_rd_channel,
-   output [7-1 : 0] default_src_channel
+   output [8-1 : 0] default_wr_channel,
+   output [8-1 : 0] default_rd_channel,
+   output [8-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module de0_nano_system_mm_interconnect_0_router_001_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 7'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 8'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module de0_nano_system_mm_interconnect_0_router_001_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 7'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 7'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 8'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 8'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module de0_nano_system_mm_interconnect_0_router_001
     // -------------------
     output                          src_valid,
     output reg [103-1    : 0] src_data,
-    output reg [7-1 : 0] src_channel,
+    output reg [8-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module de0_nano_system_mm_interconnect_0_router_001
     localparam PKT_PROTECTION_H = 93;
     localparam PKT_PROTECTION_L = 91;
     localparam ST_DATA_W = 103;
-    localparam ST_CHANNEL_W = 7;
+    localparam ST_CHANNEL_W = 8;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 65;
@@ -134,11 +134,12 @@ module de0_nano_system_mm_interconnect_0_router_001
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h4000000 - 64'h2000000); 
-    localparam PAD1 = log2ceil(64'h4001000 - 64'h4000800); 
-    localparam PAD2 = log2ceil(64'h4001020 - 64'h4001000); 
-    localparam PAD3 = log2ceil(64'h4001040 - 64'h4001030); 
-    localparam PAD4 = log2ceil(64'h4001050 - 64'h4001040); 
+    localparam PAD0 = log2ceil(64'h40000 - 64'h0); 
+    localparam PAD1 = log2ceil(64'h4000000 - 64'h2000000); 
+    localparam PAD2 = log2ceil(64'h4001000 - 64'h4000800); 
+    localparam PAD3 = log2ceil(64'h4001020 - 64'h4001000); 
+    localparam PAD4 = log2ceil(64'h4001040 - 64'h4001030); 
+    localparam PAD5 = log2ceil(64'h4001050 - 64'h4001040); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
@@ -168,7 +169,7 @@ module de0_nano_system_mm_interconnect_0_router_001
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [7-1 : 0] default_src_channel;
+    wire [8-1 : 0] default_src_channel;
 
 
 
@@ -192,34 +193,40 @@ module de0_nano_system_mm_interconnect_0_router_001
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
+    // ( 0x0 .. 0x40000 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 27'h0   ) begin
+            src_channel = 8'b000010;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
+    end
+
     // ( 0x2000000 .. 0x4000000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 27'h2000000   ) begin
-            src_channel = 7'b00010;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
-    end
-
-    // ( 0x4000800 .. 0x4001000 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 27'h4000800   ) begin
-            src_channel = 7'b00001;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
-    end
-
-    // ( 0x4001000 .. 0x4001020 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 27'h4001000   ) begin
-            src_channel = 7'b10000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
-    end
-
-    // ( 0x4001030 .. 0x4001040 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 27'h4001030   ) begin
-            src_channel = 7'b01000;
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 27'h2000000   ) begin
+            src_channel = 8'b000100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end
 
+    // ( 0x4000800 .. 0x4001000 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 27'h4000800   ) begin
+            src_channel = 8'b000001;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
+    end
+
+    // ( 0x4001000 .. 0x4001020 )
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 27'h4001000   ) begin
+            src_channel = 8'b100000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
+    end
+
+    // ( 0x4001030 .. 0x4001040 )
+    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 27'h4001030   ) begin
+            src_channel = 8'b010000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
+    end
+
     // ( 0x4001040 .. 0x4001050 )
-    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 27'h4001040   ) begin
-            src_channel = 7'b00100;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+    if ( {address[RG:PAD5],{PAD5{1'b0}}} == 27'h4001040   ) begin
+            src_channel = 8'b001000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
 end

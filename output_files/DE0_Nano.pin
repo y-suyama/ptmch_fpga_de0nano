@@ -76,7 +76,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
-SPI_CS                       : A8        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+SPI_CLK                      : A8        : input  : 3.3-V LVCMOS      :         : 8         : Y              
 GND+                         : A9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
 LED[3]                       : A11       : output : 3.3-V LVCMOS      :         : 7         : Y              
@@ -92,7 +92,7 @@ TRG_PLS[3]                   : B4        : output : 3.3-V LVCMOS      :         
 TRG_PLS[4]                   : B5        : output : 3.3-V LVCMOS      :         : 8         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
-SPI_CLK                      : B8        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+SPI_CS                       : B8        : input  : 3.3-V LVCMOS      :         : 8         : Y              
 SW[2]                        : B9        : input  : 3.3-V LVCMOS      :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B10       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B11       :        :                   :         : 7         :                
