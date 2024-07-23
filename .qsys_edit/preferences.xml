@@ -15,8 +15,7 @@
    <frequency preferredWidth="316" />
   </columns>
  </clocktable>
- <library
-   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Basic Functions,Library,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions/Clocks; PLLs and Resets,Project" />
+ <library expandedCategories="Project/USER_IP,Library,Project" />
  <window width="2418" height="1318" x="-2409" y="-8" />
  <hdlexample language="VERILOG" />
 </preferences>

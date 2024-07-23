@@ -14,8 +14,8 @@
 		.zs_we_n_from_the_sdram                    (<connected-to-zs_we_n_from_the_sdram>),                    //                             .we_n
 		.in_port_to_the_sw                         (<connected-to-in_port_to_the_sw>),                         //       sw_external_connection.export
 		.trg_pls_component_0_spi_clk_clk           (<connected-to-trg_pls_component_0_spi_clk_clk>),           //  trg_pls_component_0_spi_clk.clk
-		.trg_pls_component_0_spi_cs_spi_cs         (<connected-to-trg_pls_component_0_spi_cs_spi_cs>),         //   trg_pls_component_0_spi_cs.spi_cs
-		.trg_pls_component_0_spi_mosi_spi_mosi     (<connected-to-trg_pls_component_0_spi_mosi_spi_mosi>),     // trg_pls_component_0_spi_mosi.spi_mosi
-		.trg_pls_component_0_trg_pls_monitorsignal (<connected-to-trg_pls_component_0_trg_pls_monitorsignal>)  //  trg_pls_component_0_trg_pls.monitorsignal
+		.trg_pls_component_0_spi_cs_spi            (<connected-to-trg_pls_component_0_spi_cs_spi>),            //   trg_pls_component_0_spi_cs.spi
+		.trg_pls_component_0_spi_mosi_spi          (<connected-to-trg_pls_component_0_spi_mosi_spi>),          // trg_pls_component_0_spi_mosi.spi
+		.trg_pls_component_0_trg_pls_triggersignal (<connected-to-trg_pls_component_0_trg_pls_triggersignal>)  //  trg_pls_component_0_trg_pls.triggersignal
 	);
 

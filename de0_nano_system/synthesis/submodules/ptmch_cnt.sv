@@ -54,11 +54,11 @@ module ptmch_cnt(
 //  assign
 //=================================================================
     // Rise Edge Pulse
-    assign c_pls_rise[0] = ~sr_trg_pls_3d[0] & sr_trg_pls_4d[0] ;
-    assign c_pls_rise[1] = ~sr_trg_pls_3d[1] & sr_trg_pls_4d[1] ;
-    assign c_pls_rise[2] = ~sr_trg_pls_3d[2] & sr_trg_pls_4d[2] ;
-    assign c_pls_rise[3] = ~sr_trg_pls_3d[3] & sr_trg_pls_4d[3] ;
-    assign c_pls_rise[4] = ~sr_trg_pls_3d[4] & sr_trg_pls_4d[4] ;
+    assign c_pls_rise[0] = sr_trg_pls_3d[0] & ~sr_trg_pls_4d[0] ;
+    assign c_pls_rise[1] = sr_trg_pls_3d[1] & ~sr_trg_pls_4d[1] ;
+    assign c_pls_rise[2] = sr_trg_pls_3d[2] & ~sr_trg_pls_4d[2] ;
+    assign c_pls_rise[3] = sr_trg_pls_3d[3] & ~sr_trg_pls_4d[3] ;
+    assign c_pls_rise[4] = sr_trg_pls_3d[4] & ~sr_trg_pls_4d[4] ;
     // TRG PLS Register Interface
     assign PRGEXCT = sr_prgexct_counter;
     assign RDSTAT  = sr_rdstat_counter;
@@ -179,12 +179,49 @@ module ptmch_cnt(
     end
 
 
+    // Clock Transfer (program_excute 4Clock)
+    always @(negedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_trg_pls_4d[0]  <= 1'b0;
+        else
+            sr_trg_pls_4d[0]  <= sr_trg_pls_3d[0];
+    end
+    // Clock Transfer (p_readstatus 4Clock)
+    always @(negedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_trg_pls_4d[1]  <= 1'b0;
+        else
+            sr_trg_pls_4d[1]  <= sr_trg_pls_3d[1];
+    end
+    // Clock Transfer (128kb_blockerase 4Clock)
+    always @(negedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_trg_pls_4d[2]  <= 1'b0;
+        else
+            sr_trg_pls_4d[2]  <= sr_trg_pls_3d[2];
+    end
+    // Clock Transfer (pagedata_read 4Clock)
+    always @(negedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_trg_pls_4d[3]  <= 1'b0;
+        else
+            sr_trg_pls_4d[3]  <= sr_trg_pls_3d[3];
+    end
+    // Clock Transfer (writestatus 4Clock)
+    always @(negedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_trg_pls_4d[4]  <= 1'b0;
+        else
+            sr_trg_pls_4d[4]  <= sr_trg_pls_3d[4];
+    end
+
+
     // TRG PLS Counter(PRGEXCT)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
             sr_prgexct_counter  <= 32'h0;
         else begin
-            if (sr_prgexct_counter == 32'hFFFF) // STOP
+            if (sr_prgexct_counter == 32'hFFFF_FFFF) // STOP
                 sr_prgexct_counter <= sr_prgexct_counter;
             else if(c_pls_rise[0] == 1'b1) // Count
                 sr_prgexct_counter  <= sr_prgexct_counter + 1;
@@ -198,7 +235,7 @@ module ptmch_cnt(
         if(!RESET_N)
             sr_rdstat_counter  <= 32'h0;
         else begin
-            if (sr_rdstat_counter == 32'hFFFF) // STOP
+            if (sr_rdstat_counter == 32'hFFFF_FFFF) // STOP
                 sr_rdstat_counter <= sr_rdstat_counter;
             else if(c_pls_rise[1] == 1'b1) // Count
                 sr_rdstat_counter  <= sr_rdstat_counter + 1;
@@ -212,7 +249,7 @@ module ptmch_cnt(
         if(!RESET_N)
             sr_blkers_counter  <= 32'h0;
         else begin
-            if (sr_blkers_counter == 32'hFFFF) // STOP
+            if (sr_blkers_counter == 32'hFFFF_FFFF) // STOP
                 sr_blkers_counter <= sr_rdstat_counter;
             else if(c_pls_rise[2] == 1'b1) // Count
                 sr_blkers_counter  <= sr_blkers_counter + 1;
@@ -226,7 +263,7 @@ module ptmch_cnt(
         if(!RESET_N)
             sr_pdread_counter  <= 32'h0;
         else begin
-            if (sr_pdread_counter == 32'hFFFF) // STOP
+            if (sr_pdread_counter == 32'hFFFF_FFFF) // STOP
                 sr_pdread_counter <= sr_pdread_counter;
             else if(c_pls_rise[3] == 1'b1) // Count
                 sr_pdread_counter  <= sr_pdread_counter + 1;
@@ -240,7 +277,7 @@ module ptmch_cnt(
         if(!RESET_N)
             sr_wrstat_counter  <= 32'h0;
         else begin
-            if (sr_wrstat_counter == 32'hFFFF) // STOP
+            if (sr_wrstat_counter == 32'hFFFF_FFFF) // STOP
                 sr_wrstat_counter <= sr_wrstat_counter;
             else if(c_pls_rise[4] == 1'b1) // Count
                 sr_wrstat_counter  <= sr_wrstat_counter + 1;

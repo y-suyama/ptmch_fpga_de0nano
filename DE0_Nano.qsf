@@ -112,9 +112,17 @@ set_location_assignment PIN_L4 -to DRAM_ADDR[12]
 #============================================================
 
 #============================================================
-# End of pin assignments by Terasic System Builder
+# SPI Ptmch
 #============================================================
+set_location_assignment PIN_A8 -to SPI_CLK
+set_location_assignment PIN_B8 -to SPI_CS
+set_location_assignment PIN_A2 -to SPI_MOSI
 
+set_location_assignment PIN_D3 -to TRG_PLS[0]
+set_location_assignment PIN_C3 -to TRG_PLS[1]
+set_location_assignment PIN_A3 -to TRG_PLS[2]
+set_location_assignment PIN_B4 -to TRG_PLS[3]
+set_location_assignment PIN_B5 -to TRG_PLS[4]
 
 
 
@@ -200,15 +208,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DRAM_ADDR[9]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DRAM_ADDR[10]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DRAM_ADDR[11]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DRAM_ADDR[12]
-set_location_assignment PIN_A8 -to SPI_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SPI_CLK
-set_location_assignment PIN_D3 -to TRG_PLS[0]
-set_location_assignment PIN_C3 -to TRG_PLS[1]
-set_location_assignment PIN_A3 -to TRG_PLS[2]
-set_location_assignment PIN_B4 -to TRG_PLS[3]
-set_location_assignment PIN_B5 -to TRG_PLS[4]
-set_location_assignment PIN_B8 -to SPI_CS
-set_location_assignment PIN_A2 -to SPI_MOSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SPI_CS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SPI_MOSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to TRG_PLS[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to TRG_PLS[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to TRG_PLS[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to TRG_PLS[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to TRG_PLS[4]
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF

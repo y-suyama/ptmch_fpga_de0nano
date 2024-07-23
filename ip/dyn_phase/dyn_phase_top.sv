@@ -1,13 +1,27 @@
-//=======================================================
+//==================================================================================================
+//  Company name        : 
+//  Date                : 
+//  File Name           : dyn_phase_top.sv
+//  Project Name        : 
+//  Coding              : suyama
+//  Rev.                : 1.0
+//
+//==================================================================================================
+// Import
+//==================================================================================================
+// None
+//==================================================================================================
+// Module
+//==================================================================================================
 module dyn_phase_top(
     // Reset/Clock
-    input  wire        RESET_N,
-    input  wire        CLK100M,
-    input  wire        CLK50M,
+    input  logic        RESET_N,
+    input  logic        CLK100M,
+    input  logic        CLK50M,
     // From PLL
-    input  wire        PHASEDONE,
+    input  logic        PHASEDONE,
     // To PLL
-    output wire [ 3:0] PHASECOUNTERSELECT,/**** PLL Phase Counter Select ****/
+    output logic [ 3:0] PHASECOUNTERSELECT,/**** PLL Phase Counter Select ****/
                                           //    0x0:ALL Output Counters
                                           //    0x1:M  Counters
                                           //    0x2:C0 Counters
@@ -15,17 +29,17 @@ module dyn_phase_top(
                                           //    0x4:C2 Counters
                                           //    0x5:C3 Counters
                                           //    0x6:C4 Counters
-    output wire        PHASEUPDOWN,
-    output wire        PHASESTEP,
+    output logic        PHASEUPDOWN,
+    output logic        PHASESTEP,
     // Avalone Slave I/F
-    input  wire        AV_BEGINTRANSFER,
-    input  wire [12:0] AV_ADDRESS,
-    input  wire        AV_CS,
-    input  wire        AV_READ,
-    input  wire        AV_WRITE,
-    output wire [31:0] AV_READDATA,
-    input  wire [31:0] AV_WRITEDATA,
-    output wire        AV_WAITREQUEST
+    input  logic        AV_BEGINTRANSFER,
+    input  logic [12:0] AV_ADDRESS,
+    input  logic        AV_CS,
+    input  logic        AV_READ,
+    input  logic        AV_WRITE,
+    output logic [31:0] AV_READDATA,
+    input  logic [31:0] AV_WRITEDATA,
+    output logic        AV_WAITREQUEST
 );
 
 //=======================================================
@@ -35,9 +49,9 @@ module dyn_phase_top(
 //=======================================================
 //  Internal Signal
 //=======================================================
-    wire [ 3:0] w_counter;
-    wire [ 1:0] w_dyn_phase;
-    wire [15:0] w_reg_address;
+    logic [ 3:0] w_counter;
+    logic [ 1:0] w_dyn_phase;
+    logic [15:0] w_reg_address;
 
 //=======================================================
 //  output Port

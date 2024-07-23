@@ -13,7 +13,7 @@ module de0_nano_system_mm_interconnect_0 (
 		input  wire        cpu_reset_reset_bridge_in_reset_reset,                                //                                cpu_reset_reset_bridge_in_reset.reset
 		input  wire        jtag_uart_reset_reset_bridge_in_reset_reset,                          //                          jtag_uart_reset_reset_bridge_in_reset.reset
 		input  wire        TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset_reset, // TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset.reset
-		input  wire        TRG_PLS_component_0_RESET_N_reset_bridge_in_reset_reset,              //              TRG_PLS_component_0_RESET_N_reset_bridge_in_reset.reset
+		input  wire        TRG_PLS_component_0_reset_reset_bridge_in_reset_reset,                //                TRG_PLS_component_0_reset_reset_bridge_in_reset.reset
 		input  wire [26:0] cpu_data_master_address,                                              //                                                cpu_data_master.address
 		output wire        cpu_data_master_waitrequest,                                          //                                                               .waitrequest
 		input  wire [3:0]  cpu_data_master_byteenable,                                           //                                                               .byteenable

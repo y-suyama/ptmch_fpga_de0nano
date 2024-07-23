@@ -15,9 +15,9 @@
 			zs_we_n_from_the_sdram                    : out   std_logic;                                        -- we_n
 			in_port_to_the_sw                         : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
 			trg_pls_component_0_spi_clk_clk           : in    std_logic                     := 'X';             -- clk
-			trg_pls_component_0_spi_cs_spi_cs         : in    std_logic                     := 'X';             -- spi_cs
-			trg_pls_component_0_spi_mosi_spi_mosi     : in    std_logic                     := 'X';             -- spi_mosi
-			trg_pls_component_0_trg_pls_monitorsignal : out   std_logic_vector(4 downto 0)                      -- monitorsignal
+			trg_pls_component_0_spi_cs_spi            : in    std_logic                     := 'X';             -- spi
+			trg_pls_component_0_spi_mosi_spi          : in    std_logic                     := 'X';             -- spi
+			trg_pls_component_0_trg_pls_triggersignal : out   std_logic_vector(4 downto 0)                      -- triggersignal
 		);
 	end component de0_nano_system;
 
@@ -38,8 +38,8 @@
 			zs_we_n_from_the_sdram                    => CONNECTED_TO_zs_we_n_from_the_sdram,                    --                             .we_n
 			in_port_to_the_sw                         => CONNECTED_TO_in_port_to_the_sw,                         --       sw_external_connection.export
 			trg_pls_component_0_spi_clk_clk           => CONNECTED_TO_trg_pls_component_0_spi_clk_clk,           --  trg_pls_component_0_spi_clk.clk
-			trg_pls_component_0_spi_cs_spi_cs         => CONNECTED_TO_trg_pls_component_0_spi_cs_spi_cs,         --   trg_pls_component_0_spi_cs.spi_cs
-			trg_pls_component_0_spi_mosi_spi_mosi     => CONNECTED_TO_trg_pls_component_0_spi_mosi_spi_mosi,     -- trg_pls_component_0_spi_mosi.spi_mosi
-			trg_pls_component_0_trg_pls_monitorsignal => CONNECTED_TO_trg_pls_component_0_trg_pls_monitorsignal  --  trg_pls_component_0_trg_pls.monitorsignal
+			trg_pls_component_0_spi_cs_spi            => CONNECTED_TO_trg_pls_component_0_spi_cs_spi,            --   trg_pls_component_0_spi_cs.spi
+			trg_pls_component_0_spi_mosi_spi          => CONNECTED_TO_trg_pls_component_0_spi_mosi_spi,          -- trg_pls_component_0_spi_mosi.spi
+			trg_pls_component_0_trg_pls_triggersignal => CONNECTED_TO_trg_pls_component_0_trg_pls_triggersignal  --  trg_pls_component_0_trg_pls.triggersignal
 		);
 

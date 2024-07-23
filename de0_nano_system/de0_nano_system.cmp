@@ -15,9 +15,9 @@
 			zs_we_n_from_the_sdram                    : out   std_logic;                                        -- we_n
 			in_port_to_the_sw                         : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
 			trg_pls_component_0_spi_clk_clk           : in    std_logic                     := 'X';             -- clk
-			trg_pls_component_0_spi_cs_spi_cs         : in    std_logic                     := 'X';             -- spi_cs
-			trg_pls_component_0_spi_mosi_spi_mosi     : in    std_logic                     := 'X';             -- spi_mosi
-			trg_pls_component_0_trg_pls_monitorsignal : out   std_logic_vector(4 downto 0)                      -- monitorsignal
+			trg_pls_component_0_spi_cs_spi            : in    std_logic                     := 'X';             -- spi
+			trg_pls_component_0_spi_mosi_spi          : in    std_logic                     := 'X';             -- spi
+			trg_pls_component_0_trg_pls_triggersignal : out   std_logic_vector(4 downto 0)                      -- triggersignal
 		);
 	end component de0_nano_system;
 

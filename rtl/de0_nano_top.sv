@@ -72,11 +72,12 @@ de0_nano_system u0_inst (
     .in_port_to_the_sw                         (SW),
     .clk_50                                    (CLK50M),
     .trg_pls_component_0_spi_clk_clk           (SPI_CLK),
-    .trg_pls_component_0_spi_cs_spi_cs         (SPI_CS),
-    .trg_pls_component_0_spi_mosi_spi_mosi     (SPI_MOSI),
-    .trg_pls_component_0_trg_pls_monitorsignal (w_trg_pls),
+    .trg_pls_component_0_spi_cs_spi            (SPI_CS),
+    .trg_pls_component_0_spi_mosi_spi          (SPI_MOSI),
+    .trg_pls_component_0_trg_pls_triggersignal (w_trg_pls),
     .clk100m_clk_clk(w_clk100m)
 );
+
 
 ledpwm ledpwm_inst(
     .CLK50M(CLK50M),

@@ -19,9 +19,9 @@ module de0_nano_system (
 		output wire        zs_we_n_from_the_sdram,                    //                             .we_n
 		input  wire [3:0]  in_port_to_the_sw,                         //       sw_external_connection.export
 		input  wire        trg_pls_component_0_spi_clk_clk,           //  trg_pls_component_0_spi_clk.clk
-		input  wire        trg_pls_component_0_spi_cs_spi_cs,         //   trg_pls_component_0_spi_cs.spi_cs
-		input  wire        trg_pls_component_0_spi_mosi_spi_mosi,     // trg_pls_component_0_spi_mosi.spi_mosi
-		output wire [4:0]  trg_pls_component_0_trg_pls_monitorsignal  //  trg_pls_component_0_trg_pls.monitorsignal
+		input  wire        trg_pls_component_0_spi_cs_spi,            //   trg_pls_component_0_spi_cs.spi
+		input  wire        trg_pls_component_0_spi_mosi_spi,          // trg_pls_component_0_spi_mosi.spi
+		output wire [4:0]  trg_pls_component_0_trg_pls_triggersignal  //  trg_pls_component_0_trg_pls.triggersignal
 	);
 
 	wire         altpll_0_c1_clk;                                           // altpll_0:c1 -> TRG_PLS_component_0:CLK160M
@@ -99,9 +99,10 @@ module de0_nano_system (
 	wire         rst_controller_001_reset_out_reset_req;                    // rst_controller_001:reset_req -> [cpu:reset_req, rst_translator:reset_req_in]
 	wire         cpu_debug_reset_request_reset;                             // cpu:debug_reset_request -> [rst_controller_001:reset_in0, rst_controller_002:reset_in1]
 	wire         rst_controller_002_reset_out_reset;                        // rst_controller_002:reset_out -> [jtag_uart:rst_n, key:reset_n, mm_interconnect_0:jtag_uart_reset_reset_bridge_in_reset_reset, sdram:reset_n, sw:reset_n, timer:reset_n]
-	wire         rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [mm_interconnect_0:TRG_PLS_component_0_RESET_N_reset_bridge_in_reset_reset, mm_interconnect_0:TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset_reset]
+	wire         rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [mm_interconnect_0:TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_0:TRG_PLS_component_0_reset_reset_bridge_in_reset_reset]
 
 	ptmch_top trg_pls_component_0 (
+		.RESET_N           (reset_n),                                                 //    reset.reset_n
 		.REG_BEGINTRANSFER (mm_interconnect_0_trg_pls_component_0_reg_begintransfer), //      reg.begintransfer
 		.REG_ADDRESS       (mm_interconnect_0_trg_pls_component_0_reg_address),       //         .address
 		.REG_READ          (mm_interconnect_0_trg_pls_component_0_reg_read),          //         .read
@@ -112,11 +113,10 @@ module de0_nano_system (
 		.REG_CS            (mm_interconnect_0_trg_pls_component_0_reg_chipselect),    //         .chipselect
 		.CLK100M           (clk100m_clk_clk),                                         //  CLK100M.clk
 		.CLK160M           (altpll_0_c1_clk),                                         //  CLK160M.clk
-		.TRG_PLS           (trg_pls_component_0_trg_pls_monitorsignal),               //  TRG_PLS.monitorsignal
 		.SPI_CLK           (trg_pls_component_0_spi_clk_clk),                         //  SPI_CLK.clk
-		.SPI_CS            (trg_pls_component_0_spi_cs_spi_cs),                       //   SPI_CS.spi_cs
-		.SPI_MOSI          (trg_pls_component_0_spi_mosi_spi_mosi),                   // SPI_MOSI.spi_mosi
-		.RESET_N           (reset_n)                                                  //  RESET_N.reset_n
+		.SPI_CS            (trg_pls_component_0_spi_cs_spi),                          //   SPI_CS.spi
+		.SPI_MOSI          (trg_pls_component_0_spi_mosi_spi),                        // SPI_MOSI.spi
+		.TRG_PLS           (trg_pls_component_0_trg_pls_triggersignal)                //  TRG_PLS.triggersignal
 	);
 
 	de0_nano_system_altpll_0 altpll_0 (
@@ -250,7 +250,7 @@ module de0_nano_system (
 		.cpu_reset_reset_bridge_in_reset_reset                                (rst_controller_001_reset_out_reset),                        //                                cpu_reset_reset_bridge_in_reset.reset
 		.jtag_uart_reset_reset_bridge_in_reset_reset                          (rst_controller_002_reset_out_reset),                        //                          jtag_uart_reset_reset_bridge_in_reset.reset
 		.TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),                        // TRG_PLS_component_0_reg_translator_reset_reset_bridge_in_reset.reset
-		.TRG_PLS_component_0_RESET_N_reset_bridge_in_reset_reset              (rst_controller_003_reset_out_reset),                        //              TRG_PLS_component_0_RESET_N_reset_bridge_in_reset.reset
+		.TRG_PLS_component_0_reset_reset_bridge_in_reset_reset                (rst_controller_003_reset_out_reset),                        //                TRG_PLS_component_0_reset_reset_bridge_in_reset.reset
 		.cpu_data_master_address                                              (cpu_data_master_address),                                   //                                                cpu_data_master.address
 		.cpu_data_master_waitrequest                                          (cpu_data_master_waitrequest),                               //                                                               .waitrequest
 		.cpu_data_master_byteenable                                           (cpu_data_master_byteenable),                                //                                                               .byteenable

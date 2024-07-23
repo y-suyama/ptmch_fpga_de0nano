@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2024.07.21.22:11:38</td>
+    <td class="l">2024.07.23.23:09:54</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -146,8 +146,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">reg&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>04040000</td>
+    <td class="addr"><span style="color:#989898">0x</span>04040000</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -159,7 +159,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">pll_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>04001050</td>
+    <td class="addr"><span style="color:#989898">0x</span>04081040</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -172,8 +172,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">debug_mem_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>04000800</td>
-    <td class="addr"><span style="color:#989898">0x</span>04000800</td>
+    <td class="addr"><span style="color:#989898">0x</span>04080800</td>
+    <td class="addr"><span style="color:#989898">0x</span>04080800</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -185,7 +185,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>04001060</td>
+    <td class="addr"><span style="color:#989898">0x</span>04081050</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -199,7 +199,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slaveb">s1&#160;</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>04001040</td>
+    <td class="addr"><span style="color:#989898">0x</span>04081030</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -225,7 +225,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slaveb">s1&#160;</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>04001030</td>
+    <td class="addr"><span style="color:#989898">0x</span>04081020</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -238,7 +238,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slaveb">s1&#160;</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>04001000</td>
+    <td class="addr"><span style="color:#989898">0x</span>04081000</td>
    </tr>
   </table>
   <a name="module_CLK100M"> </a>
@@ -365,7 +365,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
-      <td class="to">&#160;&#160;RESET_N</td>
+      <td class="to">&#160;&#160;reset</td>
      </tr>
     </table>
    </div>
@@ -2119,7 +2119,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">breakAbsoluteAddr</td>
-        <td class="parametervalue">67110944</td>
+        <td class="parametervalue">67635232</td>
        </tr>
        <tr>
         <td class="parametername">mmu_TLBMissExcAbsAddr</td>
@@ -2227,7 +2227,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">instSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='TRG_PLS_component_0.reg' start='0x0' end='0x40000' type='TRG_PLS_component.reg' /&gt;&lt;slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer.s1' start='0x4001000' end='0x4001020' type='altera_avalon_timer.s1' /&gt;&lt;slave name='sw.s1' start='0x4001030' end='0x4001040' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x4001040' end='0x4001050' type='altera_avalon_pio.s1' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4080000' type='TRG_PLS_component.reg' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer.s1' start='0x4081000' end='0x4081020' type='altera_avalon_timer.s1' /&gt;&lt;slave name='sw.s1' start='0x4081020' end='0x4081030' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x4081030' end='0x4081040' type='altera_avalon_pio.s1' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">faSlaveMapParam</td>
@@ -2235,7 +2235,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='TRG_PLS_component_0.reg' start='0x0' end='0x40000' type='TRG_PLS_component.reg' /&gt;&lt;slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x4000800' end='0x4001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='altpll_0.pll_slave' start='0x4001050' end='0x4001060' type='altpll.pll_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x4001060' end='0x4001068' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4080000' type='TRG_PLS_component.reg' /&gt;&lt;slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='altpll_0.pll_slave' start='0x4081040' end='0x4081050' type='altpll.pll_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x4081050' end='0x4081058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -2348,7 +2348,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">BREAK_ADDR</td>
-        <td class="parametervalue">0x04000820</td>
+        <td class="parametervalue">0x04080820</td>
        </tr>
        <tr>
         <td class="parametername">CPU_ARCH_NIOS2_R1</td>
@@ -3546,7 +3546,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.09 seconds</td>
+    <td class="r">rendering took 0.10 seconds</td>
    </tr>
   </table>
  </body>
