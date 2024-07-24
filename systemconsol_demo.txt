@@ -14,4 +14,27 @@ master_read_32 $mm 0x04040010 1
 #Write Status Count(0x04040014)
 master_read_32 $mm 0x04040014 1
 
+# Program Excute Low Addr
+master_read_32 $mm 0x04040018 1
+# Program Excute High Addr
+master_read_32 $mm 0x0404001C 1
+# RDSTAT Low Addr
+master_read_32 $mm 0x04040020 1
+# RDSTAT High Addr
+master_read_32 $mm 0x04040024 1
+# 128KB Block Erase Low Addr
+master_read_32 $mm 0x04040028 1
+# 128KB Block Erase High Addr
+master_read_32 $mm 0x0404002C 1
+# Page Data Reads Low Addr
+master_read_32 $mm 0x04040030 1
+# Page Data Read High Addr
+master_read_32 $mm 0x04040034 1
+# Write Status Low Addr
+master_read_32 $mm 0x04040038 1
+# Write Status High Addr
+master_read_32 $mm 0x0404003C 1
 
+
+
+master_write_32 $mm 0x04040018 0x5a5aa5a5

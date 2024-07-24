@@ -49,6 +49,17 @@ module ptmch_top(
     
     logic [31: 0] n_reg_readdata;
     logic         n_reg_waitrequest;
+    //Page Address Setting
+    logic [23: 0] n_prgexct_low_addr;
+    logic [23: 0] n_prgexct_high_addr;
+    logic [23: 0] n_rdstat_low_addr;
+    logic [23: 0] n_rdstat_high_addr;
+    logic [23: 0] n_blkers_low_addr;
+    logic [23: 0] n_blkers_high_addr;
+    logic [23: 0] n_pdread_low_addr;
+    logic [23: 0] n_pdread_high_addr;
+    logic [23: 0] n_wrstat_low_addr;
+    logic [23: 0] n_wrstat_high_addr;
 
 //==================================================================================================
 //  assign
@@ -67,7 +78,17 @@ ptmch_trg trg_inst(
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),
     .SPI_MOSI(SPI_MOSI),
-    .TRG_PLS(n_trg_pls)
+    .TRG_PLS(n_trg_pls),
+    .PRGEXCT_LOW_ADDR(n_prgexct_low_addr),
+    .PRGEXCT_HIGH_ADDR(n_prgexct_high_addr),
+    .RDSTAT_LOW_ADDR(n_rdstat_low_addr),
+    .RDSTAT_HIGH_ADDR(n_rdstat_high_addr),
+    .BLKERS_LOW_ADDR(n_blkers_low_addr),
+    .BLKERS_HIGH_ADDR(n_blkers_high_addr),
+    .PDREAD_LOW_ADDR(n_pdread_low_addr),
+    .PDREAD_HIGH_ADDR(n_pdread_high_addr),
+    .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
+    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr)
 );
 
 ptmch_cnt cnt_inst(
@@ -89,6 +110,16 @@ ptmch_reg reg_inst(
     .BLKERS(n_blkers),
     .PDREAD(n_pdread),
     .WRSTAT(n_qrstat),
+    .PRGEXCT_LOW_ADDR(n_prgexct_low_addr),
+    .PRGEXCT_HIGH_ADDR(n_prgexct_high_addr),
+    .RDSTAT_LOW_ADDR(n_rdstat_low_addr),
+    .RDSTAT_HIGH_ADDR(n_rdstat_high_addr),
+    .BLKERS_LOW_ADDR(n_blkers_low_addr),
+    .BLKERS_HIGH_ADDR(n_blkers_high_addr),
+    .PDREAD_LOW_ADDR(n_pdread_low_addr),
+    .PDREAD_HIGH_ADDR(n_pdread_high_addr),
+    .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
+    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr),
     .REG_BEGINTRANSFER(REG_BEGINTRANSFER),
     .REG_ADDRESS(REG_ADDRESS),
     .REG_CS(REG_CS),

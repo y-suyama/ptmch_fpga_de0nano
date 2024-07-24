@@ -15,7 +15,7 @@
    <frequency preferredWidth="316" />
   </columns>
  </clocktable>
- <library expandedCategories="Project/USER_IP,Library,Project" />
- <window width="2418" height="1318" x="-2409" y="-9" />
+ <library expandedCategories="Library,Project/USER_IP,Project" />
+ <window width="2418" height="1318" x="-1950" y="247" />
  <hdlexample language="VERILOG" />
 </preferences>

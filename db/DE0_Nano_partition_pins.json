@@ -212,15 +212,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_CS",
-					"strict" : false
-				},
-				{
 					"name" : "SPI_CLK",
 					"strict" : false
 				},
 				{
 					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CS",
 					"strict" : false
 				},
 				{
