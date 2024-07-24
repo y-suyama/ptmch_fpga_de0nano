@@ -29,7 +29,7 @@ module ledpwm(
 //=======================================================
     logic [26:0] r_counter;
     logic [ 5:0] r_pwm_adj;
-    logic [ 6:0] r_pwm_width;
+    logic [12:0] r_pwm_width;
     logic [ 7:0] r_led;
 //=======================================================
 //  Structural coding
@@ -69,7 +69,7 @@ module ledpwm(
     //
     always_ff @(posedge CLK50M or negedge RESET_N) begin
         if(!RESET_N)
-            r_pwm_width <= 7'b0;
+            r_pwm_width <= 13'b0;
          else
             r_pwm_width <= r_pwm_width[5:0]+ r_pwm_adj;
     end

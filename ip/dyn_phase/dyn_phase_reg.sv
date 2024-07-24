@@ -59,7 +59,7 @@ module dyn_phase_reg(
 //  Structural coding
 //=======================================================
     // Phase Counter Register(0x0000)
-    always @(posedge CLK100M or negedge RESET_N)
+    always_ff @(posedge CLK100M or negedge RESET_N)
         begin
             if(!RESET_N)
                 COUNTER <= 4'b0011;
@@ -69,7 +69,7 @@ module dyn_phase_reg(
                  end
         end
     // DynPhase Register(0x0004)
-    always @(posedge CLK100M or negedge RESET_N) begin
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
       if(!RESET_N)
         r_dyn_phase <= 2'b00;
       else begin
@@ -78,7 +78,7 @@ module dyn_phase_reg(
            end
     end
     // DYN_PHASE Enable Pulse Counter
-    always @(posedge CLK100M or negedge RESET_N)
+    always_ff @(posedge CLK100M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_enable_counter <= 2'b11;
@@ -92,7 +92,7 @@ module dyn_phase_reg(
                  end
         end
     // DYN_PHASE Enable Pulse
-    always @(posedge CLK100M or negedge RESET_N)
+    always_ff @(posedge CLK100M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_dyn_phase_pls <=2'b00;
@@ -107,7 +107,7 @@ module dyn_phase_reg(
         end
     // Clock Transfer(100MHz => 50MHz)
     // 1Clock
-    always @(negedge CLK50M or negedge RESET_N)
+    always_ff @(negedge CLK50M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_dyn_phase_pls_d1  <= 2'b00;
@@ -115,14 +115,14 @@ module dyn_phase_reg(
                 r_dyn_phase_pls_d1  <= r_dyn_phase_pls;
         end
     // 2Clock
-    always @(negedge CLK50M or negedge RESET_N) begin
+    always_ff @(negedge CLK50M or negedge RESET_N) begin
       if(!RESET_N)
         r_dyn_phase_pls_d2  <= 2'b00;
       else
         r_dyn_phase_pls_d2  <= r_dyn_phase_pls_d1;
       end
     // 3Clock
-    always @(negedge CLK50M or negedge RESET_N)
+    always_ff @(negedge CLK50M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_dyn_phase_pls_d3  <= 2'b00;
@@ -130,7 +130,7 @@ module dyn_phase_reg(
                 r_dyn_phase_pls_d3  <= r_dyn_phase_pls_d2;
         end
     // DYN_PHASE Enable Pulse Compera
-    always @(negedge CLK50M or negedge RESET_N)
+    always_ff @(negedge CLK50M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_dyn_phase_pls_sync    <= 2'b00;
@@ -138,7 +138,7 @@ module dyn_phase_reg(
                 r_dyn_phase_pls_sync    <= r_dyn_phase_pls_d3;
         end
     // Avalone READ DATA
-    always @(posedge CLK100M or negedge RESET_N)
+    always_ff @(posedge CLK100M or negedge RESET_N)
         begin
             if(!RESET_N)
                 r_reg_readdata <= 32'h0000_0000;

@@ -1,38 +1,53 @@
+//==================================================================================================
+//  Company name        : 
+//  Date                : 
+//  File Name           : dyn_phase_stm.sv
+//  Project Name        : 
+//  Coding              : suyama
+//  Rev.                : 1.0
+//
+//==================================================================================================
+// Import
+//==================================================================================================
+// None
+//==================================================================================================
+// Module
+//==================================================================================================
 
 module dyn_phase_stm(
     // Reset/Clock
-    input  wire       CLK50M,
-    input  wire       RESET_N,
+    input  logic       CLK50M,
+    input  logic       RESET_N,
     // Register Interface
-    input  wire [3:0] COUNTER,
-    input  wire [1:0] DYN_PHASE,          /**** PLL PhaseShift Enable ****/
-                                          //0x0:do nothing
-                                          //0x1:1 Phase stepup
-                                          //0x2:do nothing
-                                          //0x3:1 Phase stepdown
+    input  logic [3:0] COUNTER,
+    input  logic [1:0] DYN_PHASE,          /**** PLL PhaseShift Enable ****/
+                                           //0x0:do nothing
+                                           //0x1:1 Phase stepup
+                                           //0x2:do nothing
+                                           //0x3:1 Phase stepdown
     // From PLL
-    input  wire       PHASEDONE,
+    input  logic       PHASEDONE,
     // To PLL
-    output wire [3:0] PHASECOUNTERSELECT, /**** PLL Phase Counter Select ****/
-                                          //     0x0:ALL Output Counters
-                                          //     0x1:M  Counters
-                                          //     0x2:C0 Counters
-                                          //     0x3:C1 Counters
-                                          //     0x4:C2 Counters
-                                          //     0x5:C3 Counters
-                                          //     0x6:C4 Counters
-    output wire       PHASEUPDOWN,
-    output wire       PHASESTEP
+    output logic [3:0] PHASECOUNTERSELECT, /**** PLL Phase Counter Select ****/
+                                           //     0x0:ALL Output Counters
+                                           //     0x1:M  Counters
+                                           //     0x2:C0 Counters
+                                           //     0x3:C1 Counters
+                                           //     0x4:C2 Counters
+                                           //     0x5:C3 Counters
+                                           //     0x6:C4 Counters
+    output logic       PHASEUPDOWN,
+    output logic       PHASESTEP
 //    output [1:0] NEXT_STATE,
     );
 
 //=======================================================
 //  Internal Signal
 //=======================================================
-    reg [1:0] r_state;
-    reg [1:0] r_next_state;
-    reg [2:0] r_count;
-    reg       r_step;
+    logic [1:0] r_state;
+    logic [1:0] r_next_state;
+    logic [2:0] r_count;
+    logic       r_step;
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
@@ -49,7 +64,7 @@ module dyn_phase_stm(
 //  Structural coding
 //=======================================================
    // STATE INCREMENT
-    always @(posedge CLK50M or negedge RESET_N) begin
+    always_ff @(posedge CLK50M or negedge RESET_N) begin
         if (!RESET_N) begin
             r_state <= p_do_nothing;
         end
@@ -57,7 +72,7 @@ module dyn_phase_stm(
             r_state <= r_next_state;
     end
    // NEXT STATE
-    always @(posedge CLK50M or negedge RESET_N) begin
+    always_ff @(posedge CLK50M or negedge RESET_N) begin
         if (!RESET_N) begin
             r_next_state <= p_do_nothing;
         end
@@ -73,7 +88,7 @@ module dyn_phase_stm(
         end
     end
     // PLL Phase Shift STATE MACHINE
-    always @ (posedge CLK50M or negedge RESET_N) begin
+    always_ff @ (posedge CLK50M or negedge RESET_N) begin
         if (!RESET_N) begin
             r_count     <= 3'b000;
             PHASESTEP   <= 1'b0;
