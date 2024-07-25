@@ -92,7 +92,7 @@ module ptmch_reg(
     // PRGEXCT High Address Register(0x001C)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            PRGEXCT_HIGH_ADDR  <= 24'hF;
+            PRGEXCT_HIGH_ADDR  <= 24'hFFFFFF;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_prgexct_high_addr))
                 PRGEXCT_HIGH_ADDR  <= REG_WRITEDATA[23:0];
@@ -111,7 +111,7 @@ module ptmch_reg(
     // RDSTAT High Address Register(0x0024)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            RDSTAT_HIGH_ADDR  <= 24'hF;
+            RDSTAT_HIGH_ADDR  <= 24'hFFFFFF;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_rdstat_high_addr))
                 RDSTAT_HIGH_ADDR  <= REG_WRITEDATA[23:0];
@@ -130,7 +130,7 @@ module ptmch_reg(
     // BLKERS High Address Register(0x0024)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            BLKERS_HIGH_ADDR  <= 24'hF;
+            BLKERS_HIGH_ADDR  <= 24'hFFFFFF;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_blkers_high_addr))
                 BLKERS_HIGH_ADDR  <= REG_WRITEDATA[23:0];
@@ -149,7 +149,7 @@ module ptmch_reg(
     // PDREAD High Address Register(0x0024)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            PDREAD_HIGH_ADDR  <= 24'hF;
+            PDREAD_HIGH_ADDR  <= 24'hFFFFFF;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_pdread_high_addr))
                 PDREAD_HIGH_ADDR  <= REG_WRITEDATA[23:0];
@@ -168,7 +168,7 @@ module ptmch_reg(
     // WRSTAT High Address Register(0x0024)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            WRSTAT_HIGH_ADDR  <= 24'hF;
+            WRSTAT_HIGH_ADDR  <= 24'hFFFFFF;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_wrstat_high_addr))
                 WRSTAT_HIGH_ADDR  <= REG_WRITEDATA[23:0];
@@ -188,16 +188,16 @@ module ptmch_reg(
                     p_128kb_blockerase_addr : r_reg_readdata <= BLKERS;
                     p_pagedata_read_addr    : r_reg_readdata <= PDREAD;
                     p_writestatus_addr      : r_reg_readdata <= WRSTAT;
-                    p_prgexct_low_addr      : r_reg_readdata <= {8'h0,PRGEXCT_LOW_ADDR};
-                    p_prgexct_high_addr     : r_reg_readdata <= {8'h0,PRGEXCT_HIGH_ADDR};
-                    p_rdstat_low_addr       : r_reg_readdata <= {8'h0,RDSTAT_LOW_ADDR};
-                    p_rdstat_high_addr      : r_reg_readdata <= {8'h0,RDSTAT_HIGH_ADDR};
-                    p_blkers_low_addr       : r_reg_readdata <= {8'h0,BLKERS_LOW_ADDR};
-                    p_blkers_high_addr      : r_reg_readdata <= {8'h0,BLKERS_HIGH_ADDR};
-                    p_pdread_low_addr       : r_reg_readdata <= {8'h0,PDREAD_LOW_ADDR};
-                    p_pdread_high_addr      : r_reg_readdata <= {8'h0,PDREAD_HIGH_ADDR};
-                    p_wrstat_low_addr       : r_reg_readdata <= {8'h0,WRSTAT_LOW_ADDR};
-                    p_wrstat_high_addr      : r_reg_readdata <= {8'h0,WRSTAT_HIGH_ADDR};
+                    p_prgexct_low_addr      : r_reg_readdata <= {8'd0,PRGEXCT_LOW_ADDR};
+                    p_prgexct_high_addr     : r_reg_readdata <= {8'd0,PRGEXCT_HIGH_ADDR};
+                    p_rdstat_low_addr       : r_reg_readdata <= {8'd0,RDSTAT_LOW_ADDR};
+                    p_rdstat_high_addr      : r_reg_readdata <= {8'd0,RDSTAT_HIGH_ADDR};
+                    p_blkers_low_addr       : r_reg_readdata <= {8'd0,BLKERS_LOW_ADDR};
+                    p_blkers_high_addr      : r_reg_readdata <= {8'd0,BLKERS_HIGH_ADDR};
+                    p_pdread_low_addr       : r_reg_readdata <= {8'd0,PDREAD_LOW_ADDR};
+                    p_pdread_high_addr      : r_reg_readdata <= {8'd0,PDREAD_HIGH_ADDR};
+                    p_wrstat_low_addr       : r_reg_readdata <= {8'd0,WRSTAT_LOW_ADDR};
+                    p_wrstat_high_addr      : r_reg_readdata <= {8'd0,WRSTAT_HIGH_ADDR};
                     default                 : r_reg_readdata <= 32'h0000_0000;
                 endcase
             end

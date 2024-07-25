@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.07.25.01:16:36 -->
+ <!-- 2024.07.26.00:26:15 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1721837795</value>
+  <value>1721921174</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -430,7 +430,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="1.5"
+   version="1.7"
    path="TRG_PLS_component_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -533,7 +533,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>262144</value>
+    <value>32768</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -838,7 +838,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>REG_ADDRESS</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>13</width>
     <role>address</role>
    </port>
    <port>
@@ -5185,7 +5185,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4080000' type='TRG_PLS_component.reg' /><slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x4081000' end='0x4081020' type='altera_avalon_timer.s1' /><slave name='sw.s1' start='0x4081020' end='0x4081030' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x4081030' end='0x4081040' type='altera_avalon_pio.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4048000' type='TRG_PLS_component.reg' /><slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x4081000' end='0x4081020' type='altera_avalon_timer.s1' /><slave name='sw.s1' start='0x4081020' end='0x4081030' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x4081030' end='0x4081040' type='altera_avalon_pio.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5205,7 +5205,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4080000' type='TRG_PLS_component.reg' /><slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='altpll_0.pll_slave' start='0x4081040' end='0x4081050' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x4081050' end='0x4081058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='TRG_PLS_component_0.reg' start='0x4040000' end='0x4048000' type='TRG_PLS_component.reg' /><slave name='cpu.debug_mem_slave' start='0x4080800' end='0x4081000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='altpll_0.pll_slave' start='0x4081040' end='0x4081050' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x4081050' end='0x4081058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5901,7 +5901,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>reg</slaveName>
     <name>TRG_PLS_component_0.reg</name>
     <baseAddress>67371008</baseAddress>
-    <span>262144</span>
+    <span>32768</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -6212,7 +6212,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>reg</slaveName>
     <name>TRG_PLS_component_0.reg</name>
     <baseAddress>67371008</baseAddress>
-    <span>262144</span>
+    <span>32768</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -12518,7 +12518,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>TRG_PLS_component</displayName>
-  <version>1.5</version>
+  <version>1.7</version>
  </plugin>
  <plugin>
   <instanceCount>8</instanceCount>

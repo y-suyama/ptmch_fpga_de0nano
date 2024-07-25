@@ -70,7 +70,7 @@ module de0_nano_system_mm_interconnect_0 (
 		input  wire [15:0] timer_s1_readdata,                                                    //                                                               .readdata
 		output wire [15:0] timer_s1_writedata,                                                   //                                                               .writedata
 		output wire        timer_s1_chipselect,                                                  //                                                               .chipselect
-		output wire [15:0] TRG_PLS_component_0_reg_address,                                      //                                        TRG_PLS_component_0_reg.address
+		output wire [12:0] TRG_PLS_component_0_reg_address,                                      //                                        TRG_PLS_component_0_reg.address
 		output wire        TRG_PLS_component_0_reg_write,                                        //                                                               .write
 		output wire        TRG_PLS_component_0_reg_read,                                         //                                                               .read
 		input  wire [31:0] TRG_PLS_component_0_reg_readdata,                                     //                                                               .readdata
@@ -978,7 +978,7 @@ module de0_nano_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (16),
+		.AV_ADDRESS_W                   (13),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),

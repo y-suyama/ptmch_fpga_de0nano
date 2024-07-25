@@ -25,7 +25,7 @@ module ptmch_top(
     output logic [ 4: 0]  TRG_PLS,
     // Avalone Slave I/F
     input  logic          REG_BEGINTRANSFER,
-    input  logic [15: 0]  REG_ADDRESS,
+    input  logic [12: 0]  REG_ADDRESS,
     input  logic          REG_CS,
     input  logic          REG_READ,
     input  logic          REG_WRITE,
@@ -61,6 +61,8 @@ module ptmch_top(
     logic [23: 0] n_wrstat_low_addr;
     logic [23: 0] n_wrstat_high_addr;
 
+    logic [15: 0] n_reg_address;
+
 //==================================================================================================
 //  assign
 //==================================================================================================
@@ -68,6 +70,8 @@ module ptmch_top(
     // Avalone Bus Interface
     assign REG_READDATA        = n_reg_readdata;
     assign REG_WAITREQUEST     = n_reg_waitrequest;
+    assign n_reg_address       = {REG_ADDRESS,2'b00};
+
 //==================================================================================================
 //  Structural coding
 //==================================================================================================
@@ -121,7 +125,7 @@ ptmch_reg reg_inst(
     .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
     .WRSTAT_HIGH_ADDR(n_wrstat_high_addr),
     .REG_BEGINTRANSFER(REG_BEGINTRANSFER),
-    .REG_ADDRESS(REG_ADDRESS),
+    .REG_ADDRESS(n_reg_address),
     .REG_CS(REG_CS),
     .REG_READ(REG_READ),
     .REG_WRITE(REG_WRITE),

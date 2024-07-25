@@ -4,7 +4,7 @@
  <systemtable filter="All Interfaces" showClockDomains="1" showResetDomains="0">
   <columns>
    <connections preferredWidth="207" />
-   <irq preferredWidth="95" />
+   <irq preferredWidth="34" />
    <name preferredWidth="224" />
   </columns>
  </systemtable>
@@ -15,7 +15,7 @@
    <frequency preferredWidth="316" />
   </columns>
  </clocktable>
- <library expandedCategories="Library,Project/USER_IP,Project" />
- <window width="2418" height="1318" x="-1950" y="247" />
+ <library expandedCategories="Project/USER_IP,Project,Library" />
+ <window width="1920" height="1030" x="-1942" y="386" />
  <hdlexample language="VERILOG" />
 </preferences>

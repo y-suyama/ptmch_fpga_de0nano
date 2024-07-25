@@ -60,7 +60,7 @@ module de0_nano_system (
 	wire         mm_interconnect_0_trg_pls_component_0_reg_chipselect;      // mm_interconnect_0:TRG_PLS_component_0_reg_chipselect -> TRG_PLS_component_0:REG_CS
 	wire  [31:0] mm_interconnect_0_trg_pls_component_0_reg_readdata;        // TRG_PLS_component_0:REG_READDATA -> mm_interconnect_0:TRG_PLS_component_0_reg_readdata
 	wire         mm_interconnect_0_trg_pls_component_0_reg_waitrequest;     // TRG_PLS_component_0:REG_WAITREQUEST -> mm_interconnect_0:TRG_PLS_component_0_reg_waitrequest
-	wire  [15:0] mm_interconnect_0_trg_pls_component_0_reg_address;         // mm_interconnect_0:TRG_PLS_component_0_reg_address -> TRG_PLS_component_0:REG_ADDRESS
+	wire  [12:0] mm_interconnect_0_trg_pls_component_0_reg_address;         // mm_interconnect_0:TRG_PLS_component_0_reg_address -> TRG_PLS_component_0:REG_ADDRESS
 	wire         mm_interconnect_0_trg_pls_component_0_reg_read;            // mm_interconnect_0:TRG_PLS_component_0_reg_read -> TRG_PLS_component_0:REG_READ
 	wire         mm_interconnect_0_trg_pls_component_0_reg_begintransfer;   // mm_interconnect_0:TRG_PLS_component_0_reg_begintransfer -> TRG_PLS_component_0:REG_BEGINTRANSFER
 	wire         mm_interconnect_0_trg_pls_component_0_reg_write;           // mm_interconnect_0:TRG_PLS_component_0_reg_write -> TRG_PLS_component_0:REG_WRITE

@@ -135,7 +135,7 @@ module de0_nano_system_mm_interconnect_0_router_001
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h4000000 - 64'h2000000); 
-    localparam PAD1 = log2ceil(64'h4080000 - 64'h4040000); 
+    localparam PAD1 = log2ceil(64'h4048000 - 64'h4040000); 
     localparam PAD2 = log2ceil(64'h4081000 - 64'h4080800); 
     localparam PAD3 = log2ceil(64'h4081020 - 64'h4081000); 
     localparam PAD4 = log2ceil(64'h4081030 - 64'h4081020); 
@@ -199,7 +199,7 @@ module de0_nano_system_mm_interconnect_0_router_001
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end
 
-    // ( 0x4040000 .. 0x4080000 )
+    // ( 0x4040000 .. 0x4048000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 27'h4040000   ) begin
             src_channel = 8'b000010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
