@@ -69,16 +69,16 @@ module ptmch_trg(
 //  output Port
 //=================================================================
     // TRG_PLS Output sel
-    assign   TRG_PLS[0]  = (sr_inst_chk_3d == p_program_excute )? n_trg_pls:
-                                                                   1'b0;
-    assign   TRG_PLS[1]  = (sr_inst_chk_3d == p_readstatus1 | sr_inst_chk_3d == p_readstatus2)? n_trg_pls:
-                                                                                                1'b0;
-    assign   TRG_PLS[2]  = (sr_inst_chk_3d == p_128kb_blockerase )? n_trg_pls:
-                                                                    1'b0;
-    assign   TRG_PLS[3]  = (sr_inst_chk_3d == p_pagedata_read )? n_trg_pls:
-                                                                 1'b0;
-    assign   TRG_PLS[4]  = (sr_inst_chk_3d == p_writestatus1 | sr_inst_chk_3d == p_writestatus2)? n_trg_pls:
-                                                                 1'b0;
+    assign   TRG_PLS[0]  = (sr_inst_chk_3d[31:24] == p_program_excute )? n_trg_pls:
+                                                                         1'b0;
+    assign   TRG_PLS[1]  = (sr_inst_chk_3d[31:24] == p_readstatus1 | sr_inst_chk_3d[31:24] == p_readstatus2)? n_trg_pls:
+                                                                                                              1'b0;
+    assign   TRG_PLS[2]  = (sr_inst_chk_3d[31:24] == p_128kb_blockerase )? n_trg_pls:
+                                                                           1'b0;
+    assign   TRG_PLS[3]  = (sr_inst_chk_3d[31:24] == p_pagedata_read )? n_trg_pls:
+                                                                        1'b0;
+    assign   TRG_PLS[4]  = (sr_inst_chk_3d[31:24] == p_writestatus1 | sr_inst_chk_3d[31:24] == p_writestatus2)? n_trg_pls:
+                                                                                                                1'b0;
     assign   c_inst_edge = (c_inst_mch & ~sr_inst_mch_sft2);
     assign   c_cs_edge = (sr_cs_sync & ~sr_cs_sync_sft2);
 //=================================================================

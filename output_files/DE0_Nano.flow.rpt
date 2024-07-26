@@ -1,5 +1,5 @@
 Flow report for DE0_Nano
-Fri Jul 26 00:29:02 2024
+Fri Jul 26 21:24:13 2024
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jul 26 00:28:52 2024       ;
+; Flow Status                        ; Successful - Fri Jul 26 21:23:56 2024       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; DE0_Nano                                    ;
 ; Top-level Entity Name              ; de0_nano_top                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,709 / 22,320 ( 17 % )                     ;
-;     Total combinational functions  ; 3,350 / 22,320 ( 15 % )                     ;
+; Total logic elements               ; 3,700 / 22,320 ( 17 % )                     ;
+;     Total combinational functions  ; 3,341 / 22,320 ( 15 % )                     ;
 ;     Dedicated logic registers      ; 2,121 / 22,320 ( 10 % )                     ;
 ; Total registers                    ; 2190                                        ;
 ; Total pins                         ; 62 / 154 ( 40 % )                           ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/26/2024 00:25:33 ;
+; Start date & time ; 07/26/2024 21:19:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_Nano            ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+-------------------------------------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                     ; Value                                                             ; Default Value ; Entity Name     ; Section Id ;
 +-------------------------------------+-------------------------------------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 90274928606859.172192113208420                                    ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 90274928606859.172199638910124                                    ; --            ; --              ; --         ;
 ; IGNORE_PARTITIONS                   ; On                                                                ; Off           ; --              ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                ; --            ; --              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                 ; --            ; --              ; --         ;
@@ -94,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                      ; --            ; --              ; --         ;
 ; SLD_FILE                            ; de0_nano_system/synthesis/de0_nano_system.regmap                  ; --            ; --              ; --         ;
 ; SLD_FILE                            ; de0_nano_system/synthesis/de0_nano_system.debuginfo               ; --            ; --              ; --         ;
-; SLD_INFO                            ; QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721921061 ; --            ; de0_nano_system ; --         ;
+; SLD_INFO                            ; QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1721996273 ; --            ; de0_nano_system ; --         ;
 ; SOPCINFO_FILE                       ; de0_nano_system/synthesis/../../de0_nano_system.sopcinfo          ; --            ; --              ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                ; --            ; --              ; --         ;
 ; TOP_LEVEL_ENTITY                    ; de0_nano_top                                                      ; DE0_Nano      ; --              ; --         ;
@@ -106,11 +106,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:26     ; 1.0                     ; 4918 MB             ; 00:03:40                           ;
-; Fitter               ; 00:00:41     ; 1.1                     ; 5397 MB             ; 00:00:53                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4692 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.2                     ; 4801 MB             ; 00:00:10                           ;
-; Total                ; 00:03:20     ; --                      ; --                  ; 00:04:46                           ;
+; Analysis & Synthesis ; 00:02:57     ; 1.0                     ; 4912 MB             ; 00:04:30                           ;
+; Fitter               ; 00:00:53     ; 1.1                     ; 5388 MB             ; 00:01:07                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4692 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:14     ; 1.2                     ; 4801 MB             ; 00:00:15                           ;
+; Total                ; 00:04:09     ; --                      ; --                  ; 00:05:56                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
