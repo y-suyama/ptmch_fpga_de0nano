@@ -83,7 +83,7 @@ module ptmch_reg(
     // PRGEXCT Low Address Register(0x0018)
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            PRGEXCT_LOW_ADDR  <= 24'hFFFFFF;
+            PRGEXCT_LOW_ADDR  <= 24'h0;
         else begin
             if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_prgexct_low_addr))
                 PRGEXCT_LOW_ADDR  <= REG_WRITEDATA[23:0];

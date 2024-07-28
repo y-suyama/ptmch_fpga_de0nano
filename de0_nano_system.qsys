@@ -304,7 +304,7 @@
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="1.7"
+   version="1.8"
    enabled="1" />
  <module name="altpll_0" kind="altpll" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />

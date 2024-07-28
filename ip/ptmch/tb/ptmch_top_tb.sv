@@ -156,6 +156,9 @@ ptmch_top _ptmch_top(
                         SPI_MOSI = 1'b0;//[12]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
+                        SPI_MOSI = 1'b0;//[11]
+        #half_cycle_spi SPI_CLK = 1'b1;
+        #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_MOSI = 1'b0;//[10]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
@@ -261,10 +264,10 @@ ptmch_top _ptmch_top(
                         SPI_MOSI = 1'b0;//[13]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
-                        SPI_MOSI = 1'b1;//[11]
+                        SPI_MOSI = 1'b1;//[12]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
-                        SPI_MOSI = 1'b0;//[12]
+                        SPI_MOSI = 1'b0;//[11]
         #half_cycle_spi SPI_CLK = 1'b1;
         #half_cycle_spi SPI_CLK = 1'b0;
                         SPI_MOSI = 1'b0;//[10]
