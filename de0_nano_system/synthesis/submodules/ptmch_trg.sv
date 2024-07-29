@@ -200,20 +200,20 @@ module ptmch_trg(
     end
 
     always @* begin
-        if((p_program_excute == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=PRGEXCT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=PRGEXCT_HIGH_ADDR)))
+        if((p_program_excute == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=PRGEXCT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=PRGEXCT_HIGH_ADDR))
             c_inst_mch <= 1'b1;
         else begin
-            if((p_readstatus1 == sr_inst_chk_3d[31:24] )&&((sr_inst_chk_3d[23:0]>=RDSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=RDSTAT_HIGH_ADDR)))
+            if((p_readstatus1 == sr_inst_chk_3d[31:24] )&&(sr_inst_chk_3d[23:0]>=RDSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=RDSTAT_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
-            else if((p_readstatus2 == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=RDSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=RDSTAT_HIGH_ADDR)))
+            else if((p_readstatus2 == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=RDSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=RDSTAT_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
-            else if((p_128kb_blockerase == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=BLKERS_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=BLKERS_HIGH_ADDR)))
+            else if((p_128kb_blockerase == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=BLKERS_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=BLKERS_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
-            else if((p_pagedata_read == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=PDREAD_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=PDREAD_HIGH_ADDR)))
+            else if((p_pagedata_read == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=PDREAD_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=PDREAD_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
-            else if((p_writestatus1 == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=WRSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=WRSTAT_HIGH_ADDR)))
+            else if((p_writestatus1 == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=WRSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=WRSTAT_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
-            else if((p_writestatus2 == sr_inst_chk_3d[31:24]) && ((sr_inst_chk_3d[23:0]>=WRSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=WRSTAT_HIGH_ADDR)))
+            else if((p_writestatus2 == sr_inst_chk_3d[31:24]) && (sr_inst_chk_3d[23:0]>=WRSTAT_LOW_ADDR) && (sr_inst_chk_3d[23:0]<=WRSTAT_HIGH_ADDR))
                 c_inst_mch <= 1'b1;
             else
                 c_inst_mch <= 1'b0;

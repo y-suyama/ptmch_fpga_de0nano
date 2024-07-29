@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ptmch_top
 
-} {} {}} C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ptmch_top_tb
-
-Top level modules:
-	ptmch_top_tb
-
 } {} {}} C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv {1 {vlog -work work -sv -stats=none C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ptmch_cnt
@@ -25,12 +18,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	ptmch_trg
-
-} {} {}} C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv {1 {vlog -work work -sv -stats=none C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ptmch_reg
-
-Top level modules:
-	ptmch_reg
 
 } {} {}}
