@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="de0_nano_system" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.08.01.23:37:44 -->
+ <!-- 2024.08.02.06:52:50 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1722523006</value>
+  <value>1722549126</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -448,7 +448,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="2.6"
+   version="2.7"
    path="TRG_PLS_component_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -19100,7 +19100,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>TRG_PLS_component</displayName>
-  <version>2.6</version>
+  <version>2.7</version>
  </plugin>
  <plugin>
   <instanceCount>21</instanceCount>
@@ -19303,5 +19303,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 646</reportVersion>
- <uniqueIdentifier>521AC50D3E8B000001910E5F7136</uniqueIdentifier>
+ <uniqueIdentifier>521AC50D3E8B000001910FEDE7EA</uniqueIdentifier>
 </EnsembleReport>

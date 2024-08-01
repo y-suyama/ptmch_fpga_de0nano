@@ -22,7 +22,7 @@ module ptmch_cnt(
     output  logic [31: 0] RDSTAT,
     output  logic [31: 0] BLKERS,
     output  logic [31: 0] PDREAD,
-    output  logic [31: 0] WRSTAT,
+//    output  logic [31: 0] WRSTAT,
     // TRG_PLS INPUT
     input   logic [ 4: 0] TRG_PLS
 );
@@ -47,8 +47,8 @@ module ptmch_cnt(
     logic  [31: 0]  sr_blkers_counter;
     // TRG PLS Counter(PDREAD)
     logic  [31: 0]  sr_pdread_counter;
-    // TRG PLS Counter(WRSTAT)
-    logic  [31: 0]  sr_wrstat_counter;
+//    // TRG PLS Counter(WRSTAT)
+//    logic  [31: 0]  sr_wrstat_counter;
 
 //=================================================================
 //  assign
@@ -58,13 +58,13 @@ module ptmch_cnt(
     assign c_pls_rise[1] = sr_trg_pls_3d[1] & ~sr_trg_pls_4d[1] ;
     assign c_pls_rise[2] = sr_trg_pls_3d[2] & ~sr_trg_pls_4d[2] ;
     assign c_pls_rise[3] = sr_trg_pls_3d[3] & ~sr_trg_pls_4d[3] ;
-    assign c_pls_rise[4] = sr_trg_pls_3d[4] & ~sr_trg_pls_4d[4] ;
+//    assign c_pls_rise[4] = sr_trg_pls_3d[4] & ~sr_trg_pls_4d[4] ;
     // TRG PLS Register Interface
     assign PRGEXCT = sr_prgexct_counter;
     assign RDSTAT  = sr_rdstat_counter;
     assign BLKERS  = sr_blkers_counter;
     assign PDREAD  = sr_pdread_counter;
-    assign WRSTAT  = sr_wrstat_counter;
+//    assign WRSTAT  = sr_wrstat_counter;
 
 //=================================================================
 //  Structural coding
@@ -97,13 +97,13 @@ module ptmch_cnt(
         else
             ar_trg_pls_1d[3]  <= TRG_PLS[3];
     end
-    // Clock Transfer (writestatus 1Clock)
-    always @(negedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            ar_trg_pls_1d[4]  <= 1'b0;
-        else
-            ar_trg_pls_1d[4]  <= TRG_PLS[4];
-    end
+//    // Clock Transfer (writestatus 1Clock)
+//    always @(negedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            ar_trg_pls_1d[4]  <= 1'b0;
+//        else
+//            ar_trg_pls_1d[4]  <= TRG_PLS[4];
+//    end
 
     // Clock Transfer (program_excute 2Clock)
     always @(negedge CLK100M or negedge RESET_N) begin
@@ -133,13 +133,13 @@ module ptmch_cnt(
         else
             sr_trg_pls_2d[3]  <= ar_trg_pls_1d[3];
     end
-    // Clock Transfer (writestatus 2Clock)
-    always @(negedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_trg_pls_2d[4]  <= 1'b0;
-        else
-            sr_trg_pls_2d[4]  <= ar_trg_pls_1d[4];
-    end
+//    // Clock Transfer (writestatus 2Clock)
+//    always @(negedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            sr_trg_pls_2d[4]  <= 1'b0;
+//        else
+//            sr_trg_pls_2d[4]  <= ar_trg_pls_1d[4];
+//    end
 
 
     // Clock Transfer (program_excute 3Clock)
@@ -170,13 +170,13 @@ module ptmch_cnt(
         else
             sr_trg_pls_3d[3]  <= sr_trg_pls_2d[3];
     end
-    // Clock Transfer (writestatus 3Clock)
-    always @(negedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_trg_pls_3d[4]  <= 1'b0;
-        else
-            sr_trg_pls_3d[4]  <= sr_trg_pls_2d[4];
-    end
+//    // Clock Transfer (writestatus 3Clock)
+//    always @(negedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            sr_trg_pls_3d[4]  <= 1'b0;
+//        else
+//            sr_trg_pls_3d[4]  <= sr_trg_pls_2d[4];
+//    end
 
 
     // Clock Transfer (program_excute 4Clock)
@@ -207,13 +207,13 @@ module ptmch_cnt(
         else
             sr_trg_pls_4d[3]  <= sr_trg_pls_3d[3];
     end
-    // Clock Transfer (writestatus 4Clock)
-    always @(negedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_trg_pls_4d[4]  <= 1'b0;
-        else
-            sr_trg_pls_4d[4]  <= sr_trg_pls_3d[4];
-    end
+//    // Clock Transfer (writestatus 4Clock)
+//    always @(negedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            sr_trg_pls_4d[4]  <= 1'b0;
+//        else
+//            sr_trg_pls_4d[4]  <= sr_trg_pls_3d[4];
+//    end
 
 
     // TRG PLS Counter(PRGEXCT)
@@ -272,18 +272,18 @@ module ptmch_cnt(
         end
     end
 
-    // TRG PLS Counter(WRSTAT)
-    always_ff @(posedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            sr_wrstat_counter  <= 32'h0;
-        else begin
-            if (sr_wrstat_counter == 32'hFFFF_FFFF) // STOP
-                sr_wrstat_counter <= sr_wrstat_counter;
-            else if(c_pls_rise[4] == 1'b1) // Count
-                sr_wrstat_counter  <= sr_wrstat_counter + 1;
-            else
-                sr_wrstat_counter  <= sr_wrstat_counter;
-        end
-    end
+//    // TRG PLS Counter(WRSTAT)
+//    always_ff @(posedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            sr_wrstat_counter  <= 32'h0;
+//        else begin
+//            if (sr_wrstat_counter == 32'hFFFF_FFFF) // STOP
+//                sr_wrstat_counter <= sr_wrstat_counter;
+//            else if(c_pls_rise[4] == 1'b1) // Count
+//                sr_wrstat_counter  <= sr_wrstat_counter + 1;
+//            else
+//                sr_wrstat_counter  <= sr_wrstat_counter;
+//        end
+//    end
 
 endmodule

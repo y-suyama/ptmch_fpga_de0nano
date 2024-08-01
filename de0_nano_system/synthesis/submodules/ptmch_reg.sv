@@ -22,7 +22,7 @@ module ptmch_reg(
     input  logic [31: 0] RDSTAT,
     input  logic [31: 0] BLKERS,
     input  logic [31: 0] PDREAD,
-    input  logic [31: 0] WRSTAT,
+//    input  logic [31: 0] WRSTAT,
     //Page Address Setting
     output logic [23: 0] PRGEXCT_LOW_ADDR,
     output logic [23: 0] PRGEXCT_HIGH_ADDR,
@@ -32,8 +32,8 @@ module ptmch_reg(
     output logic [23: 0] BLKERS_HIGH_ADDR,
     output logic [23: 0] PDREAD_LOW_ADDR,
     output logic [23: 0] PDREAD_HIGH_ADDR,
-    output logic [23: 0] WRSTAT_LOW_ADDR,
-    output logic [23: 0] WRSTAT_HIGH_ADDR,
+//    output logic [23: 0] WRSTAT_LOW_ADDR,
+//    output logic [23: 0] WRSTAT_HIGH_ADDR,
     // Avalone Slave I/F
     input  logic         REG_BEGINTRANSFER,
     input  logic [15: 0] REG_ADDRESS,
@@ -53,7 +53,7 @@ module ptmch_reg(
     parameter p_readstatus_addr       = 16'h0008;
     parameter p_128kb_blockerase_addr = 16'h000C;
     parameter p_pagedata_read_addr    = 16'h0010;
-    parameter p_writestatus_addr      = 16'h0014;
+//    parameter p_writestatus_addr      = 16'h0014;
     // Read/Write
     parameter p_prgexct_low_addr      = 16'h0018;
     parameter p_prgexct_high_addr     = 16'h001C;
@@ -63,8 +63,8 @@ module ptmch_reg(
     parameter p_blkers_high_addr      = 16'h002C;
     parameter p_pdread_low_addr       = 16'h0030;
     parameter p_pdread_high_addr      = 16'h0034;
-    parameter p_wrstat_low_addr       = 16'h0038;
-    parameter p_wrstat_high_addr      = 16'h003C;
+//    parameter p_wrstat_low_addr       = 16'h0038;
+//    parameter p_wrstat_high_addr      = 16'h003C;
 
 //=======================================================
 //  Internal Signal
@@ -156,24 +156,24 @@ module ptmch_reg(
         end
     end
 
-    // WRSTAT Low Address Register(0x0020)
-    always_ff @(posedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            WRSTAT_LOW_ADDR  <= 24'h0;
-        else begin
-            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_wrstat_low_addr))
-                WRSTAT_LOW_ADDR  <= REG_WRITEDATA[23:0];
-        end
-    end
-    // WRSTAT High Address Register(0x0024)
-    always_ff @(posedge CLK100M or negedge RESET_N) begin
-        if(!RESET_N)
-            WRSTAT_HIGH_ADDR  <= 24'hFFFFFF;
-        else begin
-            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_wrstat_high_addr))
-                WRSTAT_HIGH_ADDR  <= REG_WRITEDATA[23:0];
-        end
-    end
+//    // WRSTAT Low Address Register(0x0020)
+//    always_ff @(posedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            WRSTAT_LOW_ADDR  <= 24'h0;
+//        else begin
+//            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_wrstat_low_addr))
+//                WRSTAT_LOW_ADDR  <= REG_WRITEDATA[23:0];
+//        end
+//    end
+//    // WRSTAT High Address Register(0x0024)
+//    always_ff @(posedge CLK100M or negedge RESET_N) begin
+//        if(!RESET_N)
+//            WRSTAT_HIGH_ADDR  <= 24'hFFFFFF;
+//        else begin
+//            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_wrstat_high_addr))
+//                WRSTAT_HIGH_ADDR  <= REG_WRITEDATA[23:0];
+//        end
+//    end
 
     // Avalone READ DATA
     always_ff @(posedge CLK100M or negedge RESET_N) begin
@@ -187,7 +187,7 @@ module ptmch_reg(
                     p_readstatus_addr       : r_reg_readdata <= RDSTAT;
                     p_128kb_blockerase_addr : r_reg_readdata <= BLKERS;
                     p_pagedata_read_addr    : r_reg_readdata <= PDREAD;
-                    p_writestatus_addr      : r_reg_readdata <= WRSTAT;
+//                    p_writestatus_addr      : r_reg_readdata <= WRSTAT;
                     p_prgexct_low_addr      : r_reg_readdata <= {8'd0,PRGEXCT_LOW_ADDR};
                     p_prgexct_high_addr     : r_reg_readdata <= {8'd0,PRGEXCT_HIGH_ADDR};
                     p_rdstat_low_addr       : r_reg_readdata <= {8'd0,RDSTAT_LOW_ADDR};
@@ -196,8 +196,8 @@ module ptmch_reg(
                     p_blkers_high_addr      : r_reg_readdata <= {8'd0,BLKERS_HIGH_ADDR};
                     p_pdread_low_addr       : r_reg_readdata <= {8'd0,PDREAD_LOW_ADDR};
                     p_pdread_high_addr      : r_reg_readdata <= {8'd0,PDREAD_HIGH_ADDR};
-                    p_wrstat_low_addr       : r_reg_readdata <= {8'd0,WRSTAT_LOW_ADDR};
-                    p_wrstat_high_addr      : r_reg_readdata <= {8'd0,WRSTAT_HIGH_ADDR};
+//                    p_wrstat_low_addr       : r_reg_readdata <= {8'd0,WRSTAT_LOW_ADDR};
+//                    p_wrstat_high_addr      : r_reg_readdata <= {8'd0,WRSTAT_HIGH_ADDR};
                     default                 : r_reg_readdata <= 32'h0000_0000;
                 endcase
             end

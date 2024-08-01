@@ -136,10 +136,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "TRG_PLS[4]",
-					"strict" : false
-				},
-				{
 					"name" : "DRAM_DQ[0]",
 					"strict" : false
 				},

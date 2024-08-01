@@ -30,9 +30,9 @@ module ptmch_trg(
     input  logic [23: 0]  BLKERS_LOW_ADDR,
     input  logic [23: 0]  BLKERS_HIGH_ADDR,
     input  logic [23: 0]  PDREAD_LOW_ADDR,
-    input  logic [23: 0]  PDREAD_HIGH_ADDR,
-    input  logic [23: 0]  WRSTAT_LOW_ADDR,
-    input  logic [23: 0]  WRSTAT_HIGH_ADDR
+    input  logic [23: 0]  PDREAD_HIGH_ADDR
+//    input  logic [23: 0]  WRSTAT_LOW_ADDR,
+//    input  logic [23: 0]  WRSTAT_HIGH_ADDR
 );
 //=================================================================
 //  PARAMETER declarations
@@ -42,8 +42,8 @@ module ptmch_trg(
     parameter p_readstatus2      = 8'h05;
     parameter p_128kb_blockerase = 8'hd8;
     parameter p_pagedata_read    = 8'h13;
-    parameter p_writestatus1     = 8'h1f;
-    parameter p_writestatus2     = 8'h01;
+//    parameter p_writestatus1     = 8'h1f;
+//    parameter p_writestatus2     = 8'h01;
 //=================================================================
 //  Internal Signal
 //=================================================================
@@ -83,11 +83,11 @@ module ptmch_trg(
     logic          c_pagedread_addr_l;
     logic          c_pagedread_addr_h;
     logic          c_pagedread_mch;
-    //write status match
-    logic          c_wrsts_ins;
-    logic          c_wrsts_addr_l;
-    logic          c_wrsts_addr_h;
-    logic          c_wrsts_mch;
+//    //write status match
+//    logic          c_wrsts_ins;
+//    logic          c_wrsts_addr_l;
+//    logic          c_wrsts_addr_h;
+//    logic          c_wrsts_mch;
 
     logic          c_stopcnt;
 //=================================================================
@@ -102,8 +102,8 @@ module ptmch_trg(
                                                                            1'b0;
     assign   TRG_PLS[3]  = (c_inst_chk[31:24] == p_pagedata_read )? n_trg_pls:
                                                                         1'b0;
-    assign   TRG_PLS[4]  = (c_inst_chk[31:24] == p_writestatus1 | c_inst_chk[31:24] == p_writestatus2)? n_trg_pls:
-                                                                                                        1'b0;
+//    assign   TRG_PLS[4]  = (c_inst_chk[31:24] == p_writestatus1 | c_inst_chk[31:24] == p_writestatus2)? n_trg_pls:
+//                                                                                                        1'b0;
     assign   c_inst_edge = (sr_inst_mch_sft2 & ~sr_inst_mch_sft3);
     assign   c_cs_edge   = (~sr_cs_sync & sr_cs_sync_sft1);
     assign   c_stopcnt   = (sr_inst_cnt == 6'b100000)? 1'b1:
@@ -223,13 +223,14 @@ module ptmch_trg(
     assign   c_pagedread_addr_h = (c_inst_chk[23:0]<=PDREAD_HIGH_ADDR);
     assign   c_pagedread_mch    = (c_pagedread_ins & c_pagedread_addr_l & c_pagedread_addr_h);
 
-    //write status match
-    assign   c_wrsts_ins        = (p_writestatus1 == c_inst_chk[31:24])|(p_writestatus2 == c_inst_chk[31:24]);
-    assign   c_wrsts_addr_l     = (c_inst_chk[23:0]>=WRSTAT_LOW_ADDR);
-    assign   c_wrsts_addr_h     = (c_inst_chk[23:0]<=WRSTAT_HIGH_ADDR);
-    assign   c_wrsts_mch        = (c_wrsts_ins & c_wrsts_addr_l & c_wrsts_addr_h);
+//    //write status match
+//    assign   c_wrsts_ins        = (p_writestatus1 == c_inst_chk[31:24])|(p_writestatus2 == c_inst_chk[31:24]);
+//    assign   c_wrsts_addr_l     = (c_inst_chk[23:0]>=WRSTAT_LOW_ADDR);
+//    assign   c_wrsts_addr_h     = (c_inst_chk[23:0]<=WRSTAT_HIGH_ADDR);
+//    assign   c_wrsts_mch        = (c_wrsts_ins & c_wrsts_addr_l & c_wrsts_addr_h);
 
-    assign   c_inst_mch        = (c_prgex_mch | c_rdsts_mch | c_128kbbe_mch | c_pagedread_mch | c_wrsts_mch);
+//    assign   c_inst_mch        = (c_prgex_mch | c_rdsts_mch | c_128kbbe_mch | c_pagedread_mch | c_wrsts_mch);
+    assign   c_inst_mch        = (c_prgex_mch | c_rdsts_mch | c_128kbbe_mch | c_pagedread_mch);
 
     // TRG PLS time expander
     always @* begin
