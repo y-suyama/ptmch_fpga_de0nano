@@ -116,7 +116,7 @@ module ptmch_trg(
 //=================================================================
     //  Instraction COUNTER
     always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge) begin
-        if(!RESET_N | c_cs_edge == 1'b1)
+        if(!RESET_N | c_cs_edge)
             sr_inst_cnt  <= 6'b0;
         else begin
             if(c_stopcnt == 1'b1 )// STOP
@@ -127,7 +127,7 @@ module ptmch_trg(
     end
     // MOSI Shift Register
     always_ff @(posedge SPI_CLK or negedge RESET_N or posedge c_cs_edge) begin
-        if(!RESET_N | c_cs_edge == 1'b1)
+        if(!RESET_N | c_cs_edge)
             sr_inst_sht  <= 32'h0;
         else begin
             if(c_stopcnt == 1'b1)// STOP
@@ -139,21 +139,21 @@ module ptmch_trg(
 
     // Instracton Match pls(async)
     always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
-        if(!RESET_N | c_cs_edge == 1'b1)
+        if(!RESET_N | c_cs_edge)
             ar_inst_mch_sft1  <= 1'b0;
         else
             ar_inst_mch_sft1  <= c_inst_mch;
     end
     // Instracton Match pls(sync)
     always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
-        if(!RESET_N | c_cs_edge == 1'b1)
+        if(!RESET_N | c_cs_edge)
             sr_inst_mch_sft2  <= 1'b0;
         else
             sr_inst_mch_sft2  <= ar_inst_mch_sft1;
     end
     // Instracton Match pls(sync)
     always_ff @(posedge CLK160M or negedge RESET_N or posedge c_cs_edge) begin
-        if(!RESET_N | c_cs_edge == 1'b1)
+        if(!RESET_N | c_cs_edge)
             sr_inst_mch_sft3  <= 1'b0;
         else
             sr_inst_mch_sft3  <= sr_inst_mch_sft2;
