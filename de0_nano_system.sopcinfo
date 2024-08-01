@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.07.31.22:53:17 -->
+ <!-- 2024.08.01.22:48:10 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1722433996</value>
+  <value>1722520089</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -430,7 +430,7 @@ parameters are a RESULT of the module parameters. -->
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="2.3"
+   version="2.5"
    path="TRG_PLS_component_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -12311,6 +12311,60 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
+   name="cpu.debug_reset_request/CLK100M.clk_in_reset"
+   kind="reset"
+   version="18.1"
+   start="cpu.debug_reset_request"
+   end="CLK100M.clk_in_reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>cpu</startModule>
+  <startConnectionPoint>debug_reset_request</startConnectionPoint>
+  <endModule>CLK100M</endModule>
+  <endConnectionPoint>clk_in_reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="cpu.debug_reset_request/altpll_0.inclk_interface_reset"
+   kind="reset"
+   version="18.1"
+   start="cpu.debug_reset_request"
+   end="altpll_0.inclk_interface_reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>cpu</startModule>
+  <startConnectionPoint>debug_reset_request</startConnectionPoint>
+  <endModule>altpll_0</endModule>
+  <endConnectionPoint>inclk_interface_reset</endConnectionPoint>
+ </connection>
+ <connection
    name="cpu.debug_reset_request/timer.reset"
    kind="reset"
    version="18.1"
@@ -12472,6 +12526,33 @@ parameters are a RESULT of the module parameters. -->
   <endModule>cpu</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
+ <connection
+   name="cpu.debug_reset_request/TRG_PLS_component_0.reset"
+   kind="reset"
+   version="18.1"
+   start="cpu.debug_reset_request"
+   end="TRG_PLS_component_0.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>cpu</startModule>
+  <startConnectionPoint>debug_reset_request</startConnectionPoint>
+  <endModule>TRG_PLS_component_0</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
  <plugin>
   <instanceCount>2</instanceCount>
   <name>clock_source</name>
@@ -12518,7 +12599,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>TRG_PLS_component</displayName>
-  <version>2.3</version>
+  <version>2.5</version>
  </plugin>
  <plugin>
   <instanceCount>8</instanceCount>
@@ -12673,7 +12754,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>14</instanceCount>
+  <instanceCount>17</instanceCount>
   <name>reset</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
