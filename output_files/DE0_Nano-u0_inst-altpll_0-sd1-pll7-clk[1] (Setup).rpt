@@ -1,0 +1,72 @@
+u0_inst|altpll_0|sd1|pll7|clk[1] (Setup) report for DE0_Nano
+Fri Aug 02 00:10:52 2024
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. u0_inst|altpll_0|sd1|pll7|clk[1] (Setup)
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; u0_inst|altpll_0|sd1|pll7|clk[1] (Setup)                                             ;
++-------------------------+-------+----------------------------------------------------+
+; Slack (ns)              ; Edges ; Histogram                                          ;
++-------------------------+-------+----------------------------------------------------+
+; [   -6.576 ,   -6.165 ] ; 609   ; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ;
+; [   -6.165 ,   -5.754 ] ; 316   ; XXXXXXXXXXXXXXXXXXXXXXXXX                          ;
+; [   -5.754 ,   -5.343 ] ; 205   ; XXXXXXXXXXXXXXXX                                   ;
+; [   -5.343 ,   -4.932 ] ; 103   ; XXXXXXXX                                           ;
+; [   -4.932 ,   -4.521 ] ; 52    ; XXXX                                               ;
+; [   -4.521 ,   -4.110 ] ; 32    ; XX                                                 ;
+; [   -4.110 ,   -3.699 ] ; 14    ; X                                                  ;
+; [   -3.699 ,   -3.288 ] ; 0     ;                                                    ;
+; [   -3.288 ,   -2.877 ] ; 24    ; X                                                  ;
+; [   -2.877 ,   -2.466 ] ; 183   ; XXXXXXXXXXXXXXX                                    ;
+; [   -2.466 ,   -2.055 ] ; 351   ; XXXXXXXXXXXXXXXXXXXXXXXXXXXX                       ;
+; [   -2.055 ,   -1.644 ] ; 132   ; XXXXXXXXXX                                         ;
+; [   -1.644 ,   -1.233 ] ; 27    ; XX                                                 ;
+; [   -1.233 ,   -0.822 ] ; 3     ;                                                    ;
+; [   -0.822 ,   -0.411 ] ; 0     ;                                                    ;
+; [   -0.411 ,    0.000 ] ; 0     ;                                                    ;
+; [    0.000 ,    0.411 ] ; 0     ;                                                    ;
+; [    0.411 ,    0.822 ] ; 0     ;                                                    ;
+; [    0.822 ,    1.233 ] ; 0     ;                                                    ;
+; [    1.233 ,    1.644 ] ; 0     ;                                                    ;
+; [    1.644 ,    2.055 ] ; 0     ;                                                    ;
+; [    2.055 ,    2.466 ] ; 0     ;                                                    ;
+; [    2.466 ,    2.877 ] ; 0     ;                                                    ;
+; [    2.877 ,    3.288 ] ; 7     ;                                                    ;
+; [    3.288 ,    3.699 ] ; 3     ;                                                    ;
+; [    3.699 ,    4.110 ] ; 0     ;                                                    ;
+; [    4.110 ,    4.521 ] ; 26    ; XX                                                 ;
+; [    4.521 ,    4.932 ] ; 23    ; X                                                  ;
+; [    4.932 ,    5.343 ] ; 14    ; X                                                  ;
+; [    5.343 ,    5.754 ] ; 13    ; X                                                  ;
++-------------------------+-------+----------------------------------------------------+
+
+
+
