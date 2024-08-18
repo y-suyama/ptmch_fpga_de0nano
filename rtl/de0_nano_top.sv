@@ -74,8 +74,13 @@ de0_nano_system u0_inst (
     .trg_pls_component_0_spi_clk_clk           (SPI_CLK),
     .trg_pls_component_0_spi_cs_spi            (SPI_CS),
     .trg_pls_component_0_spi_mosi_spi          (SPI_MOSI),
+<<<<<<< HEAD
     .trg_pls_component_0_trg_pls_triggersignal (w_trg_pls)
 //    .clk100m_clk_clk(w_clk100m)
+=======
+    .trg_pls_component_0_trg_pls_triggersignal (w_trg_pls),
+    .clk100m_clk_clk(w_clk100m)
+>>>>>>> origin/main
 );
 
 

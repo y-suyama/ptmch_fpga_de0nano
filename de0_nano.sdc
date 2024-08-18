@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Generated SDC file "DE0_Nano.out.sdc"
 
 ## Copyright (C) 2019  Intel Corporation. All rights reserved.
@@ -50,6 +51,23 @@ create_clock -name {SPI_CLK} -period 10.000 -waveform { 0.000 5.000 } [get_ports
 
 create_generated_clock -name {u0_inst|altpll_0|sd1|pll7|clk[0]} -source [get_pins {u0_inst|altpll_0|sd1|pll7|inclk[0]}] -duty_cycle 50/1 -multiply_by 2 -master_clock {CLK50M} [get_pins {u0_inst|altpll_0|sd1|pll7|clk[0]}] 
 create_generated_clock -name {u0_inst|altpll_0|sd1|pll7|clk[1]} -source [get_pins {u0_inst|altpll_0|sd1|pll7|inclk[0]}] -duty_cycle 50/1 -multiply_by 16 -divide_by 5 -master_clock {CLK50M} [get_pins {u0_inst|altpll_0|sd1|pll7|clk[1]}] 
+=======
+#**************************************************************
+# This .sdc file is created by Terasic Tool.
+# Users are recommended to modify this file to match users logic.
+#**************************************************************
+
+#**************************************************************
+# Create Clock
+#**************************************************************
+create_clock -period 20 [get_ports CLK50M]
+create_clock -period 10 [get_ports SPI_CLK]
+#**************************************************************
+# Create Generated Clock
+#**************************************************************
+derive_pll_clocks
+
+>>>>>>> origin/main
 
 
 #**************************************************************
@@ -61,6 +79,7 @@ create_generated_clock -name {u0_inst|altpll_0|sd1|pll7|clk[1]} -source [get_pin
 #**************************************************************
 # Set Clock Uncertainty
 #**************************************************************
+<<<<<<< HEAD
 
 set_clock_uncertainty -rise_from [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}] -rise_to [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}]  0.020  
 set_clock_uncertainty -rise_from [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}] -fall_to [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}]  0.020  
@@ -122,6 +141,10 @@ set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -rise_to [ge
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}]  0.020  
+=======
+derive_clock_uncertainty
+
+>>>>>>> origin/main
 
 
 #**************************************************************
@@ -140,14 +163,18 @@ set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [ge
 # Set Clock Groups
 #**************************************************************
 
+<<<<<<< HEAD
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
+=======
+>>>>>>> origin/main
 
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
+<<<<<<< HEAD
 set_false_path  -from  [get_clocks {SPI_CLK}]  -to  [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}]
 set_false_path  -from  [get_clocks {u0_inst|altpll_0|sd1|pll7|clk[1]}]  -to  [get_clocks {SPI_CLK}]
 set_false_path  -from  [get_clocks {SPI_CLK}]  -to  [get_clocks *]
@@ -176,6 +203,8 @@ set_false_path -from [get_keepers {*de0_nano_system_cpu_cpu:*|de0_nano_system_cp
 set_false_path -from [get_keepers {*de0_nano_system_cpu_cpu:*|de0_nano_system_cpu_cpu_nios2_oci:the_de0_nano_system_cpu_cpu_nios2_oci|de0_nano_system_cpu_cpu_debug_slave_wrapper:the_de0_nano_system_cpu_cpu_debug_slave_wrapper|de0_nano_system_cpu_cpu_debug_slave_tck:the_de0_nano_system_cpu_cpu_debug_slave_tck|*sr*}] -to [get_keepers {*de0_nano_system_cpu_cpu:*|de0_nano_system_cpu_cpu_nios2_oci:the_de0_nano_system_cpu_cpu_nios2_oci|de0_nano_system_cpu_cpu_debug_slave_wrapper:the_de0_nano_system_cpu_cpu_debug_slave_wrapper|de0_nano_system_cpu_cpu_debug_slave_sysclk:the_de0_nano_system_cpu_cpu_debug_slave_sysclk|*jdo*}]
 set_false_path -from [get_keepers {sld_hub:*|irf_reg*}] -to [get_keepers {*de0_nano_system_cpu_cpu:*|de0_nano_system_cpu_cpu_nios2_oci:the_de0_nano_system_cpu_cpu_nios2_oci|de0_nano_system_cpu_cpu_debug_slave_wrapper:the_de0_nano_system_cpu_cpu_debug_slave_wrapper|de0_nano_system_cpu_cpu_debug_slave_sysclk:the_de0_nano_system_cpu_cpu_debug_slave_sysclk|ir*}]
 set_false_path -from [get_keepers {sld_hub:*|sld_shadow_jsm:shadow_jsm|state[1]}] -to [get_keepers {*de0_nano_system_cpu_cpu:*|de0_nano_system_cpu_cpu_nios2_oci:the_de0_nano_system_cpu_cpu_nios2_oci|de0_nano_system_cpu_cpu_nios2_oci_debug:the_de0_nano_system_cpu_cpu_nios2_oci_debug|monitor_go}]
+=======
+>>>>>>> origin/main
 
 
 #**************************************************************
@@ -188,16 +217,22 @@ set_false_path -from [get_keepers {sld_hub:*|sld_shadow_jsm:shadow_jsm|state[1]}
 # Set Maximum Delay
 #**************************************************************
 
+<<<<<<< HEAD
 set_max_delay -from [get_registers {*altera_avalon_st_clock_crosser:*|in_data_buffer*}] -to [get_registers {*altera_avalon_st_clock_crosser:*|out_data_buffer*}] 100.000
 set_max_delay -from [get_registers *] -to [get_registers {*altera_avalon_st_clock_crosser:*|altera_std_synchronizer_nocut:*|din_s1}] 100.000
+=======
+>>>>>>> origin/main
 
 
 #**************************************************************
 # Set Minimum Delay
 #**************************************************************
 
+<<<<<<< HEAD
 set_min_delay -from [get_registers {*altera_avalon_st_clock_crosser:*|in_data_buffer*}] -to [get_registers {*altera_avalon_st_clock_crosser:*|out_data_buffer*}] -100.000
 set_min_delay -from [get_registers *] -to [get_registers {*altera_avalon_st_clock_crosser:*|altera_std_synchronizer_nocut:*|din_s1}] -100.000
+=======
+>>>>>>> origin/main
 
 
 #**************************************************************
@@ -207,8 +242,16 @@ set_min_delay -from [get_registers *] -to [get_registers {*altera_avalon_st_cloc
 
 
 #**************************************************************
+<<<<<<< HEAD
 # Set Net Delay
 #**************************************************************
 
 set_net_delay -max 2.000 -from [get_registers {*altera_avalon_st_clock_crosser:*|in_data_buffer*}] -to [get_registers {*altera_avalon_st_clock_crosser:*|out_data_buffer*}]
 set_net_delay -max 2.000 -from [get_registers *] -to [get_registers {*altera_avalon_st_clock_crosser:*|altera_std_synchronizer_nocut:*|din_s1}]
+=======
+# Set Load
+#**************************************************************
+
+
+
+>>>>>>> origin/main

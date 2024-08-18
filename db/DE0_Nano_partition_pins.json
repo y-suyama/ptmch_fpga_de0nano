@@ -136,10 +136,13 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
 					"name" : "TRG_PLS[4]",
 					"strict" : false
 				},
 				{
+=======
+>>>>>>> origin/main
 					"name" : "DRAM_DQ[0]",
 					"strict" : false
 				},
@@ -212,11 +215,23 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
 					"name" : "SPI_MOSI",
 					"strict" : false
 				},
 				{
 					"name" : "SPI_CLK",
+=======
+					"name" : "SPI_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CS",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MOSI",
+>>>>>>> origin/main
 					"strict" : false
 				},
 				{
@@ -240,10 +255,13 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
 					"name" : "SPI_CS",
 					"strict" : false
 				},
 				{
+=======
+>>>>>>> origin/main
 					"name" : "altera_reserved_tms",
 					"strict" : false
 				},

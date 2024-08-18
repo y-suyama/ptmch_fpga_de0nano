@@ -1,5 +1,9 @@
 Assembler report for DE0_Nano
+<<<<<<< HEAD
 Sun Aug 18 02:02:08 2024
+=======
+Fri Aug 02 06:55:21 2024
+>>>>>>> origin/main
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -39,7 +43,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< HEAD
 ; Assembler Status      ; Successful - Sun Aug 18 02:02:08 2024 ;
+=======
+; Assembler Status      ; Successful - Fri Aug 02 06:55:21 2024 ;
+>>>>>>> origin/main
 ; Revision Name         ; DE0_Nano                              ;
 ; Top-level Entity Name ; de0_nano_top                          ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,7 +87,11 @@ https://fpgasoftware.intel.com/eula.
 ; Option         ; Setting                                                                            ;
 +----------------+------------------------------------------------------------------------------------+
 ; JTAG usercode  ; 0xFFFFFFFF                                                                         ;
+<<<<<<< HEAD
 ; Checksum       ; 0x004004C6                                                                         ;
+=======
+; Checksum       ; 0x0035DDA3                                                                         ;
+>>>>>>> origin/main
 +----------------+------------------------------------------------------------------------------------+
 
 
@@ -89,15 +101,26 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+<<<<<<< HEAD
     Info: Processing started: Sun Aug 18 02:02:02 2024
+=======
+    Info: Processing started: Fri Aug 02 06:55:17 2024
+>>>>>>> origin/main
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off de0_nano_ptmch -c DE0_Nano
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
+<<<<<<< HEAD
     Info: Peak virtual memory: 4697 megabytes
     Info: Processing ended: Sun Aug 18 02:02:08 2024
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
+=======
+    Info: Peak virtual memory: 4692 megabytes
+    Info: Processing ended: Fri Aug 02 06:55:21 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+>>>>>>> origin/main
 
 

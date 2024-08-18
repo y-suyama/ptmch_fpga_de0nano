@@ -1,5 +1,9 @@
 	component de0_nano_system is
 		port (
+<<<<<<< HEAD
+=======
+			clk100m_clk_clk                           : out   std_logic;                                        -- clk
+>>>>>>> origin/main
 			clk_50                                    : in    std_logic                     := 'X';             -- clk
 			reset_n                                   : in    std_logic                     := 'X';             -- reset_n
 			in_port_to_the_key                        : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- export
@@ -22,6 +26,10 @@
 
 	u0 : component de0_nano_system
 		port map (
+<<<<<<< HEAD
+=======
+			clk100m_clk_clk                           => CONNECTED_TO_clk100m_clk_clk,                           --                  clk100m_clk.clk
+>>>>>>> origin/main
 			clk_50                                    => CONNECTED_TO_clk_50,                                    --                clk_50_clk_in.clk
 			reset_n                                   => CONNECTED_TO_reset_n,                                   --          clk_50_clk_in_reset.reset_n
 			in_port_to_the_key                        => CONNECTED_TO_in_port_to_the_key,                        --      key_external_connection.export

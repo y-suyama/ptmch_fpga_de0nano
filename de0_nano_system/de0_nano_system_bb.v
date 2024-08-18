@@ -1,5 +1,9 @@
 
 module de0_nano_system (
+<<<<<<< HEAD
+=======
+	clk100m_clk_clk,
+>>>>>>> origin/main
 	clk_50,
 	reset_n,
 	in_port_to_the_key,
@@ -18,6 +22,10 @@ module de0_nano_system (
 	trg_pls_component_0_spi_mosi_spi,
 	trg_pls_component_0_trg_pls_triggersignal);	
 
+<<<<<<< HEAD
+=======
+	output		clk100m_clk_clk;
+>>>>>>> origin/main
 	input		clk_50;
 	input		reset_n;
 	input	[1:0]	in_port_to_the_key;

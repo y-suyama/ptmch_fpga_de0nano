@@ -8,6 +8,7 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA_lite/18.1
+<<<<<<< HEAD
 vasync_fifo
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 DXx4 work 18 async_fifo_sv_unit 0 22 VI<OHcK>[>EG1]bgCQ2<02
@@ -242,3 +243,125 @@ r1
 !i113 1
 R11
 R12
+=======
+vptmch_cnt
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1722518868
+!i10b 1
+!s100 QfQdgFNEj@kd3I<V523eG3
+I4VeP;SlX>PKEliY[Ic5e<3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ptmch_cnt_sv_unit
+S1
+Z3 dC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/simulation
+w1721743275
+8C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv
+FC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv
+Z4 L0 16
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1722518867.000000
+!s107 C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_cnt.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vptmch_reg
+R0
+R1
+!i10b 1
+!s100 fU7DM>Do^@eWNZECUJgn02
+Ij8cfQeKi:3]YdCn:?f_GB2
+R2
+!s105 ptmch_reg_sv_unit
+S1
+R3
+w1722346767
+8C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv
+FC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv
+R4
+R5
+r1
+!s85 0
+31
+Z9 !s108 1722518868.000000
+!s107 C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_reg.sv|
+!i113 1
+R7
+R8
+vptmch_top
+R0
+R1
+!i10b 1
+!s100 ?6c=@=Wi[QIN@8N1FzA283
+I<Hz?c?7PZ43lLPafS?F9L1
+R2
+!s105 ptmch_top_sv_unit
+S1
+R3
+w1721920783
+8C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_top.sv
+FC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_top.sv
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_top.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_top.sv|
+!i113 1
+R7
+R8
+vptmch_top_tb
+R0
+R1
+!i10b 1
+!s100 PinQRHK^9A4`MV?8[_lX_3
+I?de7>KSAGWH<lFn0h67eo2
+R2
+!s105 ptmch_top_tb_sv_unit
+S1
+R3
+w1722258353
+8C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv
+FC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/tb/ptmch_top_tb.sv|
+!i113 1
+R7
+R8
+vptmch_trg
+R0
+!s110 1722518867
+!i10b 1
+!s100 8Qk9>H3oc^jFeDDQJm24?1
+In6m[i5Y48UJzn[K=h`f3S3
+R2
+!s105 ptmch_trg_sv_unit
+S1
+R3
+w1722518836
+8C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_trg.sv
+FC:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_trg.sv
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_trg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/suyama84/Documents/fpga/de0_nano_ptmch/ip/ptmch/ptmch_trg.sv|
+!i113 1
+R7
+R8
+>>>>>>> origin/main

@@ -1,4 +1,8 @@
 	de0_nano_system u0 (
+<<<<<<< HEAD
+=======
+		.clk100m_clk_clk                           (<connected-to-clk100m_clk_clk>),                           //                  clk100m_clk.clk
+>>>>>>> origin/main
 		.clk_50                                    (<connected-to-clk_50>),                                    //                clk_50_clk_in.clk
 		.reset_n                                   (<connected-to-reset_n>),                                   //          clk_50_clk_in_reset.reset_n
 		.in_port_to_the_key                        (<connected-to-in_port_to_the_key>),                        //      key_external_connection.export
