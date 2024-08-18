@@ -9,11 +9,7 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-<<<<<<< HEAD
    element TRG_PLS_component_0
-=======
-   element CLK100M
->>>>>>> origin/main
    {
       datum _sortIndex
       {
@@ -21,17 +17,6 @@
          type = "int";
       }
    }
-<<<<<<< HEAD
-=======
-   element TRG_PLS_component_0
-   {
-      datum _sortIndex
-      {
-         value = "9";
-         type = "int";
-      }
-   }
->>>>>>> origin/main
    element TRG_PLS_component_0.reg
    {
       datum baseAddress
@@ -254,10 +239,6 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
-<<<<<<< HEAD
-=======
- <interface name="clk100m_clk" internal="CLK100M.clk" type="clock" dir="start" />
->>>>>>> origin/main
  <interface name="clk_50_clk_in" internal="clk_50.clk_in" type="clock" dir="end">
   <port name="clk_50" internal="in_clk" />
  </interface>
@@ -313,23 +294,10 @@
    internal="TRG_PLS_component_0.TRG_PLS"
    type="conduit"
    dir="end" />
-<<<<<<< HEAD
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="3.9"
-=======
- <module name="CLK100M" kind="clock_source" version="18.1" enabled="1">
-  <parameter name="clockFrequency" value="100000000" />
-  <parameter name="clockFrequencyKnown" value="false" />
-  <parameter name="inputClockFrequency" value="100000000" />
-  <parameter name="resetSynchronousEdges" value="NONE" />
- </module>
- <module
-   name="TRG_PLS_component_0"
-   kind="TRG_PLS_component"
-   version="2.7"
->>>>>>> origin/main
+   version="4.0"
    enabled="1" />
  <module name="altpll_0" kind="altpll" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
@@ -505,13 +473,8 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module name="cpu" kind="altera_nios2_gen2" version="18.1" enabled="1">
-<<<<<<< HEAD
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="4" />
-=======
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="5" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="5" />
->>>>>>> origin/main
   <parameter name="AUTO_DEVICE" value="EP4CE22F17C6" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
@@ -696,22 +659,14 @@
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clkFreq" value="100000000" />
   <parameter name="hubInstanceID" value="0" />
-<<<<<<< HEAD
   <parameter name="readBufferDepth" value="128" />
-=======
-  <parameter name="readBufferDepth" value="64" />
->>>>>>> origin/main
   <parameter name="readIRQThreshold" value="8" />
   <parameter name="simInputCharacterStream" value="" />
   <parameter name="simInteractiveOptions">INTERACTIVE_ASCII_OUTPUT</parameter>
   <parameter name="useRegistersForReadBuffer" value="false" />
   <parameter name="useRegistersForWriteBuffer" value="false" />
   <parameter name="useRelativePathForSimFile" value="false" />
-<<<<<<< HEAD
   <parameter name="writeBufferDepth" value="128" />
-=======
-  <parameter name="writeBufferDepth" value="64" />
->>>>>>> origin/main
   <parameter name="writeIRQThreshold" value="8" />
  </module>
  <module name="key" kind="altera_avalon_pio" version="18.1" enabled="1">
@@ -889,10 +844,6 @@
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="timer.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="key.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="sw.clk" />
-<<<<<<< HEAD
-=======
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="CLK100M.clk_in" />
->>>>>>> origin/main
  <connection
    kind="clock"
    version="18.1"
@@ -919,14 +870,6 @@
    kind="reset"
    version="18.1"
    start="clk_50.clk_reset"
-<<<<<<< HEAD
-=======
-   end="CLK100M.clk_in_reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_50.clk_reset"
->>>>>>> origin/main
    end="altpll_0.inclk_interface_reset" />
  <connection
    kind="reset"
@@ -955,14 +898,6 @@
    kind="reset"
    version="18.1"
    start="cpu.debug_reset_request"
-<<<<<<< HEAD
-=======
-   end="CLK100M.clk_in_reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="cpu.debug_reset_request"
->>>>>>> origin/main
    end="altpll_0.inclk_interface_reset" />
  <connection
    kind="reset"

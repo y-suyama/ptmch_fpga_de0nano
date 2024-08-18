@@ -2,11 +2,7 @@ set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "de0_nano_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../de0_nano_system.sopcinfo"]
-<<<<<<< HEAD
-set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name SLD_INFO "QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1723913641"
-=======
-set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name SLD_INFO "QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1722548983"
->>>>>>> origin/main
+set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name SLD_INFO "QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1723986350"
 set_global_assignment -library "de0_nano_system" -name MISC_FILE [file join $::quartus(qip_path) "../de0_nano_system.cmp"]
 set_global_assignment -library "de0_nano_system" -name SLD_FILE [file join $::quartus(qip_path) "de0_nano_system.regmap"]
 set_global_assignment -library "de0_nano_system" -name SLD_FILE [file join $::quartus(qip_path) "de0_nano_system.debuginfo"]
@@ -20,11 +16,7 @@ set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_VERSION "MS4w"
-<<<<<<< HEAD
-set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTcyMzkxMzY0MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
-=======
-set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTcyMjU0ODk4Mw==::QXV0byBHRU5FUkFUSU9OX0lE"
->>>>>>> origin/main
+set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTcyMzk4NjM1MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UyMkYxN0M2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "de0_nano_system" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -981,21 +973,13 @@ set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_sys
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_VERSION "MTguMQ=="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "YWxsb3dNdWx0aXBsZUNvbm5lY3Rpb25z::ZmFsc2U=::QWxsb3cgbXVsdGlwbGUgY29ubmVjdGlvbnMgdG8gQXZhbG9uIEpUQUcgc2xhdmU="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "aHViSW5zdGFuY2VJRA==::MA==::aHViSW5zdGFuY2VJRA=="
-<<<<<<< HEAD
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "cmVhZEJ1ZmZlckRlcHRo::MTI4::QnVmZmVyIGRlcHRoIChieXRlcyk="
-=======
-set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "cmVhZEJ1ZmZlckRlcHRo::NjQ=::QnVmZmVyIGRlcHRoIChieXRlcyk="
->>>>>>> origin/main
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "cmVhZElSUVRocmVzaG9sZA==::OA==::SVJRIHRocmVzaG9sZA=="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "c2ltSW50ZXJhY3RpdmVPcHRpb25z::SU5URVJBQ1RJVkVfQVNDSUlfT1VUUFVU::T3B0aW9ucw=="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "dXNlUmVnaXN0ZXJzRm9yUmVhZEJ1ZmZlcg==::ZmFsc2U=::Q29uc3RydWN0IHVzaW5nIHJlZ2lzdGVycyBpbnN0ZWFkIG9mIG1lbW9yeSBibG9ja3M="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "dXNlUmVnaXN0ZXJzRm9yV3JpdGVCdWZmZXI=::ZmFsc2U=::Q29uc3RydWN0IHVzaW5nIHJlZ2lzdGVycyBpbnN0ZWFkIG9mIG1lbW9yeSBibG9ja3M="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "dXNlUmVsYXRpdmVQYXRoRm9yU2ltRmlsZQ==::ZmFsc2U=::dXNlUmVsYXRpdmVQYXRoRm9yU2ltRmlsZQ=="
-<<<<<<< HEAD
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "d3JpdGVCdWZmZXJEZXB0aA==::MTI4::QnVmZmVyIGRlcHRoIChieXRlcyk="
-=======
-set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "d3JpdGVCdWZmZXJEZXB0aA==::NjQ=::QnVmZmVyIGRlcHRoIChieXRlcyk="
->>>>>>> origin/main
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "d3JpdGVJUlFUaHJlc2hvbGQ=::OA==::SVJRIHRocmVzaG9sZA=="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "Y2xrRnJlcQ==::MTAwMDAwMDAw::Y2xrRnJlcQ=="
 set_global_assignment -entity "de0_nano_system_jtag_uart" -library "de0_nano_system" -name IP_COMPONENT_PARAMETER "YXZhbG9uU3BlYw==::Mi4w::YXZhbG9uU3BlYw=="
@@ -1402,11 +1386,7 @@ set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_CO
 set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_COMPONENT_DISPLAY_NAME "VFJHX1BMU19jb21wb25lbnQ="
 set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
 set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_COMPONENT_INTERNAL "Off"
-<<<<<<< HEAD
 set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_COMPONENT_VERSION "NC4w"
-=======
-set_global_assignment -entity "ptmch_top" -library "de0_nano_system" -name IP_COMPONENT_VERSION "Mi43"
->>>>>>> origin/main
 
 set_global_assignment -library "de0_nano_system" -name VERILOG_FILE [file join $::quartus(qip_path) "de0_nano_system.v"]
 set_global_assignment -library "de0_nano_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
@@ -1476,10 +1456,7 @@ set_global_assignment -library "de0_nano_system" -name SYSTEMVERILOG_FILE [file 
 set_global_assignment -library "de0_nano_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/ptmch_reg.sv"]
 set_global_assignment -library "de0_nano_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/ptmch_top.sv"]
 set_global_assignment -library "de0_nano_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/ptmch_trg.sv"]
-<<<<<<< HEAD
 set_global_assignment -library "de0_nano_system" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/ptmch_rst.sv"]
-=======
->>>>>>> origin/main
 set_global_assignment -library "de0_nano_system" -name TCL_FILE [file join $::quartus(qip_path) "submodules/TRG_PLS_component_hw.tcl"]
 
 set_global_assignment -entity "altera_reset_controller" -library "de0_nano_system" -name IP_TOOL_NAME "altera_reset_controller"

@@ -58,7 +58,6 @@ module ptmch_top(
     logic [23: 0] n_blkers_high_addr;
     logic [23: 0] n_pdread_low_addr;
     logic [23: 0] n_pdread_high_addr;
-<<<<<<< HEAD
     logic [23: 0] n_wrstat_low_addr;
     logic [23: 0] n_wrstat_high_addr;
 
@@ -67,13 +66,6 @@ module ptmch_top(
     logic         n_cs_edge_n;
     logic         n_ptmch_rst_n;
 
-=======
-//    logic [23: 0] n_wrstat_low_addr;
-//    logic [23: 0] n_wrstat_high_addr;
-
-    logic [15: 0] n_reg_address;
-
->>>>>>> origin/main
 //==================================================================================================
 //  assign
 //==================================================================================================
@@ -86,7 +78,6 @@ module ptmch_top(
 //==================================================================================================
 //  Structural coding
 //==================================================================================================
-<<<<<<< HEAD
 ptmch_rst rst_inst(
     .RESET_N(RESET_N),
     .CLK160M(CLK160M),
@@ -98,11 +89,6 @@ ptmch_trg trg_inst(
     .RESET_N(RESET_N),
     .CS_EDGE_N(n_cs_edge_n),
     .PTMCH_RST_N(n_ptmch_rst_n),
-=======
-
-ptmch_trg trg_inst(
-    .RESET_N(RESET_N),
->>>>>>> origin/main
     .CLK160M(CLK160M),
     .SPI_CS(SPI_CS),
     .SPI_CLK(SPI_CLK),
@@ -115,15 +101,9 @@ ptmch_trg trg_inst(
     .BLKERS_LOW_ADDR(n_blkers_low_addr),
     .BLKERS_HIGH_ADDR(n_blkers_high_addr),
     .PDREAD_LOW_ADDR(n_pdread_low_addr),
-<<<<<<< HEAD
     .PDREAD_HIGH_ADDR(n_pdread_high_addr),
     .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
     .WRSTAT_HIGH_ADDR(n_wrstat_high_addr)
-=======
-    .PDREAD_HIGH_ADDR(n_pdread_high_addr)
-//    .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
-//    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr)
->>>>>>> origin/main
 );
 
 ptmch_cnt cnt_inst(
@@ -133,11 +113,7 @@ ptmch_cnt cnt_inst(
     .RDSTAT(n_rdstat),
     .BLKERS(n_blkers),
     .PDREAD(n_pdread),
-<<<<<<< HEAD
     .WRSTAT(n_qrstat),
-=======
-//    .WRSTAT(n_qrstat),
->>>>>>> origin/main
     .TRG_PLS(n_trg_pls)
 );
 
@@ -148,11 +124,7 @@ ptmch_reg reg_inst(
     .RDSTAT(n_rdstat),
     .BLKERS(n_blkers),
     .PDREAD(n_pdread),
-<<<<<<< HEAD
     .WRSTAT(n_qrstat),
-=======
-//    .WRSTAT(n_qrstat),
->>>>>>> origin/main
     .PRGEXCT_LOW_ADDR(n_prgexct_low_addr),
     .PRGEXCT_HIGH_ADDR(n_prgexct_high_addr),
     .RDSTAT_LOW_ADDR(n_rdstat_low_addr),
@@ -161,13 +133,8 @@ ptmch_reg reg_inst(
     .BLKERS_HIGH_ADDR(n_blkers_high_addr),
     .PDREAD_LOW_ADDR(n_pdread_low_addr),
     .PDREAD_HIGH_ADDR(n_pdread_high_addr),
-<<<<<<< HEAD
     .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
     .WRSTAT_HIGH_ADDR(n_wrstat_high_addr),
-=======
-//    .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
-//    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr),
->>>>>>> origin/main
     .REG_BEGINTRANSFER(REG_BEGINTRANSFER),
     .REG_ADDRESS(n_reg_address),
     .REG_CS(REG_CS),
@@ -177,10 +144,5 @@ ptmch_reg reg_inst(
     .REG_WRITEDATA(REG_WRITEDATA),
     .REG_WAITREQUEST(n_reg_waitrequest)
 );
-<<<<<<< HEAD
 endmodule
 
-=======
-
-endmodule
->>>>>>> origin/main
