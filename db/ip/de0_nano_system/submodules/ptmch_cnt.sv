@@ -23,8 +23,12 @@ module ptmch_cnt(
     output  logic [31: 0] BLKERS,
     output  logic [31: 0] PDREAD,
     output  logic [31: 0] WRSTAT,
+    // 240830
+    input   logic [ 2: 0] PAGEADDR_SEL,
+    output  logic [ 5: 0] PADDR_CNT,
     // TRG_PLS INPUT
-    input   logic [ 4: 0] TRG_PLS
+    input   logic [ 4: 0] TRG_PLS,
+    output  logic         PLS_RISE
 );
 //=================================================================
 //  Internal Signal
@@ -226,6 +230,38 @@ module ptmch_cnt(
                 sr_wrstat_counter  <= sr_wrstat_counter + 1;
             else
                 sr_wrstat_counter  <= sr_wrstat_counter;
+        end
+    end
+
+    // Page Address Selsect
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            PLS_RISE <= 1'h0;
+        else begin
+            case(PAGEADDR_SEL) 
+                3'b000  : PLS_RISE <= c_pls_rise[0]; // 0x0:program excute
+                3'b001  : PLS_RISE <= c_pls_rise[1]; // 0x1:readstatus
+                3'b010  : PLS_RISE <= c_pls_rise[2]; // 0x2:128kb_blockerase
+                3'b011  : PLS_RISE <= c_pls_rise[3]; // 0x3:pagedata_read
+                3'b100  : PLS_RISE <= c_pls_rise[4]; // 0x4:writestatus
+                default : PLS_RISE <= c_pls_rise[0];
+            endcase
+        end
+    end
+
+    // Page Address Selsect
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            PADDR_CNT <= 6'h0;
+        else begin
+            case(PAGEADDR_SEL) 
+                3'b000  : PADDR_CNT <= sr_prgexct_counter[ 5: 0]; // 0x0:program excute
+                3'b001  : PADDR_CNT <= sr_rdstat_counter[ 5: 0];  // 0x1:readstatus
+                3'b010  : PADDR_CNT <= sr_blkers_counter[ 5: 0];  // 0x2:128kb_blockerase
+                3'b011  : PADDR_CNT <= sr_pdread_counter[ 5: 0];  // 0x3:pagedata_read
+                3'b100  : PADDR_CNT <= sr_wrstat_counter[ 5: 0];  // 0x4:writestatus
+                default : PADDR_CNT <= sr_prgexct_counter[ 5: 0];
+            endcase
         end
     end
 

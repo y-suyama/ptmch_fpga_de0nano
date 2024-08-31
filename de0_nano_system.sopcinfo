@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.08.18.22:11:14 -->
+ <!-- 2024.09.01.01:55:45 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1723986674</value>
+  <value>1725123344</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -132,7 +132,7 @@
  <module
    name="TRG_PLS_component_0"
    kind="TRG_PLS_component"
-   version="4.0"
+   version="4.1"
    path="TRG_PLS_component_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -12201,7 +12201,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>TRG_PLS_component</displayName>
-  <version>4.0</version>
+  <version>4.1</version>
  </plugin>
  <plugin>
   <instanceCount>8</instanceCount>

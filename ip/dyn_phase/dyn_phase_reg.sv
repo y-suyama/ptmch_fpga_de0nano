@@ -59,99 +59,91 @@ module dyn_phase_reg(
 //  Structural coding
 //=======================================================
     // Phase Counter Register(0x0000)
-    always_ff @(posedge CLK100M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                COUNTER <= 4'b0011;
-            else begin
-                if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_counter_addr))
-                        COUNTER <= REG_WRITEDATA[3:0];
-                 end
+    always_ff @(posedge CLK100M or negedge RESET_N)begin
+        if(!RESET_N)
+            COUNTER <= 4'b0011;
+        else begin
+            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_counter_addr))
+                COUNTER <= REG_WRITEDATA[3:0];
         end
+    end
     // DynPhase Register(0x0004)
-    always_ff @(posedge CLK100M or negedge RESET_N) begin
-      if(!RESET_N)
-        r_dyn_phase <= 2'b00;
-      else begin
-        if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_phasedirection_addr))
-          r_dyn_phase <= REG_WRITEDATA[1:0];
-           end
+    always_ff @(posedge CLK100M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_dyn_phase <= 2'b00;
+        else begin
+            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_phasedirection_addr))
+                r_dyn_phase <= REG_WRITEDATA[1:0];
+        end
     end
     // DYN_PHASE Enable Pulse Counter
-    always_ff @(posedge CLK100M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_enable_counter <= 2'b11;
-            else begin
-                if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_phasedirection_addr))
-                    r_enable_counter <= 2'b00;
-                else if (r_enable_counter == 2'b11)
-                    r_enable_counter <= r_enable_counter;
-                else
-                    r_enable_counter <= r_enable_counter + 1'b1;
-                 end
+    always_ff @(posedge CLK100M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_enable_counter <= 2'b11;
+        else begin
+            if (REG_BEGINTRANSFER & REG_CS & REG_WRITE & (REG_ADDRESS == p_phasedirection_addr))
+                r_enable_counter <= 2'b00;
+            else if (r_enable_counter == 2'b11)
+                r_enable_counter <= r_enable_counter;
+            else
+                r_enable_counter <= r_enable_counter + 1'b1;
         end
+    end
     // DYN_PHASE Enable Pulse
-    always_ff @(posedge CLK100M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_dyn_phase_pls <=2'b00;
-            else begin
-                if (r_enable_counter == 2'b00)
-                    r_dyn_phase_pls <= r_dyn_phase;
-                else if (r_enable_counter == 2'b11)
-                    r_dyn_phase_pls <= 2'b00;
-                else
-                    r_dyn_phase_pls <= r_dyn_phase_pls;
-                 end
+    always_ff @(posedge CLK100M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_dyn_phase_pls <=2'b00;
+        else begin
+            if (r_enable_counter == 2'b00)
+                r_dyn_phase_pls <= r_dyn_phase;
+            else if (r_enable_counter == 2'b11)
+                r_dyn_phase_pls <= 2'b00;
+            else
+                r_dyn_phase_pls <= r_dyn_phase_pls;
         end
+    end
     // Clock Transfer(100MHz => 50MHz)
     // 1Clock
-    always_ff @(negedge CLK50M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_dyn_phase_pls_d1  <= 2'b00;
-            else
-                r_dyn_phase_pls_d1  <= r_dyn_phase_pls;
-        end
+    always_ff @(negedge CLK50M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_dyn_phase_pls_d1  <= 2'b00;
+        else
+            r_dyn_phase_pls_d1  <= r_dyn_phase_pls;
+    end
     // 2Clock
     always_ff @(negedge CLK50M or negedge RESET_N) begin
-      if(!RESET_N)
-        r_dyn_phase_pls_d2  <= 2'b00;
-      else
-        r_dyn_phase_pls_d2  <= r_dyn_phase_pls_d1;
-      end
+        if(!RESET_N)
+            r_dyn_phase_pls_d2  <= 2'b00;
+        else
+            r_dyn_phase_pls_d2  <= r_dyn_phase_pls_d1;
+    end
     // 3Clock
-    always_ff @(negedge CLK50M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_dyn_phase_pls_d3  <= 2'b00;
-            else
-                r_dyn_phase_pls_d3  <= r_dyn_phase_pls_d2;
-        end
+    always_ff @(negedge CLK50M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_dyn_phase_pls_d3  <= 2'b00;
+        else
+            r_dyn_phase_pls_d3  <= r_dyn_phase_pls_d2;
+    end
     // DYN_PHASE Enable Pulse Compera
-    always_ff @(negedge CLK50M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_dyn_phase_pls_sync    <= 2'b00;
-            else if({r_dyn_phase_pls_d3^r_dyn_phase_pls_d2 == 2'b00})
-                r_dyn_phase_pls_sync    <= r_dyn_phase_pls_d3;
-        end
+    always_ff @(negedge CLK50M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_dyn_phase_pls_sync    <= 2'b00;
+        else if({r_dyn_phase_pls_d3^r_dyn_phase_pls_d2 == 2'b00})
+            r_dyn_phase_pls_sync    <= r_dyn_phase_pls_d3;
+    end
     // Avalone READ DATA
-    always_ff @(posedge CLK100M or negedge RESET_N)
-        begin
-            if(!RESET_N)
-                r_reg_readdata <= 32'h0000_0000;
-            else begin
-                if (REG_BEGINTRANSFER & REG_CS & REG_READ)
-                begin
-                    case(REG_ADDRESS)
-                        p_counter_addr        : r_reg_readdata <= {28'd0,COUNTER};
-                        p_phasedirection_addr : r_reg_readdata <= {30'd0,r_dyn_phase};
-                        default               : r_reg_readdata <= 32'h0000_0000;
-                    endcase
-                end
-                 end
+    always_ff @(posedge CLK100M or negedge RESET_N)begin
+        if(!RESET_N)
+            r_reg_readdata <= 32'h0000_0000;
+        else begin
+            if (REG_BEGINTRANSFER & REG_CS & REG_READ)begin
+                case(REG_ADDRESS)
+                    p_counter_addr        : r_reg_readdata <= {28'd0,COUNTER};
+                    p_phasedirection_addr : r_reg_readdata <= {30'd0,r_dyn_phase};
+                    default               : r_reg_readdata <= 32'h0000_0000;
+                endcase
+            end
         end
-
+    end
 endmodule
+

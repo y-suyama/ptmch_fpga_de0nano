@@ -44,10 +44,10 @@ module dyn_phase_stm(
 //=======================================================
 //  Internal Signal
 //=======================================================
-    logic [1:0] r_state;
-    logic [1:0] r_next_state;
-    logic [2:0] r_count;
-    logic       r_step;
+    logic [1:0] sr_state;
+    logic [1:0] sr_next_state;
+    logic [2:0] sr_count;
+    logic       sr_step;
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
@@ -65,68 +65,65 @@ module dyn_phase_stm(
 //=======================================================
    // STATE INCREMENT
     always_ff @(posedge CLK50M or negedge RESET_N) begin
-        if (!RESET_N) begin
-            r_state <= p_do_nothing;
-        end
+        if (!RESET_N)
+            sr_state <= p_do_nothing;
         else
-            r_state <= r_next_state;
+            sr_state <= sr_next_state;
     end
    // NEXT STATE
     always_ff @(posedge CLK50M or negedge RESET_N) begin
-        if (!RESET_N) begin
-            r_next_state <= p_do_nothing;
-        end
+        if (!RESET_N)
+            sr_next_state <= p_do_nothing;
         else begin
             case (DYN_PHASE)
                 2'b01:
-                    r_next_state <= p_phase_up;
+                    sr_next_state <= p_phase_up;
                 2'b10:
-                    r_next_state <= p_phase_down;
+                    sr_next_state <= p_phase_down;
                 default:
-                    r_next_state <= p_do_nothing;
+                    sr_next_state <= p_do_nothing;
             endcase
         end
     end
     // PLL Phase Shift STATE MACHINE
     always_ff @ (posedge CLK50M or negedge RESET_N) begin
-        if (!RESET_N) begin
-            r_count     <= 3'b000;
+        if (!RESET_N)
+            sr_count    <= 3'b000;
             PHASESTEP   <= 1'b0;
             PHASEUPDOWN <= 1'b0;
-        end
         else begin
-            if (r_state !=  p_do_nothing && r_count == 3'b000 && PHASEDONE) begin // START PHASESTEP
-                case (r_state)
+            if (sr_state !=  p_do_nothing && sr_count == 3'b000 && PHASEDONE) begin // START PHASESTEP
+                case (sr_state)
                     p_phase_up: begin
-                        r_step    <= p_up;        //Phase Shift up
-                        PHASESTEP <= 1'b1;
-                        r_count   <= r_count + 1'b1;
+                        sr_step    <= p_up;        //Phase Shift up
+                        PHASESTEP  <= 1'b1;
+                        sr_count   <= sr_count + 1'b1;
                     end
                     p_phase_down: begin
-                        r_step    <= p_down;      //Phase Shift Down
-                        PHASESTEP <= 1'b1;
-                        r_count   <= r_count + 1'b1;
+                        sr_step    <= p_down;      //Phase Shift Down
+                        PHASESTEP  <= 1'b1;
+                        sr_count   <= sr_count + 1'b1;
                     end
                 endcase
             end
-                case (r_count)
+                case (sr_count)
                     3'b001: begin
-                        PHASEUPDOWN        <= r_step;
+                        PHASEUPDOWN        <= sr_step;
                         PHASECOUNTERSELECT <= COUNTER;
-                        r_count            <= r_count + 1'b1;
+                        sr_count           <= sr_count + 1'b1;
                     end
                     3'b010: begin
 //                        PHASESTEP          <= 1'b0;
-                        r_count            <= r_count + 1'b1;
+                        sr_count            <= sr_count + 1'b1;
                     end
                     3'b011: begin
                         PHASEUPDOWN        <= 1'b0;
                         PHASECOUNTERSELECT <= COUNTER;
-                        r_count            <= r_count + 1'b1;
+                        sr_count           <= sr_count + 1'b1;
                     end
                     3'b100: begin
                         PHASESTEP          <= 1'b0;
-                        r_count            <= 3'b000;
+                        sr_count           <= 3'b000;
                     end
                 endcase
         end

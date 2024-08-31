@@ -65,6 +65,10 @@ module ptmch_top(
 
     logic         n_cs_edge_n;
     logic         n_ptmch_rst_n;
+    logic [23: 0] n_page_addr;
+    logic         n_pls_rise;
+    logic [ 2: 0] n_pageaddr_sel;
+    logic [ 5: 0] n_paddr_cnt;
 
 //==================================================================================================
 //  assign
@@ -103,7 +107,8 @@ ptmch_trg trg_inst(
     .PDREAD_LOW_ADDR(n_pdread_low_addr),
     .PDREAD_HIGH_ADDR(n_pdread_high_addr),
     .WRSTAT_LOW_ADDR(n_wrstat_low_addr),
-    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr)
+    .WRSTAT_HIGH_ADDR(n_wrstat_high_addr),
+    .PAGE_ADDR(n_page_addr)
 );
 
 ptmch_cnt cnt_inst(
@@ -114,7 +119,10 @@ ptmch_cnt cnt_inst(
     .BLKERS(n_blkers),
     .PDREAD(n_pdread),
     .WRSTAT(n_qrstat),
-    .TRG_PLS(n_trg_pls)
+    .TRG_PLS(n_trg_pls),
+    .PAGEADDR_SEL(n_pageaddr_sel),
+    .PADDR_CNT(n_paddr_cnt),
+    .PLS_RISE(n_pls_rise)
 );
 
 ptmch_reg reg_inst(
@@ -125,6 +133,10 @@ ptmch_reg reg_inst(
     .BLKERS(n_blkers),
     .PDREAD(n_pdread),
     .WRSTAT(n_qrstat),
+    .PAGE_ADDR(n_page_addr),
+    .PLS_RISE(n_pls_rise),
+    .PAGEADDR_SEL(n_pageaddr_sel),
+    .PADDR_CNT(n_paddr_cnt),
     .PRGEXCT_LOW_ADDR(n_prgexct_low_addr),
     .PRGEXCT_HIGH_ADDR(n_prgexct_high_addr),
     .RDSTAT_LOW_ADDR(n_rdstat_low_addr),

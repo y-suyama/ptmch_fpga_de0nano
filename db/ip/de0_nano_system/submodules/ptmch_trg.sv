@@ -34,7 +34,9 @@ module ptmch_trg(
     input  logic [23: 0]  PDREAD_LOW_ADDR,
     input  logic [23: 0]  PDREAD_HIGH_ADDR,
     input  logic [23: 0]  WRSTAT_LOW_ADDR,
-    input  logic [23: 0]  WRSTAT_HIGH_ADDR
+    input  logic [23: 0]  WRSTAT_HIGH_ADDR,
+    output logic [23: 0]  PAGE_ADDR
+    
 );
 //=================================================================
 //  PARAMETER declarations
@@ -174,7 +176,8 @@ module ptmch_trg(
     assign   c_wrsts_mch        = (c_wrsts_ins & c_wrsts_addr_l & c_wrsts_addr_h);
 
     assign   c_inst_mch_n       = ~(c_prgex_mch | c_rdsts_mch | c_128kbbe_mch | c_pagedread_mch | c_wrsts_mch);
-
+   //240830
+    assign   PAGE_ADDR          = sr_inst_chk[23:0];
 //=================================================================
 //  Structural coding
 //=================================================================
