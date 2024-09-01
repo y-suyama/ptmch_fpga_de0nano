@@ -1,5 +1,5 @@
 Assembler report for DE0_Nano
-Sun Sep 01 02:03:56 2024
+Mon Sep 02 00:42:13 2024
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Sep 01 02:03:56 2024 ;
+; Assembler Status      ; Successful - Mon Sep 02 00:42:13 2024 ;
 ; Revision Name         ; DE0_Nano                              ;
 ; Top-level Entity Name ; de0_nano_top                          ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option         ; Setting                                                                            ;
 +----------------+------------------------------------------------------------------------------------+
 ; JTAG usercode  ; 0xFFFFFFFF                                                                         ;
-; Checksum       ; 0x005A0D18                                                                         ;
+; Checksum       ; 0x00966CEC                                                                         ;
 +----------------+------------------------------------------------------------------------------------+
 
 
@@ -89,14 +89,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Sun Sep 01 02:03:50 2024
+    Info: Processing started: Mon Sep 02 00:42:07 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off de0_nano_ptmch -c DE0_Nano
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4705 megabytes
-    Info: Processing ended: Sun Sep 01 02:03:56 2024
+    Info: Peak virtual memory: 4723 megabytes
+    Info: Processing ended: Mon Sep 02 00:42:13 2024
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 

@@ -1,5 +1,5 @@
 Flow report for DE0_Nano
-Sun Sep 01 02:09:02 2024
+Mon Sep 02 00:42:37 2024
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Analyzed - Sun Sep 01 02:09:02 2024         ;
+; Flow Status                        ; Successful - Mon Sep 02 00:42:13 2024       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; DE0_Nano                                    ;
 ; Top-level Entity Name              ; de0_nano_top                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,198 / 22,320 ( 32 % )                     ;
-;     Total combinational functions  ; 5,867 / 22,320 ( 26 % )                     ;
-;     Dedicated logic registers      ; 4,891 / 22,320 ( 22 % )                     ;
-; Total registers                    ; 4960                                        ;
+; Total logic elements               ; 12,552 / 22,320 ( 56 % )                    ;
+;     Total combinational functions  ; 9,548 / 22,320 ( 43 % )                     ;
+;     Dedicated logic registers      ; 9,056 / 22,320 ( 41 % )                     ;
+; Total registers                    ; 9125                                        ;
 ; Total pins                         ; 62 / 154 ( 40 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 12,288 / 608,256 ( 2 % )                    ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/01/2024 01:54:45 ;
+; Start date & time ; 09/02/2024 00:29:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_Nano            ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------+-------------------------------------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                                   ; Value                                                             ; Default Value ; Entity Name     ; Section Id ;
 +---------------------------------------------------+-------------------------------------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID                             ; 90274928606859.172512328405900                                    ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID                             ; 90274928606859.172520456801876                                    ; --            ; --              ; --         ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE                  ; Speed                                                             ; Balanced      ; --              ; --         ;
 ; FITTER_EFFORT                                     ; Standard Fit                                                      ; Auto Fit      ; --              ; --         ;
 ; IGNORE_PARTITIONS                                 ; On                                                                ; Off           ; --              ; --         ;
@@ -105,7 +105,7 @@ https://fpgasoftware.intel.com/eula.
 ; ROUTER_TIMING_OPTIMIZATION_LEVEL                  ; MAXIMUM                                                           ; Normal        ; --              ; --         ;
 ; SLD_FILE                                          ; de0_nano_system/synthesis/de0_nano_system.regmap                  ; --            ; --              ; --         ;
 ; SLD_FILE                                          ; de0_nano_system/synthesis/de0_nano_system.debuginfo               ; --            ; --              ; --         ;
-; SLD_INFO                                          ; QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725123201 ; --            ; de0_nano_system ; --         ;
+; SLD_INFO                                          ; QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725204485 ; --            ; de0_nano_system ; --         ;
 ; SMART_RECOMPILE                                   ; On                                                                ; Off           ; --              ; --         ;
 ; SOPCINFO_FILE                                     ; de0_nano_system/synthesis/../../de0_nano_system.sopcinfo          ; --            ; --              ; --         ;
 ; SYNCHRONIZER_IDENTIFICATION                       ; Auto                                                              ; Off           ; --              ; --         ;
@@ -119,12 +119,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:05:41     ; 1.0                     ; 4937 MB             ; 00:05:49                           ;
-; Fitter               ; 00:03:04     ; 1.1                     ; 5367 MB             ; 00:03:58                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4705 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:15     ; 1.2                     ; 4842 MB             ; 00:00:16                           ;
-; Design Assistant     ; 00:00:09     ; 1.0                     ; 4711 MB             ; 00:00:09                           ;
-; Total                ; 00:09:15     ; --                      ; --                  ; 00:10:17                           ;
+; Analysis & Synthesis ; 00:03:18     ; 1.0                     ; 4960 MB             ; 00:04:37                           ;
+; Fitter               ; 00:09:07     ; 1.0                     ; 5492 MB             ; 00:11:10                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4723 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:22     ; 1.4                     ; 4897 MB             ; 00:00:27                           ;
+; Total                ; 00:12:53     ; --                      ; --                  ; 00:16:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -137,7 +136,6 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
-; Design Assistant     ; suyama           ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -148,7 +146,6 @@ quartus_map --read_settings_files=on --write_settings_files=off de0_nano_ptmch -
 quartus_fit --read_settings_files=off --write_settings_files=off de0_nano_ptmch -c DE0_Nano
 quartus_asm --read_settings_files=off --write_settings_files=off de0_nano_ptmch -c DE0_Nano
 quartus_sta de0_nano_ptmch -c DE0_Nano
-quartus_drc de0_nano_ptmch -c DE0_Nano
 
 
 
