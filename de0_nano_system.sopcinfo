@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.09.02.00:30:09 -->
+ <!-- 2024.09.02.20:44:49 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1725204608</value>
+  <value>1725277488</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2785,12 +2785,6 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>cpu</moduleName>
-    <slaveName>clk</slaveName>
-    <name>cpu.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>sdram</moduleName>
     <slaveName>clk</slaveName>
     <name>sdram.clk</name>
@@ -2818,6 +2812,12 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sw</moduleName>
     <slaveName>clk</slaveName>
     <name>sw.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>cpu</moduleName>
+    <slaveName>clk</slaveName>
+    <name>cpu.clk</name>
    </clockDomainMember>
   </interface>
   <interface name="c1" kind="clock_source" version="18.1">
@@ -11408,33 +11408,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>CLK100M</endConnectionPoint>
  </connection>
  <connection
-   name="altpll_0.c0/cpu.clk"
-   kind="clock"
-   version="18.1"
-   start="altpll_0.c0"
-   end="cpu.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>altpll_0</startModule>
-  <startConnectionPoint>c0</startConnectionPoint>
-  <endModule>cpu</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="altpll_0.c0/sdram.clk"
    kind="clock"
    version="18.1"
@@ -11567,6 +11540,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>altpll_0</startModule>
   <startConnectionPoint>c0</startConnectionPoint>
   <endModule>sw</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="altpll_0.c0/cpu.clk"
+   kind="clock"
+   version="18.1"
+   start="altpll_0.c0"
+   end="cpu.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>altpll_0</startModule>
+  <startConnectionPoint>c0</startConnectionPoint>
+  <endModule>cpu</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection

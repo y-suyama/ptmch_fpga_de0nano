@@ -473,8 +473,8 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module name="cpu" kind="altera_nios2_gen2" version="18.1" enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="4" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="4" />
   <parameter name="AUTO_DEVICE" value="EP4CE22F17C6" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
@@ -697,7 +697,7 @@
   <parameter name="casLatency" value="3" />
   <parameter name="clockRate" value="100000000" />
   <parameter name="columnWidth" value="9" />
-  <parameter name="componentName">de0_nano_system_sdram</parameter>
+  <parameter name="componentName" value="$${FILENAME}_sdram" />
   <parameter name="dataWidth" value="16" />
   <parameter name="generateSimulationModel" value="true" />
   <parameter name="initNOPDelay" value="0.0" />
@@ -838,12 +838,12 @@
    version="18.1"
    start="altpll_0.c0"
    end="TRG_PLS_component_0.CLK100M" />
- <connection kind="clock" version="18.1" start="altpll_0.c0" end="cpu.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="sdram.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="jtag_uart.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="timer.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="key.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="sw.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="cpu.clk" />
  <connection
    kind="clock"
    version="18.1"

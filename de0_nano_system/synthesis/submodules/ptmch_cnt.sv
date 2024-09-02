@@ -25,7 +25,7 @@ module ptmch_cnt(
     output  logic [31: 0] WRSTAT,
     // 240830
     input   logic [ 2: 0] PAGEADDR_SEL,
-    output  logic [ 7: 0] PADDR_CNT,
+    output  logic [ 5: 0] PADDR_CNT,
     // TRG_PLS INPUT
     input   logic [ 4: 0] TRG_PLS,
     output  logic         PLS_RISE
@@ -252,15 +252,15 @@ module ptmch_cnt(
     // Page Address Selsect
     always_ff @(posedge CLK100M or negedge RESET_N) begin
         if(!RESET_N)
-            PADDR_CNT <= 8'h0;
+            PADDR_CNT <= 6'h0;
         else begin
             case(PAGEADDR_SEL) 
-                3'b000  : PADDR_CNT <= sr_prgexct_counter[ 7: 0]; // 0x0:program excute
-                3'b001  : PADDR_CNT <= sr_rdstat_counter[ 7: 0];  // 0x1:readstatus
-                3'b010  : PADDR_CNT <= sr_blkers_counter[ 7: 0];  // 0x2:128kb_blockerase
-                3'b011  : PADDR_CNT <= sr_pdread_counter[ 7: 0];  // 0x3:pagedata_read
-                3'b100  : PADDR_CNT <= sr_wrstat_counter[ 7: 0];  // 0x4:writestatus
-                default : PADDR_CNT <= sr_prgexct_counter[ 7: 0];
+                3'b000  : PADDR_CNT <= sr_prgexct_counter[ 5: 0]; // 0x0:program excute
+                3'b001  : PADDR_CNT <= sr_rdstat_counter[ 5: 0];  // 0x1:readstatus
+                3'b010  : PADDR_CNT <= sr_blkers_counter[ 5: 0];  // 0x2:128kb_blockerase
+                3'b011  : PADDR_CNT <= sr_pdread_counter[ 5: 0];  // 0x3:pagedata_read
+                3'b100  : PADDR_CNT <= sr_wrstat_counter[ 5: 0];  // 0x4:writestatus
+                default : PADDR_CNT <= sr_prgexct_counter[ 5: 0];
             endcase
         end
     end
