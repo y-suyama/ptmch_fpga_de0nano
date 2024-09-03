@@ -15,7 +15,8 @@
    <frequency preferredWidth="316" />
   </columns>
  </clocktable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Library,Library/Qsys Interconnect/Memory-Mapped Alpha,Library/Basic Functions/On Chip Memory,Library/Qsys Interconnect/Memory-Mapped,Library/Memory Interfaces and Controllers,Project,Library/University Program/Memory,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Memory Interfaces and Controllers/SDRAM,Library/Processors and Peripherals/Hard Processor Components,Library/Memory Interfaces and Controllers/Memory Interfaces with UniPHY,Library/Basic Functions/Bridges and Adaptors,Library/Processors and Peripherals,Library/Qsys Interconnect,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/University Program,Library/Memory Interfaces and Controllers/Memory Interfaces with ALTMEMPHY,Library/Memory Interfaces and Controllers/Flash" />
  <window width="2418" height="1318" x="-2409" y="-8" />
  <hdlexample language="VERILOG" />
 </preferences>

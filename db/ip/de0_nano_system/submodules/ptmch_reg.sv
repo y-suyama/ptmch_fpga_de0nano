@@ -1117,7 +1117,7 @@ module ptmch_reg(
                     p_wrstat_low_addr       : r_reg_readdata <= {8'd0,WRSTAT_LOW_ADDR};
                     p_wrstat_high_addr      : r_reg_readdata <= {8'd0,WRSTAT_HIGH_ADDR};
                     // 240830
-                    sr_page_addr_sel        : r_reg_readdata <= {29'd0,sr_page_addr_sel};
+                    p_paddr_sel_addr        : r_reg_readdata <= {29'd0,sr_page_addr_sel};
                     p_paddr_1               : r_reg_readdata <= {8'd0,sr_paddr_dat[1]};
                     p_paddr_2               : r_reg_readdata <= {8'd0,sr_paddr_dat[2]};
                     p_paddr_3               : r_reg_readdata <= {8'd0,sr_paddr_dat[3]};

@@ -252,7 +252,7 @@ reg              oe /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_ENABLE_REGISTER
 wire             pending;
 wire             rd_strobe;
 reg     [  2: 0] rd_valid;
-reg     [ 12: 0] refresh_counter;
+reg     [ 13: 0] refresh_counter;
 reg              refresh_request;
 wire             rnw_match;
 wire             row_match;
@@ -302,9 +302,9 @@ wire             zs_we_n;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          refresh_counter <= 8000;
+          refresh_counter <= 10000;
       else if (refresh_counter == 0)
-          refresh_counter <= 1249;
+          refresh_counter <= 1562;
       else 
         refresh_counter <= refresh_counter - 1'b1;
     end
@@ -375,7 +375,7 @@ wire             zs_we_n;
                   i_cmd <= {{1{1'b0}},3'h1};
                   i_refs <= i_refs + 1'b1;
                   i_state <= 3'b011;
-                  i_count <= 5;
+                  i_count <= 7;
                   // Count up init_refresh_commands
                   if (i_refs == 3'h1)
                       i_next <= 3'b111;
@@ -400,7 +400,7 @@ wire             zs_we_n;
                   i_state <= 3'b011;
                   i_cmd <= {{1{1'b0}},3'h0};
                   i_addr <= {{3{1'b0}},1'b0,2'b00,3'h3,4'h0};
-                  i_count <= 3;
+                  i_count <= 4;
                   i_next <= 3'b101;
               end // 3'b111 
           
@@ -604,7 +604,7 @@ wire             zs_we_n;
                   ack_refresh_request <= 1'b1;
                   m_state <= 9'b000000100;
                   m_cmd <= {{1{1'b0}},3'h1};
-                  m_count <= 5;
+                  m_count <= 7;
                   m_next <= 9'b000000001;
               end // 9'b010000000 
           

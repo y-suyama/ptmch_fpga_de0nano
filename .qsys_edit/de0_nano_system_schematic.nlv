@@ -1,32 +1,32 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst de0_nano_system.clk_50 -pg 1 -lvl 1 -y 400
-preplace inst de0_nano_system.jtag_uart -pg 1 -lvl 5 -y 810
-preplace inst de0_nano_system.sw -pg 1 -lvl 5 -y 1350
-preplace inst de0_nano_system.altpll_0 -pg 1 -lvl 5 -y 170
-preplace inst de0_nano_system.cpu -pg 1 -lvl 3 -y 290
-preplace inst de0_nano_system.TRG_PLS_component_0 -pg 1 -lvl 6 -y 190
+preplace inst de0_nano_system.clk_50 -pg 1 -lvl 1 -y 420
+preplace inst de0_nano_system.jtag_uart -pg 1 -lvl 5 -y 830
+preplace inst de0_nano_system.sw -pg 1 -lvl 5 -y 1370
+preplace inst de0_nano_system.altpll_0 -pg 1 -lvl 5 -y 190
+preplace inst de0_nano_system.cpu -pg 1 -lvl 3 -y 310
+preplace inst de0_nano_system.TRG_PLS_component_0 -pg 1 -lvl 6 -y 210
 preplace inst de0_nano_system -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst de0_nano_system.sdram -pg 1 -lvl 5 -y 910
+preplace inst de0_nano_system.sdram -pg 1 -lvl 5 -y 930
 preplace inst de0_nano_system.cpu.reset_bridge -pg 1
 preplace inst de0_nano_system.cpu.clock_bridge -pg 1
-preplace inst de0_nano_system.key -pg 1 -lvl 5 -y 1230
+preplace inst de0_nano_system.key -pg 1 -lvl 5 -y 1250
 preplace inst de0_nano_system.cpu.cpu -pg 1
-preplace inst de0_nano_system.timer -pg 1 -lvl 5 -y 1010
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.sw_external_connection,(SLAVE)sw.external_connection) 1 0 5 NJ 1380 NJ 1380 NJ 1380 NJ 1380 NJ
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.sdram_wire,(SLAVE)sdram.wire) 1 0 5 NJ 980 NJ 980 NJ 980 NJ 980 NJ
-preplace netloc FAN_OUT<net_container>de0_nano_system</net_container>(SLAVE)timer.irq,(SLAVE)key.irq,(SLAVE)sw.irq,(MASTER)cpu.irq,(SLAVE)jtag_uart.irq) 1 3 2 NJ 380 1280
+preplace inst de0_nano_system.timer -pg 1 -lvl 5 -y 1030
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.sdram_wire,(SLAVE)sdram.wire) 1 0 5 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ
+preplace netloc FAN_OUT<net_container>de0_nano_system</net_container>(MASTER)cpu.irq,(SLAVE)jtag_uart.irq,(SLAVE)timer.irq,(SLAVE)key.irq,(SLAVE)sw.irq) 1 3 2 NJ 400 1260
 preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)clk_50.clk_in,(SLAVE)de0_nano_system.clk_50_clk_in) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>de0_nano_system</net_container>(MASTER)clk_50.clk,(SLAVE)altpll_0.inclk_interface) 1 1 4 350 200 NJ 200 NJ 200 NJ
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_trg_pls,(SLAVE)TRG_PLS_component_0.TRG_PLS) 1 0 6 NJ 120 NJ 120 NJ 120 NJ 120 NJ 120 NJ
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)key.external_connection,(SLAVE)de0_nano_system.key_external_connection) 1 0 5 NJ 1260 NJ 1260 NJ 1260 NJ 1260 NJ
-preplace netloc POINT_TO_POINT<net_container>de0_nano_system</net_container>(MASTER)altpll_0.c1,(SLAVE)TRG_PLS_component_0.CLK160M) 1 5 1 N
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_spi_clk,(SLAVE)TRG_PLS_component_0.SPI_CLK) 1 0 6 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ
-preplace netloc INTERCONNECT<net_container>de0_nano_system</net_container>(SLAVE)sdram.reset,(SLAVE)key.reset,(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)jtag_uart.reset,(SLAVE)timer.reset,(MASTER)cpu.debug_reset_request,(SLAVE)sw.reset,(SLAVE)TRG_PLS_component_0.reset,(SLAVE)cpu.reset,(MASTER)clk_50.clk_reset) 1 1 5 NJ 430 440 470 1070 340 1300 340 N
-preplace netloc INTERCONNECT<net_container>de0_nano_system</net_container>(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)altpll_0.pll_slave,(SLAVE)TRG_PLS_component_0.reg,(MASTER)cpu.data_master,(SLAVE)key.s1,(SLAVE)sdram.s1,(MASTER)cpu.instruction_master,(SLAVE)sw.s1,(SLAVE)cpu.debug_mem_slave,(SLAVE)timer.s1) 1 2 4 480 450 1090 320 1260 80 1750
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)TRG_PLS_component_0.SPI_MOSI,(SLAVE)de0_nano_system.trg_pls_component_0_spi_mosi) 1 0 6 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 NJ
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_spi_cs,(SLAVE)TRG_PLS_component_0.SPI_CS) 1 0 6 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 NJ
-preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.clk_50_clk_in_reset,(SLAVE)clk_50.clk_in_reset) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>de0_nano_system</net_container>(SLAVE)jtag_uart.clk,(SLAVE)sdram.clk,(SLAVE)key.clk,(SLAVE)sw.clk,(MASTER)altpll_0.c0,(SLAVE)cpu.clk,(SLAVE)timer.clk,(SLAVE)TRG_PLS_component_0.CLK100M) 1 2 4 460 430 NJ 430 1320 300 1710
+preplace netloc INTERCONNECT<net_container>de0_nano_system</net_container>(MASTER)clk_50.clk_reset,(SLAVE)sdram.reset,(MASTER)cpu.debug_reset_request,(SLAVE)sw.reset,(SLAVE)jtag_uart.reset,(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)key.reset,(SLAVE)timer.reset,(SLAVE)TRG_PLS_component_0.reset,(SLAVE)cpu.reset) 1 1 5 NJ 450 440 490 1070 360 1280 360 N
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)sw.external_connection,(SLAVE)de0_nano_system.sw_external_connection) 1 0 5 NJ 1400 NJ 1400 NJ 1400 NJ 1400 NJ
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_spi_mosi,(SLAVE)TRG_PLS_component_0.SPI_MOSI) 1 0 6 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 NJ
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)clk_50.clk_in_reset,(SLAVE)de0_nano_system.clk_50_clk_in_reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>de0_nano_system</net_container>(MASTER)clk_50.clk,(SLAVE)altpll_0.inclk_interface) 1 1 4 350 220 NJ 220 NJ 220 NJ
+preplace netloc INTERCONNECT<net_container>de0_nano_system</net_container>(SLAVE)timer.s1,(SLAVE)TRG_PLS_component_0.reg,(MASTER)cpu.data_master,(SLAVE)sdram.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)cpu.debug_mem_slave,(SLAVE)key.s1,(SLAVE)altpll_0.pll_slave,(MASTER)cpu.instruction_master,(SLAVE)sw.s1) 1 2 4 480 470 1090 340 1300 380 1750
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)TRG_PLS_component_0.TRG_PLS,(SLAVE)de0_nano_system.trg_pls_component_0_trg_pls) 1 0 6 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.key_external_connection,(SLAVE)key.external_connection) 1 0 5 NJ 1280 NJ 1280 NJ 1280 NJ 1280 NJ
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_spi_clk,(SLAVE)TRG_PLS_component_0.SPI_CLK) 1 0 6 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>de0_nano_system</net_container>(SLAVE)de0_nano_system.trg_pls_component_0_spi_cs,(SLAVE)TRG_PLS_component_0.SPI_CS) 1 0 6 NJ 120 NJ 120 NJ 120 NJ 120 NJ 120 NJ
+preplace netloc POINT_TO_POINT<net_container>de0_nano_system</net_container>(SLAVE)TRG_PLS_component_0.CLK160M,(MASTER)altpll_0.c1) 1 5 1 N
+preplace netloc FAN_OUT<net_container>de0_nano_system</net_container>(SLAVE)sdram.clk,(SLAVE)jtag_uart.clk,(SLAVE)key.clk,(SLAVE)sw.clk,(SLAVE)cpu.clk,(SLAVE)TRG_PLS_component_0.CLK100M,(SLAVE)timer.clk,(MASTER)altpll_0.c0) 1 2 4 460 450 NJ 450 1320 320 1750
 levelinfo -pg 1 0 160 2030
 levelinfo -hier de0_nano_system 170 200 420 850 1240 1550 1890 2020
