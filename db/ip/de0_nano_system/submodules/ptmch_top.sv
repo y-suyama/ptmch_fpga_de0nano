@@ -68,7 +68,7 @@ module ptmch_top(
     logic [23: 0] n_page_addr;
     logic         n_pls_rise;
     logic [ 2: 0] n_pageaddr_sel;
-    logic [ 5: 0] n_paddr_cnt;
+    logic [ 6: 0] n_paddr_cnt;
 
 //==================================================================================================
 //  assign
