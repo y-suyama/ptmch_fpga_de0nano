@@ -139,8 +139,8 @@
   <sld_infos>
     <sld_info hpath="de0_nano_system:u0_inst" name="u0_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725361653"/>
-        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725361770"/>
+        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725364500"/>
+        <assignment_value text="QSYS_NAME de0_nano_system HAS_SOPCINFO 1 GENERATION_ID 1725364609"/>
       </assignment_values>
       <parameters/>
     </sld_info>
