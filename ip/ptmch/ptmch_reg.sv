@@ -27,7 +27,7 @@ module ptmch_reg(
     input  logic [23: 0] PAGE_ADDR,
     input  logic         PLS_RISE,
     output logic [ 2: 0] PAGEADDR_SEL,
-    input  logic [ 7: 0] PADDR_CNT,
+    input  logic [ 8: 0] PADDR_CNT,
     //Page Address Setting
     output logic [23: 0] PRGEXCT_LOW_ADDR,
     output logic [23: 0] PRGEXCT_HIGH_ADDR,
@@ -328,6 +328,134 @@ module ptmch_reg(
     parameter p_paddr_254             = 16'h043C;
     parameter p_paddr_255             = 16'h0440;
     parameter p_paddr_256             = 16'h0444;
+    parameter p_paddr_257             = 16'h0448;
+    parameter p_paddr_258             = 16'h044C;
+    parameter p_paddr_259             = 16'h0450;
+    parameter p_paddr_260             = 16'h0454;
+    parameter p_paddr_261             = 16'h0458;
+    parameter p_paddr_262             = 16'h045C;
+    parameter p_paddr_263             = 16'h0460;
+    parameter p_paddr_264             = 16'h0464;
+    parameter p_paddr_265             = 16'h0468;
+    parameter p_paddr_266             = 16'h046C;
+    parameter p_paddr_267             = 16'h0470;
+    parameter p_paddr_268             = 16'h0474;
+    parameter p_paddr_269             = 16'h0478;
+    parameter p_paddr_270             = 16'h047C;
+    parameter p_paddr_271             = 16'h0480;
+    parameter p_paddr_272             = 16'h0484;
+    parameter p_paddr_273             = 16'h0488;
+    parameter p_paddr_274             = 16'h048C;
+    parameter p_paddr_275             = 16'h0490;
+    parameter p_paddr_276             = 16'h0494;
+    parameter p_paddr_277             = 16'h0498;
+    parameter p_paddr_278             = 16'h049C;
+    parameter p_paddr_279             = 16'h04A0;
+    parameter p_paddr_280             = 16'h04A4;
+    parameter p_paddr_281             = 16'h04A8;
+    parameter p_paddr_282             = 16'h04AC;
+    parameter p_paddr_283             = 16'h04B0;
+    parameter p_paddr_284             = 16'h04B4;
+    parameter p_paddr_285             = 16'h04B8;
+    parameter p_paddr_286             = 16'h04BC;
+    parameter p_paddr_287             = 16'h04C0;
+    parameter p_paddr_288             = 16'h04C4;
+    parameter p_paddr_289             = 16'h04C8;
+    parameter p_paddr_290             = 16'h04CC;
+    parameter p_paddr_291             = 16'h04D0;
+    parameter p_paddr_292             = 16'h04D4;
+    parameter p_paddr_293             = 16'h04D8;
+    parameter p_paddr_294             = 16'h04DC;
+    parameter p_paddr_295             = 16'h04E0;
+    parameter p_paddr_296             = 16'h04E4;
+    parameter p_paddr_297             = 16'h04E8;
+    parameter p_paddr_298             = 16'h04EC;
+    parameter p_paddr_299             = 16'h04F0;
+    parameter p_paddr_300             = 16'h04F4;
+    parameter p_paddr_301             = 16'h04F8;
+    parameter p_paddr_302             = 16'h04FC;
+    parameter p_paddr_303             = 16'h0500;
+    parameter p_paddr_304             = 16'h0504;
+    parameter p_paddr_305             = 16'h0508;
+    parameter p_paddr_306             = 16'h050C;
+    parameter p_paddr_307             = 16'h0510;
+    parameter p_paddr_308             = 16'h0514;
+    parameter p_paddr_309             = 16'h0518;
+    parameter p_paddr_310             = 16'h051C;
+    parameter p_paddr_311             = 16'h0520;
+    parameter p_paddr_312             = 16'h0524;
+    parameter p_paddr_313             = 16'h0528;
+    parameter p_paddr_314             = 16'h052C;
+    parameter p_paddr_315             = 16'h0530;
+    parameter p_paddr_316             = 16'h0534;
+    parameter p_paddr_317             = 16'h0538;
+    parameter p_paddr_318             = 16'h053C;
+    parameter p_paddr_319             = 16'h0540;
+    parameter p_paddr_320             = 16'h0544;
+    parameter p_paddr_321             = 16'h0548;
+    parameter p_paddr_322             = 16'h054C;
+    parameter p_paddr_323             = 16'h0550;
+    parameter p_paddr_324             = 16'h0554;
+    parameter p_paddr_325             = 16'h0558;
+    parameter p_paddr_326             = 16'h055C;
+    parameter p_paddr_327             = 16'h0560;
+    parameter p_paddr_328             = 16'h0564;
+    parameter p_paddr_329             = 16'h0568;
+    parameter p_paddr_330             = 16'h056C;
+    parameter p_paddr_331             = 16'h0570;
+    parameter p_paddr_332             = 16'h0574;
+    parameter p_paddr_333             = 16'h0578;
+    parameter p_paddr_334             = 16'h057C;
+    parameter p_paddr_335             = 16'h0580;
+    parameter p_paddr_336             = 16'h0584;
+    parameter p_paddr_337             = 16'h0588;
+    parameter p_paddr_338             = 16'h058C;
+    parameter p_paddr_339             = 16'h0590;
+    parameter p_paddr_340             = 16'h0594;
+    parameter p_paddr_341             = 16'h0598;
+    parameter p_paddr_342             = 16'h059C;
+    parameter p_paddr_343             = 16'h05A0;
+    parameter p_paddr_344             = 16'h05A4;
+    parameter p_paddr_345             = 16'h05A8;
+    parameter p_paddr_346             = 16'h05AC;
+    parameter p_paddr_347             = 16'h05B0;
+    parameter p_paddr_348             = 16'h05B4;
+    parameter p_paddr_349             = 16'h05B8;
+    parameter p_paddr_350             = 16'h05BC;
+    parameter p_paddr_351             = 16'h05C0;
+    parameter p_paddr_352             = 16'h05C4;
+    parameter p_paddr_353             = 16'h05C8;
+    parameter p_paddr_354             = 16'h05CC;
+    parameter p_paddr_355             = 16'h05D0;
+    parameter p_paddr_356             = 16'h05D4;
+    parameter p_paddr_357             = 16'h05D8;
+    parameter p_paddr_358             = 16'h05DC;
+    parameter p_paddr_359             = 16'h05E0;
+    parameter p_paddr_360             = 16'h05E4;
+    parameter p_paddr_361             = 16'h05E8;
+    parameter p_paddr_362             = 16'h05EC;
+    parameter p_paddr_363             = 16'h05F0;
+    parameter p_paddr_364             = 16'h05F4;
+    parameter p_paddr_365             = 16'h05F8;
+    parameter p_paddr_366             = 16'h05FC;
+    parameter p_paddr_367             = 16'h0600;
+    parameter p_paddr_368             = 16'h0604;
+    parameter p_paddr_369             = 16'h0608;
+    parameter p_paddr_370             = 16'h060C;
+    parameter p_paddr_371             = 16'h0610;
+    parameter p_paddr_372             = 16'h0614;
+    parameter p_paddr_373             = 16'h0618;
+    parameter p_paddr_374             = 16'h061C;
+    parameter p_paddr_375             = 16'h0620;
+    parameter p_paddr_376             = 16'h0624;
+    parameter p_paddr_377             = 16'h0628;
+    parameter p_paddr_378             = 16'h062C;
+    parameter p_paddr_379             = 16'h0630;
+    parameter p_paddr_380             = 16'h0634;
+    parameter p_paddr_381             = 16'h0638;
+    parameter p_paddr_382             = 16'h063C;
+    parameter p_paddr_383             = 16'h0640;
+    parameter p_paddr_384             = 16'h0644;
 
 //=======================================================
 //  Internal Signal
@@ -343,7 +471,7 @@ module ptmch_reg(
     logic    [23: 0]  sr_page_paddr_buf;
     logic    [ 2: 0]  sr_page_addr_sel;
     //240830 PageAddress Register
-    logic    [23: 0]  sr_paddr_dat[256:1]; // 24x256 Array
+    logic    [23: 0]  sr_paddr_dat[384:1]; // 24x384 Array
 
 
 //=======================================================
@@ -415,7 +543,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[1]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd1)
+           if (PADDR_CNT == 9'd1)
                sr_paddr_dat[1]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[1]  <= sr_paddr_dat[1];
@@ -427,7 +555,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[2]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd2)
+           if (PADDR_CNT == 9'd2)
                sr_paddr_dat[2]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[2]  <= sr_paddr_dat[2];
@@ -439,7 +567,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[3]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd3)
+           if (PADDR_CNT == 9'd3)
                sr_paddr_dat[3]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[3]  <= sr_paddr_dat[3];
@@ -451,7 +579,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[4]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd4)
+           if (PADDR_CNT == 9'd4)
                sr_paddr_dat[4]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[4]  <= sr_paddr_dat[4];
@@ -463,7 +591,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[5]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd5)
+           if (PADDR_CNT == 9'd5)
                sr_paddr_dat[5]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[5]  <= sr_paddr_dat[5];
@@ -475,7 +603,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[6]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd6)
+           if (PADDR_CNT == 9'd6)
                sr_paddr_dat[6]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[6]  <= sr_paddr_dat[6];
@@ -487,7 +615,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[7]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd7)
+           if (PADDR_CNT == 9'd7)
                sr_paddr_dat[7]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[7]  <= sr_paddr_dat[7];
@@ -499,7 +627,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[8]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd8)
+           if (PADDR_CNT == 9'd8)
                sr_paddr_dat[8]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[8]  <= sr_paddr_dat[8];
@@ -511,7 +639,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[9]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd9)
+           if (PADDR_CNT == 9'd9)
                sr_paddr_dat[9]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[9]  <= sr_paddr_dat[9];
@@ -523,7 +651,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[10]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd10)
+           if (PADDR_CNT == 9'd10)
                sr_paddr_dat[10]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[10]  <= sr_paddr_dat[10];
@@ -535,7 +663,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[11]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd11)
+           if (PADDR_CNT == 9'd11)
                sr_paddr_dat[11]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[11]  <= sr_paddr_dat[11];
@@ -547,7 +675,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[12]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd12)
+           if (PADDR_CNT == 9'd12)
                sr_paddr_dat[12]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[12]  <= sr_paddr_dat[12];
@@ -559,7 +687,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[13]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd13)
+           if (PADDR_CNT == 9'd13)
                sr_paddr_dat[13]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[13]  <= sr_paddr_dat[13];
@@ -571,7 +699,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[14]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd14)
+           if (PADDR_CNT == 9'd14)
                sr_paddr_dat[14]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[14]  <= sr_paddr_dat[14];
@@ -583,7 +711,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[15]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd15)
+           if (PADDR_CNT == 9'd15)
                sr_paddr_dat[15]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[15]  <= sr_paddr_dat[15];
@@ -595,7 +723,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[16]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd16)
+           if (PADDR_CNT == 9'd16)
                sr_paddr_dat[16]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[16]  <= sr_paddr_dat[16];
@@ -607,7 +735,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[17]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd17)
+           if (PADDR_CNT == 9'd17)
                sr_paddr_dat[17]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[17]  <= sr_paddr_dat[17];
@@ -619,7 +747,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[18]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd18)
+           if (PADDR_CNT == 9'd18)
                sr_paddr_dat[18]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[18]  <= sr_paddr_dat[18];
@@ -631,7 +759,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[19]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd19)
+           if (PADDR_CNT == 9'd19)
                sr_paddr_dat[19]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[19]  <= sr_paddr_dat[19];
@@ -643,7 +771,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[20]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd20)
+           if (PADDR_CNT == 9'd20)
                sr_paddr_dat[20]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[20]  <= sr_paddr_dat[20];
@@ -655,7 +783,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[21]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd21)
+           if (PADDR_CNT == 9'd21)
                sr_paddr_dat[21]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[21]  <= sr_paddr_dat[21];
@@ -667,7 +795,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[22]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd22)
+           if (PADDR_CNT == 9'd22)
                sr_paddr_dat[22]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[22]  <= sr_paddr_dat[22];
@@ -679,7 +807,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[23]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd23)
+           if (PADDR_CNT == 9'd23)
                sr_paddr_dat[23]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[23]  <= sr_paddr_dat[23];
@@ -691,7 +819,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[24]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd24)
+           if (PADDR_CNT == 9'd24)
                sr_paddr_dat[24]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[24]  <= sr_paddr_dat[24];
@@ -703,7 +831,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[25]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd25)
+           if (PADDR_CNT == 9'd25)
                sr_paddr_dat[25]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[25]  <= sr_paddr_dat[25];
@@ -715,7 +843,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[26]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd26)
+           if (PADDR_CNT == 9'd26)
                sr_paddr_dat[26]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[26]  <= sr_paddr_dat[26];
@@ -727,7 +855,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[27]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd27)
+           if (PADDR_CNT == 9'd27)
                sr_paddr_dat[27]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[27]  <= sr_paddr_dat[27];
@@ -739,7 +867,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[28]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd28)
+           if (PADDR_CNT == 9'd28)
                sr_paddr_dat[28]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[28]  <= sr_paddr_dat[28];
@@ -751,7 +879,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[29]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd29)
+           if (PADDR_CNT == 9'd29)
                sr_paddr_dat[29]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[29]  <= sr_paddr_dat[29];
@@ -763,7 +891,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[30]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd30)
+           if (PADDR_CNT == 9'd30)
                sr_paddr_dat[30]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[30]  <= sr_paddr_dat[30];
@@ -775,7 +903,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[31]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd31)
+           if (PADDR_CNT == 9'd31)
                sr_paddr_dat[31]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[31]  <= sr_paddr_dat[31];
@@ -787,7 +915,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[32]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd32)
+           if (PADDR_CNT == 9'd32)
                sr_paddr_dat[32]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[32]  <= sr_paddr_dat[32];
@@ -799,7 +927,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[33]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd33)
+           if (PADDR_CNT == 9'd33)
                sr_paddr_dat[33]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[33]  <= sr_paddr_dat[33];
@@ -811,7 +939,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[34]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd34)
+           if (PADDR_CNT == 9'd34)
                sr_paddr_dat[34]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[34]  <= sr_paddr_dat[34];
@@ -823,7 +951,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[35]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd35)
+           if (PADDR_CNT == 9'd35)
                sr_paddr_dat[35]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[35]  <= sr_paddr_dat[35];
@@ -835,7 +963,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[36]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd36)
+           if (PADDR_CNT == 9'd36)
                sr_paddr_dat[36]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[36]  <= sr_paddr_dat[36];
@@ -847,7 +975,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[37]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd37)
+           if (PADDR_CNT == 9'd37)
                sr_paddr_dat[37]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[37]  <= sr_paddr_dat[37];
@@ -859,7 +987,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[38]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd38)
+           if (PADDR_CNT == 9'd38)
                sr_paddr_dat[38]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[38]  <= sr_paddr_dat[38];
@@ -871,7 +999,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[39]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd39)
+           if (PADDR_CNT == 9'd39)
                sr_paddr_dat[39]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[39]  <= sr_paddr_dat[39];
@@ -883,7 +1011,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[40]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd40)
+           if (PADDR_CNT == 9'd40)
                sr_paddr_dat[40]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[40]  <= sr_paddr_dat[40];
@@ -895,7 +1023,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[41]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd41)
+           if (PADDR_CNT == 9'd41)
                sr_paddr_dat[41]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[41]  <= sr_paddr_dat[41];
@@ -907,7 +1035,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[42]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd42)
+           if (PADDR_CNT == 9'd42)
                sr_paddr_dat[42]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[42]  <= sr_paddr_dat[42];
@@ -919,7 +1047,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[43]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd43)
+           if (PADDR_CNT == 9'd43)
                sr_paddr_dat[43]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[43]  <= sr_paddr_dat[43];
@@ -931,7 +1059,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[44]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd44)
+           if (PADDR_CNT == 9'd44)
                sr_paddr_dat[44]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[44]  <= sr_paddr_dat[44];
@@ -943,7 +1071,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[45]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd45)
+           if (PADDR_CNT == 9'd45)
                sr_paddr_dat[45]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[45]  <= sr_paddr_dat[45];
@@ -955,7 +1083,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[46]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd46)
+           if (PADDR_CNT == 9'd46)
                sr_paddr_dat[46]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[46]  <= sr_paddr_dat[46];
@@ -967,7 +1095,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[47]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd47)
+           if (PADDR_CNT == 9'd47)
                sr_paddr_dat[47]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[47]  <= sr_paddr_dat[47];
@@ -979,7 +1107,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[48]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd48)
+           if (PADDR_CNT == 9'd48)
                sr_paddr_dat[48]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[48]  <= sr_paddr_dat[48];
@@ -991,7 +1119,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[49]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd49)
+           if (PADDR_CNT == 9'd49)
                sr_paddr_dat[49]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[49]  <= sr_paddr_dat[49];
@@ -1003,7 +1131,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[50]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd50)
+           if (PADDR_CNT == 9'd50)
                sr_paddr_dat[50]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[50]  <= sr_paddr_dat[50];
@@ -1015,7 +1143,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[51]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd51)
+           if (PADDR_CNT == 9'd51)
                sr_paddr_dat[51]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[51]  <= sr_paddr_dat[51];
@@ -1027,7 +1155,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[52]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd52)
+           if (PADDR_CNT == 9'd52)
                sr_paddr_dat[52]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[52]  <= sr_paddr_dat[52];
@@ -1039,7 +1167,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[53]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd53)
+           if (PADDR_CNT == 9'd53)
                sr_paddr_dat[53]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[53]  <= sr_paddr_dat[53];
@@ -1051,7 +1179,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[54]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd54)
+           if (PADDR_CNT == 9'd54)
                sr_paddr_dat[54]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[54]  <= sr_paddr_dat[54];
@@ -1063,7 +1191,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[55]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd55)
+           if (PADDR_CNT == 9'd55)
                sr_paddr_dat[55]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[55]  <= sr_paddr_dat[55];
@@ -1075,7 +1203,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[56]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd56)
+           if (PADDR_CNT == 9'd56)
                sr_paddr_dat[56]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[56]  <= sr_paddr_dat[56];
@@ -1087,7 +1215,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[57]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd57)
+           if (PADDR_CNT == 9'd57)
                sr_paddr_dat[57]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[57]  <= sr_paddr_dat[57];
@@ -1099,7 +1227,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[58]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd58)
+           if (PADDR_CNT == 9'd58)
                sr_paddr_dat[58]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[58]  <= sr_paddr_dat[58];
@@ -1111,7 +1239,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[59]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd59)
+           if (PADDR_CNT == 9'd59)
                sr_paddr_dat[59]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[59]  <= sr_paddr_dat[59];
@@ -1123,7 +1251,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[60]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd60)
+           if (PADDR_CNT == 9'd60)
                sr_paddr_dat[60]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[60]  <= sr_paddr_dat[60];
@@ -1135,7 +1263,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[61]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd61)
+           if (PADDR_CNT == 9'd61)
                sr_paddr_dat[61]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[61]  <= sr_paddr_dat[61];
@@ -1147,7 +1275,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[62]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd62)
+           if (PADDR_CNT == 9'd62)
                sr_paddr_dat[62]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[62]  <= sr_paddr_dat[62];
@@ -1159,7 +1287,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[63]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd63)
+           if (PADDR_CNT == 9'd63)
                sr_paddr_dat[63]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[63]  <= sr_paddr_dat[63];
@@ -1171,7 +1299,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[64]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd64)
+           if (PADDR_CNT == 9'd64)
                sr_paddr_dat[64]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[64]  <= sr_paddr_dat[64];
@@ -1183,7 +1311,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[65]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd65)
+           if (PADDR_CNT == 9'd65)
                sr_paddr_dat[65]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[65]  <= sr_paddr_dat[65];
@@ -1195,7 +1323,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[66]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd66)
+           if (PADDR_CNT == 9'd66)
                sr_paddr_dat[66]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[66]  <= sr_paddr_dat[66];
@@ -1207,7 +1335,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[67]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd67)
+           if (PADDR_CNT == 9'd67)
                sr_paddr_dat[67]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[67]  <= sr_paddr_dat[67];
@@ -1219,7 +1347,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[68]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd68)
+           if (PADDR_CNT == 9'd68)
                sr_paddr_dat[68]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[68]  <= sr_paddr_dat[68];
@@ -1231,7 +1359,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[69]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd69)
+           if (PADDR_CNT == 9'd69)
                sr_paddr_dat[69]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[69]  <= sr_paddr_dat[69];
@@ -1243,7 +1371,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[70]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd70)
+           if (PADDR_CNT == 9'd70)
                sr_paddr_dat[70]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[70]  <= sr_paddr_dat[70];
@@ -1255,7 +1383,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[71]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd71)
+           if (PADDR_CNT == 9'd71)
                sr_paddr_dat[71]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[71]  <= sr_paddr_dat[71];
@@ -1267,7 +1395,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[72]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd72)
+           if (PADDR_CNT == 9'd72)
                sr_paddr_dat[72]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[72]  <= sr_paddr_dat[72];
@@ -1279,7 +1407,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[73]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd73)
+           if (PADDR_CNT == 9'd73)
                sr_paddr_dat[73]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[73]  <= sr_paddr_dat[73];
@@ -1291,7 +1419,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[74]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd74)
+           if (PADDR_CNT == 9'd74)
                sr_paddr_dat[74]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[74]  <= sr_paddr_dat[74];
@@ -1303,7 +1431,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[75]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd75)
+           if (PADDR_CNT == 9'd75)
                sr_paddr_dat[75]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[75]  <= sr_paddr_dat[75];
@@ -1315,7 +1443,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[76]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd76)
+           if (PADDR_CNT == 9'd76)
                sr_paddr_dat[76]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[76]  <= sr_paddr_dat[76];
@@ -1327,7 +1455,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[77]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd77)
+           if (PADDR_CNT == 9'd77)
                sr_paddr_dat[77]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[77]  <= sr_paddr_dat[77];
@@ -1339,7 +1467,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[78]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd78)
+           if (PADDR_CNT == 9'd78)
                sr_paddr_dat[78]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[78]  <= sr_paddr_dat[78];
@@ -1351,7 +1479,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[79]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd79)
+           if (PADDR_CNT == 9'd79)
                sr_paddr_dat[79]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[79]  <= sr_paddr_dat[79];
@@ -1363,7 +1491,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[80]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd80)
+           if (PADDR_CNT == 9'd80)
                sr_paddr_dat[80]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[80]  <= sr_paddr_dat[80];
@@ -1375,7 +1503,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[81]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd81)
+           if (PADDR_CNT == 9'd81)
                sr_paddr_dat[81]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[81]  <= sr_paddr_dat[81];
@@ -1387,7 +1515,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[82]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd82)
+           if (PADDR_CNT == 9'd82)
                sr_paddr_dat[82]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[82]  <= sr_paddr_dat[82];
@@ -1399,7 +1527,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[83]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd83)
+           if (PADDR_CNT == 9'd83)
                sr_paddr_dat[83]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[83]  <= sr_paddr_dat[83];
@@ -1411,7 +1539,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[84]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd84)
+           if (PADDR_CNT == 9'd84)
                sr_paddr_dat[84]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[84]  <= sr_paddr_dat[84];
@@ -1423,7 +1551,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[85]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd85)
+           if (PADDR_CNT == 9'd85)
                sr_paddr_dat[85]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[85]  <= sr_paddr_dat[85];
@@ -1435,7 +1563,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[86]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd86)
+           if (PADDR_CNT == 9'd86)
                sr_paddr_dat[86]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[86]  <= sr_paddr_dat[86];
@@ -1447,7 +1575,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[87]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd87)
+           if (PADDR_CNT == 9'd87)
                sr_paddr_dat[87]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[87]  <= sr_paddr_dat[87];
@@ -1459,7 +1587,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[88]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd88)
+           if (PADDR_CNT == 9'd88)
                sr_paddr_dat[88]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[88]  <= sr_paddr_dat[88];
@@ -1471,7 +1599,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[89]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd89)
+           if (PADDR_CNT == 9'd89)
                sr_paddr_dat[89]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[89]  <= sr_paddr_dat[89];
@@ -1483,7 +1611,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[90]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd90)
+           if (PADDR_CNT == 9'd90)
                sr_paddr_dat[90]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[90]  <= sr_paddr_dat[90];
@@ -1495,7 +1623,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[91]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd91)
+           if (PADDR_CNT == 9'd91)
                sr_paddr_dat[91]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[91]  <= sr_paddr_dat[91];
@@ -1507,7 +1635,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[92]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd92)
+           if (PADDR_CNT == 9'd92)
                sr_paddr_dat[92]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[92]  <= sr_paddr_dat[92];
@@ -1519,7 +1647,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[93]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd93)
+           if (PADDR_CNT == 9'd93)
                sr_paddr_dat[93]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[93]  <= sr_paddr_dat[93];
@@ -1531,7 +1659,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[94]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd94)
+           if (PADDR_CNT == 9'd94)
                sr_paddr_dat[94]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[94]  <= sr_paddr_dat[94];
@@ -1543,7 +1671,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[95]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd95)
+           if (PADDR_CNT == 9'd95)
                sr_paddr_dat[95]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[95]  <= sr_paddr_dat[95];
@@ -1555,7 +1683,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[96]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd96)
+           if (PADDR_CNT == 9'd96)
                sr_paddr_dat[96]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[96]  <= sr_paddr_dat[96];
@@ -1567,7 +1695,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[97]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd97)
+           if (PADDR_CNT == 9'd97)
                sr_paddr_dat[97]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[97]  <= sr_paddr_dat[97];
@@ -1579,7 +1707,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[98]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd98)
+           if (PADDR_CNT == 9'd98)
                sr_paddr_dat[98]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[98]  <= sr_paddr_dat[98];
@@ -1591,7 +1719,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[99]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd99)
+           if (PADDR_CNT == 9'd99)
                sr_paddr_dat[99]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[99]  <= sr_paddr_dat[99];
@@ -1603,7 +1731,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[100]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd100)
+           if (PADDR_CNT == 9'd100)
                sr_paddr_dat[100]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[100]  <= sr_paddr_dat[100];
@@ -1615,7 +1743,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[101]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd101)
+           if (PADDR_CNT == 9'd101)
                sr_paddr_dat[101]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[101]  <= sr_paddr_dat[101];
@@ -1627,7 +1755,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[102]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd102)
+           if (PADDR_CNT == 9'd102)
                sr_paddr_dat[102]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[102]  <= sr_paddr_dat[102];
@@ -1639,7 +1767,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[103]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd103)
+           if (PADDR_CNT == 9'd103)
                sr_paddr_dat[103]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[103]  <= sr_paddr_dat[103];
@@ -1651,7 +1779,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[104]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd104)
+           if (PADDR_CNT == 9'd104)
                sr_paddr_dat[104]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[104]  <= sr_paddr_dat[104];
@@ -1663,7 +1791,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[105]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd105)
+           if (PADDR_CNT == 9'd105)
                sr_paddr_dat[105]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[105]  <= sr_paddr_dat[105];
@@ -1675,7 +1803,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[106]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd106)
+           if (PADDR_CNT == 9'd106)
                sr_paddr_dat[106]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[106]  <= sr_paddr_dat[106];
@@ -1687,7 +1815,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[107]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd107)
+           if (PADDR_CNT == 9'd107)
                sr_paddr_dat[107]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[107]  <= sr_paddr_dat[107];
@@ -1699,7 +1827,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[108]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd108)
+           if (PADDR_CNT == 9'd108)
                sr_paddr_dat[108]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[108]  <= sr_paddr_dat[108];
@@ -1711,7 +1839,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[109]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd109)
+           if (PADDR_CNT == 9'd109)
                sr_paddr_dat[109]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[109]  <= sr_paddr_dat[109];
@@ -1723,7 +1851,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[110]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd110)
+           if (PADDR_CNT == 9'd110)
                sr_paddr_dat[110]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[110]  <= sr_paddr_dat[110];
@@ -1735,7 +1863,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[111]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd111)
+           if (PADDR_CNT == 9'd111)
                sr_paddr_dat[111]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[111]  <= sr_paddr_dat[111];
@@ -1747,7 +1875,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[112]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd112)
+           if (PADDR_CNT == 9'd112)
                sr_paddr_dat[112]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[112]  <= sr_paddr_dat[112];
@@ -1759,7 +1887,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[113]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd113)
+           if (PADDR_CNT == 9'd113)
                sr_paddr_dat[113]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[113]  <= sr_paddr_dat[113];
@@ -1771,7 +1899,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[114]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd114)
+           if (PADDR_CNT == 9'd114)
                sr_paddr_dat[114]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[114]  <= sr_paddr_dat[114];
@@ -1783,7 +1911,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[115]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd115)
+           if (PADDR_CNT == 9'd115)
                sr_paddr_dat[115]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[115]  <= sr_paddr_dat[115];
@@ -1795,7 +1923,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[116]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd116)
+           if (PADDR_CNT == 9'd116)
                sr_paddr_dat[116]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[116]  <= sr_paddr_dat[116];
@@ -1807,7 +1935,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[117]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd117)
+           if (PADDR_CNT == 9'd117)
                sr_paddr_dat[117]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[117]  <= sr_paddr_dat[117];
@@ -1819,7 +1947,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[118]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd118)
+           if (PADDR_CNT == 9'd118)
                sr_paddr_dat[118]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[118]  <= sr_paddr_dat[118];
@@ -1831,7 +1959,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[119]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd119)
+           if (PADDR_CNT == 9'd119)
                sr_paddr_dat[119]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[119]  <= sr_paddr_dat[119];
@@ -1843,7 +1971,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[120]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd120)
+           if (PADDR_CNT == 9'd120)
                sr_paddr_dat[120]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[120]  <= sr_paddr_dat[120];
@@ -1855,7 +1983,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[121]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd121)
+           if (PADDR_CNT == 9'd121)
                sr_paddr_dat[121]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[121]  <= sr_paddr_dat[121];
@@ -1867,7 +1995,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[122]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd122)
+           if (PADDR_CNT == 9'd122)
                sr_paddr_dat[122]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[122]  <= sr_paddr_dat[122];
@@ -1879,7 +2007,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[123]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd123)
+           if (PADDR_CNT == 9'd123)
                sr_paddr_dat[123]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[123]  <= sr_paddr_dat[123];
@@ -1891,7 +2019,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[124]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd124)
+           if (PADDR_CNT == 9'd124)
                sr_paddr_dat[124]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[124]  <= sr_paddr_dat[124];
@@ -1903,7 +2031,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[125]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd125)
+           if (PADDR_CNT == 9'd125)
                sr_paddr_dat[125]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[125]  <= sr_paddr_dat[125];
@@ -1915,7 +2043,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[126]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd126)
+           if (PADDR_CNT == 9'd126)
                sr_paddr_dat[126]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[126]  <= sr_paddr_dat[126];
@@ -1927,7 +2055,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[127]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd127)
+           if (PADDR_CNT == 9'd127)
                sr_paddr_dat[127]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[127]  <= sr_paddr_dat[127];
@@ -1939,7 +2067,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[128]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd128)
+           if (PADDR_CNT == 9'd128)
                sr_paddr_dat[128]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[128]  <= sr_paddr_dat[128];
@@ -1951,7 +2079,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[129]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd129)
+           if (PADDR_CNT == 9'd129)
                sr_paddr_dat[129]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[129]  <= sr_paddr_dat[129];
@@ -1963,7 +2091,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[130]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd130)
+           if (PADDR_CNT == 9'd130)
                sr_paddr_dat[130]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[130]  <= sr_paddr_dat[130];
@@ -1975,7 +2103,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[131]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd131)
+           if (PADDR_CNT == 9'd131)
                sr_paddr_dat[131]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[131]  <= sr_paddr_dat[131];
@@ -1987,7 +2115,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[132]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd132)
+           if (PADDR_CNT == 9'd132)
                sr_paddr_dat[132]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[132]  <= sr_paddr_dat[132];
@@ -1999,7 +2127,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[133]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd133)
+           if (PADDR_CNT == 9'd133)
                sr_paddr_dat[133]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[133]  <= sr_paddr_dat[133];
@@ -2011,7 +2139,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[134]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd134)
+           if (PADDR_CNT == 9'd134)
                sr_paddr_dat[134]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[134]  <= sr_paddr_dat[134];
@@ -2023,7 +2151,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[135]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd135)
+           if (PADDR_CNT == 9'd135)
                sr_paddr_dat[135]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[135]  <= sr_paddr_dat[135];
@@ -2035,7 +2163,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[136]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd136)
+           if (PADDR_CNT == 9'd136)
                sr_paddr_dat[136]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[136]  <= sr_paddr_dat[136];
@@ -2047,7 +2175,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[137]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd137)
+           if (PADDR_CNT == 9'd137)
                sr_paddr_dat[137]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[137]  <= sr_paddr_dat[137];
@@ -2059,7 +2187,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[138]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd138)
+           if (PADDR_CNT == 9'd138)
                sr_paddr_dat[138]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[138]  <= sr_paddr_dat[138];
@@ -2071,7 +2199,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[139]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd139)
+           if (PADDR_CNT == 9'd139)
                sr_paddr_dat[139]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[139]  <= sr_paddr_dat[139];
@@ -2083,7 +2211,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[140]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd140)
+           if (PADDR_CNT == 9'd140)
                sr_paddr_dat[140]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[140]  <= sr_paddr_dat[140];
@@ -2095,7 +2223,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[141]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd141)
+           if (PADDR_CNT == 9'd141)
                sr_paddr_dat[141]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[141]  <= sr_paddr_dat[141];
@@ -2107,7 +2235,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[142]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd142)
+           if (PADDR_CNT == 9'd142)
                sr_paddr_dat[142]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[142]  <= sr_paddr_dat[142];
@@ -2119,7 +2247,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[143]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd143)
+           if (PADDR_CNT == 9'd143)
                sr_paddr_dat[143]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[143]  <= sr_paddr_dat[143];
@@ -2131,7 +2259,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[144]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd144)
+           if (PADDR_CNT == 9'd144)
                sr_paddr_dat[144]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[144]  <= sr_paddr_dat[144];
@@ -2143,7 +2271,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[145]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd145)
+           if (PADDR_CNT == 9'd145)
                sr_paddr_dat[145]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[145]  <= sr_paddr_dat[145];
@@ -2155,7 +2283,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[146]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd146)
+           if (PADDR_CNT == 9'd146)
                sr_paddr_dat[146]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[146]  <= sr_paddr_dat[146];
@@ -2167,7 +2295,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[147]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd147)
+           if (PADDR_CNT == 9'd147)
                sr_paddr_dat[147]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[147]  <= sr_paddr_dat[147];
@@ -2179,7 +2307,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[148]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd148)
+           if (PADDR_CNT == 9'd148)
                sr_paddr_dat[148]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[148]  <= sr_paddr_dat[148];
@@ -2191,7 +2319,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[149]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd149)
+           if (PADDR_CNT == 9'd149)
                sr_paddr_dat[149]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[149]  <= sr_paddr_dat[149];
@@ -2203,7 +2331,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[150]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd150)
+           if (PADDR_CNT == 9'd150)
                sr_paddr_dat[150]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[150]  <= sr_paddr_dat[150];
@@ -2215,7 +2343,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[151]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd151)
+           if (PADDR_CNT == 9'd151)
                sr_paddr_dat[151]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[151]  <= sr_paddr_dat[151];
@@ -2227,7 +2355,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[152]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd152)
+           if (PADDR_CNT == 9'd152)
                sr_paddr_dat[152]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[152]  <= sr_paddr_dat[152];
@@ -2239,7 +2367,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[153]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd153)
+           if (PADDR_CNT == 9'd153)
                sr_paddr_dat[153]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[153]  <= sr_paddr_dat[153];
@@ -2251,7 +2379,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[154]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd154)
+           if (PADDR_CNT == 9'd154)
                sr_paddr_dat[154]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[154]  <= sr_paddr_dat[154];
@@ -2263,7 +2391,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[155]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd155)
+           if (PADDR_CNT == 9'd155)
                sr_paddr_dat[155]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[155]  <= sr_paddr_dat[155];
@@ -2275,7 +2403,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[156]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd156)
+           if (PADDR_CNT == 9'd156)
                sr_paddr_dat[156]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[156]  <= sr_paddr_dat[156];
@@ -2287,7 +2415,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[157]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd157)
+           if (PADDR_CNT == 9'd157)
                sr_paddr_dat[157]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[157]  <= sr_paddr_dat[157];
@@ -2299,7 +2427,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[158]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd158)
+           if (PADDR_CNT == 9'd158)
                sr_paddr_dat[158]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[158]  <= sr_paddr_dat[158];
@@ -2311,7 +2439,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[159]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd159)
+           if (PADDR_CNT == 9'd159)
                sr_paddr_dat[159]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[159]  <= sr_paddr_dat[159];
@@ -2323,7 +2451,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[160]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd160)
+           if (PADDR_CNT == 9'd160)
                sr_paddr_dat[160]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[160]  <= sr_paddr_dat[160];
@@ -2335,7 +2463,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[161]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd161)
+           if (PADDR_CNT == 9'd161)
                sr_paddr_dat[161]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[161]  <= sr_paddr_dat[161];
@@ -2347,7 +2475,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[162]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd162)
+           if (PADDR_CNT == 9'd162)
                sr_paddr_dat[162]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[162]  <= sr_paddr_dat[162];
@@ -2359,7 +2487,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[163]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd163)
+           if (PADDR_CNT == 9'd163)
                sr_paddr_dat[163]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[163]  <= sr_paddr_dat[163];
@@ -2371,7 +2499,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[164]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd164)
+           if (PADDR_CNT == 9'd164)
                sr_paddr_dat[164]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[164]  <= sr_paddr_dat[164];
@@ -2383,7 +2511,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[165]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd165)
+           if (PADDR_CNT == 9'd165)
                sr_paddr_dat[165]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[165]  <= sr_paddr_dat[165];
@@ -2395,7 +2523,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[166]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd166)
+           if (PADDR_CNT == 9'd166)
                sr_paddr_dat[166]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[166]  <= sr_paddr_dat[166];
@@ -2407,7 +2535,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[167]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd167)
+           if (PADDR_CNT == 9'd167)
                sr_paddr_dat[167]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[167]  <= sr_paddr_dat[167];
@@ -2419,7 +2547,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[168]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd168)
+           if (PADDR_CNT == 9'd168)
                sr_paddr_dat[168]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[168]  <= sr_paddr_dat[168];
@@ -2431,7 +2559,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[169]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd169)
+           if (PADDR_CNT == 9'd169)
                sr_paddr_dat[169]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[169]  <= sr_paddr_dat[169];
@@ -2443,7 +2571,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[170]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd170)
+           if (PADDR_CNT == 9'd170)
                sr_paddr_dat[170]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[170]  <= sr_paddr_dat[170];
@@ -2455,7 +2583,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[171]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd171)
+           if (PADDR_CNT == 9'd171)
                sr_paddr_dat[171]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[171]  <= sr_paddr_dat[171];
@@ -2467,7 +2595,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[172]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd172)
+           if (PADDR_CNT == 9'd172)
                sr_paddr_dat[172]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[172]  <= sr_paddr_dat[172];
@@ -2479,7 +2607,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[173]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd173)
+           if (PADDR_CNT == 9'd173)
                sr_paddr_dat[173]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[173]  <= sr_paddr_dat[173];
@@ -2491,7 +2619,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[174]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd174)
+           if (PADDR_CNT == 9'd174)
                sr_paddr_dat[174]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[174]  <= sr_paddr_dat[174];
@@ -2503,7 +2631,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[175]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd175)
+           if (PADDR_CNT == 9'd175)
                sr_paddr_dat[175]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[175]  <= sr_paddr_dat[175];
@@ -2515,7 +2643,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[176]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd176)
+           if (PADDR_CNT == 9'd176)
                sr_paddr_dat[176]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[176]  <= sr_paddr_dat[176];
@@ -2527,7 +2655,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[177]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd177)
+           if (PADDR_CNT == 9'd177)
                sr_paddr_dat[177]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[177]  <= sr_paddr_dat[177];
@@ -2539,7 +2667,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[178]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd178)
+           if (PADDR_CNT == 9'd178)
                sr_paddr_dat[178]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[178]  <= sr_paddr_dat[178];
@@ -2551,7 +2679,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[179]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd179)
+           if (PADDR_CNT == 9'd179)
                sr_paddr_dat[179]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[179]  <= sr_paddr_dat[179];
@@ -2563,7 +2691,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[180]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd180)
+           if (PADDR_CNT == 9'd180)
                sr_paddr_dat[180]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[180]  <= sr_paddr_dat[180];
@@ -2575,7 +2703,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[181]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd181)
+           if (PADDR_CNT == 9'd181)
                sr_paddr_dat[181]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[181]  <= sr_paddr_dat[181];
@@ -2587,7 +2715,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[182]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd182)
+           if (PADDR_CNT == 9'd182)
                sr_paddr_dat[182]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[182]  <= sr_paddr_dat[182];
@@ -2599,7 +2727,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[183]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd183)
+           if (PADDR_CNT == 9'd183)
                sr_paddr_dat[183]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[183]  <= sr_paddr_dat[183];
@@ -2611,7 +2739,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[184]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd184)
+           if (PADDR_CNT == 9'd184)
                sr_paddr_dat[184]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[184]  <= sr_paddr_dat[184];
@@ -2623,7 +2751,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[185]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd185)
+           if (PADDR_CNT == 9'd185)
                sr_paddr_dat[185]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[185]  <= sr_paddr_dat[185];
@@ -2635,7 +2763,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[186]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd186)
+           if (PADDR_CNT == 9'd186)
                sr_paddr_dat[186]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[186]  <= sr_paddr_dat[186];
@@ -2647,7 +2775,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[187]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd187)
+           if (PADDR_CNT == 9'd187)
                sr_paddr_dat[187]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[187]  <= sr_paddr_dat[187];
@@ -2659,7 +2787,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[188]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd188)
+           if (PADDR_CNT == 9'd188)
                sr_paddr_dat[188]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[188]  <= sr_paddr_dat[188];
@@ -2671,7 +2799,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[189]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd189)
+           if (PADDR_CNT == 9'd189)
                sr_paddr_dat[189]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[189]  <= sr_paddr_dat[189];
@@ -2683,7 +2811,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[190]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd190)
+           if (PADDR_CNT == 9'd190)
                sr_paddr_dat[190]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[190]  <= sr_paddr_dat[190];
@@ -2695,7 +2823,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[191]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd191)
+           if (PADDR_CNT == 9'd191)
                sr_paddr_dat[191]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[191]  <= sr_paddr_dat[191];
@@ -2707,7 +2835,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[192]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd192)
+           if (PADDR_CNT == 9'd192)
                sr_paddr_dat[192]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[192]  <= sr_paddr_dat[192];
@@ -2719,7 +2847,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[193]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd193)
+           if (PADDR_CNT == 9'd193)
                sr_paddr_dat[193]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[193]  <= sr_paddr_dat[193];
@@ -2731,7 +2859,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[194]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd194)
+           if (PADDR_CNT == 9'd194)
                sr_paddr_dat[194]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[194]  <= sr_paddr_dat[194];
@@ -2743,7 +2871,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[195]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd195)
+           if (PADDR_CNT == 9'd195)
                sr_paddr_dat[195]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[195]  <= sr_paddr_dat[195];
@@ -2755,7 +2883,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[196]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd196)
+           if (PADDR_CNT == 9'd196)
                sr_paddr_dat[196]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[196]  <= sr_paddr_dat[196];
@@ -2767,7 +2895,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[197]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd197)
+           if (PADDR_CNT == 9'd197)
                sr_paddr_dat[197]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[197]  <= sr_paddr_dat[197];
@@ -2779,7 +2907,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[198]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd198)
+           if (PADDR_CNT == 9'd198)
                sr_paddr_dat[198]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[198]  <= sr_paddr_dat[198];
@@ -2791,7 +2919,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[199]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd199)
+           if (PADDR_CNT == 9'd199)
                sr_paddr_dat[199]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[199]  <= sr_paddr_dat[199];
@@ -2803,7 +2931,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[200]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd200)
+           if (PADDR_CNT == 9'd200)
                sr_paddr_dat[200]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[200]  <= sr_paddr_dat[200];
@@ -2815,7 +2943,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[201]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd201)
+           if (PADDR_CNT == 9'd201)
                sr_paddr_dat[201]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[201]  <= sr_paddr_dat[201];
@@ -2827,7 +2955,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[202]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd202)
+           if (PADDR_CNT == 9'd202)
                sr_paddr_dat[202]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[202]  <= sr_paddr_dat[202];
@@ -2839,7 +2967,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[203]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd203)
+           if (PADDR_CNT == 9'd203)
                sr_paddr_dat[203]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[203]  <= sr_paddr_dat[203];
@@ -2851,7 +2979,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[204]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd204)
+           if (PADDR_CNT == 9'd204)
                sr_paddr_dat[204]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[204]  <= sr_paddr_dat[204];
@@ -2863,7 +2991,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[205]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd205)
+           if (PADDR_CNT == 9'd205)
                sr_paddr_dat[205]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[205]  <= sr_paddr_dat[205];
@@ -2875,7 +3003,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[206]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd206)
+           if (PADDR_CNT == 9'd206)
                sr_paddr_dat[206]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[206]  <= sr_paddr_dat[206];
@@ -2887,7 +3015,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[207]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd207)
+           if (PADDR_CNT == 9'd207)
                sr_paddr_dat[207]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[207]  <= sr_paddr_dat[207];
@@ -2899,7 +3027,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[208]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd208)
+           if (PADDR_CNT == 9'd208)
                sr_paddr_dat[208]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[208]  <= sr_paddr_dat[208];
@@ -2911,7 +3039,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[209]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd209)
+           if (PADDR_CNT == 9'd209)
                sr_paddr_dat[209]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[209]  <= sr_paddr_dat[209];
@@ -2923,7 +3051,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[210]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd210)
+           if (PADDR_CNT == 9'd210)
                sr_paddr_dat[210]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[210]  <= sr_paddr_dat[210];
@@ -2935,7 +3063,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[211]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd211)
+           if (PADDR_CNT == 9'd211)
                sr_paddr_dat[211]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[211]  <= sr_paddr_dat[211];
@@ -2947,7 +3075,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[212]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd212)
+           if (PADDR_CNT == 9'd212)
                sr_paddr_dat[212]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[212]  <= sr_paddr_dat[212];
@@ -2959,7 +3087,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[213]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd213)
+           if (PADDR_CNT == 9'd213)
                sr_paddr_dat[213]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[213]  <= sr_paddr_dat[213];
@@ -2971,7 +3099,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[214]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd214)
+           if (PADDR_CNT == 9'd214)
                sr_paddr_dat[214]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[214]  <= sr_paddr_dat[214];
@@ -2983,7 +3111,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[215]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd215)
+           if (PADDR_CNT == 9'd215)
                sr_paddr_dat[215]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[215]  <= sr_paddr_dat[215];
@@ -2995,7 +3123,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[216]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd216)
+           if (PADDR_CNT == 9'd216)
                sr_paddr_dat[216]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[216]  <= sr_paddr_dat[216];
@@ -3007,7 +3135,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[217]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd217)
+           if (PADDR_CNT == 9'd217)
                sr_paddr_dat[217]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[217]  <= sr_paddr_dat[217];
@@ -3019,7 +3147,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[218]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd218)
+           if (PADDR_CNT == 9'd218)
                sr_paddr_dat[218]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[218]  <= sr_paddr_dat[218];
@@ -3031,7 +3159,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[219]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd219)
+           if (PADDR_CNT == 9'd219)
                sr_paddr_dat[219]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[219]  <= sr_paddr_dat[219];
@@ -3043,7 +3171,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[220]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd220)
+           if (PADDR_CNT == 9'd220)
                sr_paddr_dat[220]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[220]  <= sr_paddr_dat[220];
@@ -3055,7 +3183,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[221]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd221)
+           if (PADDR_CNT == 9'd221)
                sr_paddr_dat[221]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[221]  <= sr_paddr_dat[221];
@@ -3067,7 +3195,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[222]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd222)
+           if (PADDR_CNT == 9'd222)
                sr_paddr_dat[222]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[222]  <= sr_paddr_dat[222];
@@ -3079,7 +3207,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[223]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd223)
+           if (PADDR_CNT == 9'd223)
                sr_paddr_dat[223]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[223]  <= sr_paddr_dat[223];
@@ -3091,7 +3219,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[224]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd224)
+           if (PADDR_CNT == 9'd224)
                sr_paddr_dat[224]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[224]  <= sr_paddr_dat[224];
@@ -3103,7 +3231,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[225]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd225)
+           if (PADDR_CNT == 9'd225)
                sr_paddr_dat[225]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[225]  <= sr_paddr_dat[225];
@@ -3115,7 +3243,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[226]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd226)
+           if (PADDR_CNT == 9'd226)
                sr_paddr_dat[226]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[226]  <= sr_paddr_dat[226];
@@ -3127,7 +3255,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[227]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd227)
+           if (PADDR_CNT == 9'd227)
                sr_paddr_dat[227]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[227]  <= sr_paddr_dat[227];
@@ -3139,7 +3267,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[228]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd228)
+           if (PADDR_CNT == 9'd228)
                sr_paddr_dat[228]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[228]  <= sr_paddr_dat[228];
@@ -3151,7 +3279,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[229]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd229)
+           if (PADDR_CNT == 9'd229)
                sr_paddr_dat[229]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[229]  <= sr_paddr_dat[229];
@@ -3163,7 +3291,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[230]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd230)
+           if (PADDR_CNT == 9'd230)
                sr_paddr_dat[230]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[230]  <= sr_paddr_dat[230];
@@ -3175,7 +3303,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[231]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd231)
+           if (PADDR_CNT == 9'd231)
                sr_paddr_dat[231]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[231]  <= sr_paddr_dat[231];
@@ -3187,7 +3315,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[232]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd232)
+           if (PADDR_CNT == 9'd232)
                sr_paddr_dat[232]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[232]  <= sr_paddr_dat[232];
@@ -3199,7 +3327,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[233]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd233)
+           if (PADDR_CNT == 9'd233)
                sr_paddr_dat[233]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[233]  <= sr_paddr_dat[233];
@@ -3211,7 +3339,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[234]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd234)
+           if (PADDR_CNT == 9'd234)
                sr_paddr_dat[234]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[234]  <= sr_paddr_dat[234];
@@ -3223,7 +3351,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[235]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd235)
+           if (PADDR_CNT == 9'd235)
                sr_paddr_dat[235]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[235]  <= sr_paddr_dat[235];
@@ -3235,7 +3363,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[236]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd236)
+           if (PADDR_CNT == 9'd236)
                sr_paddr_dat[236]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[236]  <= sr_paddr_dat[236];
@@ -3247,7 +3375,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[237]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd237)
+           if (PADDR_CNT == 9'd237)
                sr_paddr_dat[237]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[237]  <= sr_paddr_dat[237];
@@ -3259,7 +3387,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[238]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd238)
+           if (PADDR_CNT == 9'd238)
                sr_paddr_dat[238]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[238]  <= sr_paddr_dat[238];
@@ -3271,7 +3399,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[239]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd239)
+           if (PADDR_CNT == 9'd239)
                sr_paddr_dat[239]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[239]  <= sr_paddr_dat[239];
@@ -3283,7 +3411,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[240]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd240)
+           if (PADDR_CNT == 9'd240)
                sr_paddr_dat[240]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[240]  <= sr_paddr_dat[240];
@@ -3295,7 +3423,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[241]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd241)
+           if (PADDR_CNT == 9'd241)
                sr_paddr_dat[241]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[241]  <= sr_paddr_dat[241];
@@ -3307,7 +3435,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[242]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd242)
+           if (PADDR_CNT == 9'd242)
                sr_paddr_dat[242]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[242]  <= sr_paddr_dat[242];
@@ -3319,7 +3447,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[243]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd243)
+           if (PADDR_CNT == 9'd243)
                sr_paddr_dat[243]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[243]  <= sr_paddr_dat[243];
@@ -3331,7 +3459,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[244]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd244)
+           if (PADDR_CNT == 9'd244)
                sr_paddr_dat[244]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[244]  <= sr_paddr_dat[244];
@@ -3343,7 +3471,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[245]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd245)
+           if (PADDR_CNT == 9'd245)
                sr_paddr_dat[245]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[245]  <= sr_paddr_dat[245];
@@ -3355,7 +3483,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[246]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd246)
+           if (PADDR_CNT == 9'd246)
                sr_paddr_dat[246]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[246]  <= sr_paddr_dat[246];
@@ -3367,7 +3495,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[247]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd247)
+           if (PADDR_CNT == 9'd247)
                sr_paddr_dat[247]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[247]  <= sr_paddr_dat[247];
@@ -3379,7 +3507,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[248]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd248)
+           if (PADDR_CNT == 9'd248)
                sr_paddr_dat[248]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[248]  <= sr_paddr_dat[248];
@@ -3391,7 +3519,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[249]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd249)
+           if (PADDR_CNT == 9'd249)
                sr_paddr_dat[249]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[249]  <= sr_paddr_dat[249];
@@ -3403,7 +3531,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[250]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd250)
+           if (PADDR_CNT == 9'd250)
                sr_paddr_dat[250]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[250]  <= sr_paddr_dat[250];
@@ -3415,7 +3543,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[251]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd251)
+           if (PADDR_CNT == 9'd251)
                sr_paddr_dat[251]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[251]  <= sr_paddr_dat[251];
@@ -3427,7 +3555,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[252]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd252)
+           if (PADDR_CNT == 9'd252)
                sr_paddr_dat[252]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[252]  <= sr_paddr_dat[252];
@@ -3439,7 +3567,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[253]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd253)
+           if (PADDR_CNT == 9'd253)
                sr_paddr_dat[253]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[253]  <= sr_paddr_dat[253];
@@ -3451,7 +3579,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[254]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd254)
+           if (PADDR_CNT == 9'd254)
                sr_paddr_dat[254]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[254]  <= sr_paddr_dat[254];
@@ -3463,7 +3591,7 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[255]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd255)
+           if (PADDR_CNT == 9'd255)
                sr_paddr_dat[255]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[255]  <= sr_paddr_dat[255];
@@ -3475,10 +3603,1546 @@ module ptmch_reg(
         if(!RESET_N)
             sr_paddr_dat[256]   <= 24'h0;
         else begin
-           if (PADDR_CNT == 8'd256)
+           if (PADDR_CNT == 9'd256)
                sr_paddr_dat[256]  <= sr_page_paddr_buf;
            else
                sr_paddr_dat[256]  <= sr_paddr_dat[256];
+        end
+    end
+
+    // Page Address Resister257
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[257]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd257)
+               sr_paddr_dat[257]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[257]  <= sr_paddr_dat[257];
+        end
+    end
+
+    // Page Address Resister258
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[258]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd258)
+               sr_paddr_dat[258]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[258]  <= sr_paddr_dat[258];
+        end
+    end
+
+    // Page Address Resister259
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[259]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd259)
+               sr_paddr_dat[259]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[259]  <= sr_paddr_dat[259];
+        end
+    end
+
+    // Page Address Resister260
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[260]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd260)
+               sr_paddr_dat[260]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[260]  <= sr_paddr_dat[260];
+        end
+    end
+
+    // Page Address Resister261
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[261]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd261)
+               sr_paddr_dat[261]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[261]  <= sr_paddr_dat[261];
+        end
+    end
+
+    // Page Address Resister262
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[262]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd262)
+               sr_paddr_dat[262]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[262]  <= sr_paddr_dat[262];
+        end
+    end
+
+    // Page Address Resister263
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[263]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd263)
+               sr_paddr_dat[263]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[263]  <= sr_paddr_dat[263];
+        end
+    end
+
+    // Page Address Resister264
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[264]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd264)
+               sr_paddr_dat[264]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[264]  <= sr_paddr_dat[264];
+        end
+    end
+
+    // Page Address Resister265
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[265]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd265)
+               sr_paddr_dat[265]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[265]  <= sr_paddr_dat[265];
+        end
+    end
+
+    // Page Address Resister266
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[266]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd266)
+               sr_paddr_dat[266]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[266]  <= sr_paddr_dat[266];
+        end
+    end
+
+    // Page Address Resister267
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[267]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd267)
+               sr_paddr_dat[267]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[267]  <= sr_paddr_dat[267];
+        end
+    end
+
+    // Page Address Resister268
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[268]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd268)
+               sr_paddr_dat[268]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[268]  <= sr_paddr_dat[268];
+        end
+    end
+
+    // Page Address Resister269
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[269]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd269)
+               sr_paddr_dat[269]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[269]  <= sr_paddr_dat[269];
+        end
+    end
+
+    // Page Address Resister270
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[270]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd270)
+               sr_paddr_dat[270]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[270]  <= sr_paddr_dat[270];
+        end
+    end
+
+    // Page Address Resister271
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[271]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd271)
+               sr_paddr_dat[271]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[271]  <= sr_paddr_dat[271];
+        end
+    end
+
+    // Page Address Resister272
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[272]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd272)
+               sr_paddr_dat[272]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[272]  <= sr_paddr_dat[272];
+        end
+    end
+
+    // Page Address Resister273
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[273]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd273)
+               sr_paddr_dat[273]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[273]  <= sr_paddr_dat[273];
+        end
+    end
+
+    // Page Address Resister274
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[274]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd274)
+               sr_paddr_dat[274]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[274]  <= sr_paddr_dat[274];
+        end
+    end
+
+    // Page Address Resister275
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[275]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd275)
+               sr_paddr_dat[275]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[275]  <= sr_paddr_dat[275];
+        end
+    end
+
+    // Page Address Resister276
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[276]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd276)
+               sr_paddr_dat[276]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[276]  <= sr_paddr_dat[276];
+        end
+    end
+
+    // Page Address Resister277
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[277]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd277)
+               sr_paddr_dat[277]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[277]  <= sr_paddr_dat[277];
+        end
+    end
+
+    // Page Address Resister278
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[278]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd278)
+               sr_paddr_dat[278]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[278]  <= sr_paddr_dat[278];
+        end
+    end
+
+    // Page Address Resister279
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[279]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd279)
+               sr_paddr_dat[279]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[279]  <= sr_paddr_dat[279];
+        end
+    end
+
+    // Page Address Resister280
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[280]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd280)
+               sr_paddr_dat[280]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[280]  <= sr_paddr_dat[280];
+        end
+    end
+
+    // Page Address Resister281
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[281]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd281)
+               sr_paddr_dat[281]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[281]  <= sr_paddr_dat[281];
+        end
+    end
+
+    // Page Address Resister282
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[282]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd282)
+               sr_paddr_dat[282]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[282]  <= sr_paddr_dat[282];
+        end
+    end
+
+    // Page Address Resister283
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[283]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd283)
+               sr_paddr_dat[283]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[283]  <= sr_paddr_dat[283];
+        end
+    end
+
+    // Page Address Resister284
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[284]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd284)
+               sr_paddr_dat[284]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[284]  <= sr_paddr_dat[284];
+        end
+    end
+
+    // Page Address Resister285
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[285]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd285)
+               sr_paddr_dat[285]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[285]  <= sr_paddr_dat[285];
+        end
+    end
+
+    // Page Address Resister286
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[286]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd286)
+               sr_paddr_dat[286]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[286]  <= sr_paddr_dat[286];
+        end
+    end
+
+    // Page Address Resister287
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[287]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd287)
+               sr_paddr_dat[287]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[287]  <= sr_paddr_dat[287];
+        end
+    end
+
+    // Page Address Resister288
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[288]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd288)
+               sr_paddr_dat[288]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[288]  <= sr_paddr_dat[288];
+        end
+    end
+
+    // Page Address Resister289
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[289]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd289)
+               sr_paddr_dat[289]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[289]  <= sr_paddr_dat[289];
+        end
+    end
+
+    // Page Address Resister290
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[290]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd290)
+               sr_paddr_dat[290]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[290]  <= sr_paddr_dat[290];
+        end
+    end
+
+    // Page Address Resister291
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[291]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd291)
+               sr_paddr_dat[291]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[291]  <= sr_paddr_dat[291];
+        end
+    end
+
+    // Page Address Resister292
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[292]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd292)
+               sr_paddr_dat[292]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[292]  <= sr_paddr_dat[292];
+        end
+    end
+
+    // Page Address Resister293
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[293]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd293)
+               sr_paddr_dat[293]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[293]  <= sr_paddr_dat[293];
+        end
+    end
+
+    // Page Address Resister294
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[294]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd294)
+               sr_paddr_dat[294]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[294]  <= sr_paddr_dat[294];
+        end
+    end
+
+    // Page Address Resister295
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[295]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd295)
+               sr_paddr_dat[295]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[295]  <= sr_paddr_dat[295];
+        end
+    end
+
+    // Page Address Resister296
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[296]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd296)
+               sr_paddr_dat[296]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[296]  <= sr_paddr_dat[296];
+        end
+    end
+
+    // Page Address Resister297
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[297]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd297)
+               sr_paddr_dat[297]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[297]  <= sr_paddr_dat[297];
+        end
+    end
+
+    // Page Address Resister298
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[298]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd298)
+               sr_paddr_dat[298]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[298]  <= sr_paddr_dat[298];
+        end
+    end
+
+    // Page Address Resister299
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[299]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd299)
+               sr_paddr_dat[299]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[299]  <= sr_paddr_dat[299];
+        end
+    end
+
+    // Page Address Resister300
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[300]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd300)
+               sr_paddr_dat[300]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[300]  <= sr_paddr_dat[300];
+        end
+    end
+
+    // Page Address Resister301
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[301]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd301)
+               sr_paddr_dat[301]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[301]  <= sr_paddr_dat[301];
+        end
+    end
+
+    // Page Address Resister302
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[302]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd302)
+               sr_paddr_dat[302]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[302]  <= sr_paddr_dat[302];
+        end
+    end
+
+    // Page Address Resister303
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[303]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd303)
+               sr_paddr_dat[303]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[303]  <= sr_paddr_dat[303];
+        end
+    end
+
+    // Page Address Resister304
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[304]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd304)
+               sr_paddr_dat[304]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[304]  <= sr_paddr_dat[304];
+        end
+    end
+
+    // Page Address Resister305
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[305]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd305)
+               sr_paddr_dat[305]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[305]  <= sr_paddr_dat[305];
+        end
+    end
+
+    // Page Address Resister306
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[306]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd306)
+               sr_paddr_dat[306]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[306]  <= sr_paddr_dat[306];
+        end
+    end
+
+    // Page Address Resister307
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[307]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd307)
+               sr_paddr_dat[307]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[307]  <= sr_paddr_dat[307];
+        end
+    end
+
+    // Page Address Resister308
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[308]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd308)
+               sr_paddr_dat[308]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[308]  <= sr_paddr_dat[308];
+        end
+    end
+
+    // Page Address Resister309
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[309]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd309)
+               sr_paddr_dat[309]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[309]  <= sr_paddr_dat[309];
+        end
+    end
+
+    // Page Address Resister310
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[310]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd310)
+               sr_paddr_dat[310]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[310]  <= sr_paddr_dat[310];
+        end
+    end
+
+    // Page Address Resister311
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[311]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd311)
+               sr_paddr_dat[311]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[311]  <= sr_paddr_dat[311];
+        end
+    end
+
+    // Page Address Resister312
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[312]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd312)
+               sr_paddr_dat[312]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[312]  <= sr_paddr_dat[312];
+        end
+    end
+
+    // Page Address Resister313
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[313]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd313)
+               sr_paddr_dat[313]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[313]  <= sr_paddr_dat[313];
+        end
+    end
+
+    // Page Address Resister314
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[314]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd314)
+               sr_paddr_dat[314]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[314]  <= sr_paddr_dat[314];
+        end
+    end
+
+    // Page Address Resister315
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[315]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd315)
+               sr_paddr_dat[315]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[315]  <= sr_paddr_dat[315];
+        end
+    end
+
+    // Page Address Resister316
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[316]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd316)
+               sr_paddr_dat[316]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[316]  <= sr_paddr_dat[316];
+        end
+    end
+
+    // Page Address Resister317
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[317]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd317)
+               sr_paddr_dat[317]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[317]  <= sr_paddr_dat[317];
+        end
+    end
+
+    // Page Address Resister318
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[318]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd318)
+               sr_paddr_dat[318]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[318]  <= sr_paddr_dat[318];
+        end
+    end
+
+    // Page Address Resister319
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[319]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd319)
+               sr_paddr_dat[319]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[319]  <= sr_paddr_dat[319];
+        end
+    end
+
+    // Page Address Resister320
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[320]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd320)
+               sr_paddr_dat[320]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[320]  <= sr_paddr_dat[320];
+        end
+    end
+
+    // Page Address Resister321
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[321]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd321)
+               sr_paddr_dat[321]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[321]  <= sr_paddr_dat[321];
+        end
+    end
+
+    // Page Address Resister322
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[322]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd322)
+               sr_paddr_dat[322]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[322]  <= sr_paddr_dat[322];
+        end
+    end
+
+    // Page Address Resister323
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[323]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd323)
+               sr_paddr_dat[323]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[323]  <= sr_paddr_dat[323];
+        end
+    end
+
+    // Page Address Resister324
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[324]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd324)
+               sr_paddr_dat[324]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[324]  <= sr_paddr_dat[324];
+        end
+    end
+
+    // Page Address Resister325
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[325]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd325)
+               sr_paddr_dat[325]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[325]  <= sr_paddr_dat[325];
+        end
+    end
+
+    // Page Address Resister326
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[326]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd326)
+               sr_paddr_dat[326]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[326]  <= sr_paddr_dat[326];
+        end
+    end
+
+    // Page Address Resister327
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[327]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd327)
+               sr_paddr_dat[327]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[327]  <= sr_paddr_dat[327];
+        end
+    end
+
+    // Page Address Resister328
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[328]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd328)
+               sr_paddr_dat[328]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[328]  <= sr_paddr_dat[328];
+        end
+    end
+
+    // Page Address Resister329
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[329]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd329)
+               sr_paddr_dat[329]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[329]  <= sr_paddr_dat[329];
+        end
+    end
+
+    // Page Address Resister330
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[330]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd330)
+               sr_paddr_dat[330]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[330]  <= sr_paddr_dat[330];
+        end
+    end
+
+    // Page Address Resister331
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[331]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd331)
+               sr_paddr_dat[331]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[331]  <= sr_paddr_dat[331];
+        end
+    end
+
+    // Page Address Resister332
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[332]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd332)
+               sr_paddr_dat[332]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[332]  <= sr_paddr_dat[332];
+        end
+    end
+
+    // Page Address Resister333
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[333]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd333)
+               sr_paddr_dat[333]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[333]  <= sr_paddr_dat[333];
+        end
+    end
+
+    // Page Address Resister334
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[334]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd334)
+               sr_paddr_dat[334]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[334]  <= sr_paddr_dat[334];
+        end
+    end
+
+    // Page Address Resister335
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[335]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd335)
+               sr_paddr_dat[335]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[335]  <= sr_paddr_dat[335];
+        end
+    end
+
+    // Page Address Resister336
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[336]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd336)
+               sr_paddr_dat[336]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[336]  <= sr_paddr_dat[336];
+        end
+    end
+
+    // Page Address Resister337
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[337]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd337)
+               sr_paddr_dat[337]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[337]  <= sr_paddr_dat[337];
+        end
+    end
+
+    // Page Address Resister338
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[338]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd338)
+               sr_paddr_dat[338]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[338]  <= sr_paddr_dat[338];
+        end
+    end
+
+    // Page Address Resister339
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[339]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd339)
+               sr_paddr_dat[339]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[339]  <= sr_paddr_dat[339];
+        end
+    end
+
+    // Page Address Resister340
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[340]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd340)
+               sr_paddr_dat[340]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[340]  <= sr_paddr_dat[340];
+        end
+    end
+
+    // Page Address Resister341
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[341]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd341)
+               sr_paddr_dat[341]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[341]  <= sr_paddr_dat[341];
+        end
+    end
+
+    // Page Address Resister342
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[342]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd342)
+               sr_paddr_dat[342]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[342]  <= sr_paddr_dat[342];
+        end
+    end
+
+    // Page Address Resister343
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[343]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd343)
+               sr_paddr_dat[343]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[343]  <= sr_paddr_dat[343];
+        end
+    end
+
+    // Page Address Resister344
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[344]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd344)
+               sr_paddr_dat[344]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[344]  <= sr_paddr_dat[344];
+        end
+    end
+
+    // Page Address Resister345
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[345]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd345)
+               sr_paddr_dat[345]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[345]  <= sr_paddr_dat[345];
+        end
+    end
+
+    // Page Address Resister346
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[346]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd346)
+               sr_paddr_dat[346]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[346]  <= sr_paddr_dat[346];
+        end
+    end
+
+    // Page Address Resister347
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[347]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd347)
+               sr_paddr_dat[347]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[347]  <= sr_paddr_dat[347];
+        end
+    end
+
+    // Page Address Resister348
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[348]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd348)
+               sr_paddr_dat[348]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[348]  <= sr_paddr_dat[348];
+        end
+    end
+
+    // Page Address Resister349
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[349]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd349)
+               sr_paddr_dat[349]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[349]  <= sr_paddr_dat[349];
+        end
+    end
+
+    // Page Address Resister350
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[350]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd350)
+               sr_paddr_dat[350]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[350]  <= sr_paddr_dat[350];
+        end
+    end
+
+    // Page Address Resister351
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[351]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd351)
+               sr_paddr_dat[351]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[351]  <= sr_paddr_dat[351];
+        end
+    end
+
+    // Page Address Resister352
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[352]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd352)
+               sr_paddr_dat[352]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[352]  <= sr_paddr_dat[352];
+        end
+    end
+
+    // Page Address Resister353
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[353]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd353)
+               sr_paddr_dat[353]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[353]  <= sr_paddr_dat[353];
+        end
+    end
+
+    // Page Address Resister354
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[354]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd354)
+               sr_paddr_dat[354]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[354]  <= sr_paddr_dat[354];
+        end
+    end
+
+    // Page Address Resister355
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[355]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd355)
+               sr_paddr_dat[355]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[355]  <= sr_paddr_dat[355];
+        end
+    end
+
+    // Page Address Resister356
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[356]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd356)
+               sr_paddr_dat[356]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[356]  <= sr_paddr_dat[356];
+        end
+    end
+
+    // Page Address Resister357
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[357]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd357)
+               sr_paddr_dat[357]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[357]  <= sr_paddr_dat[357];
+        end
+    end
+
+    // Page Address Resister358
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[358]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd358)
+               sr_paddr_dat[358]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[358]  <= sr_paddr_dat[358];
+        end
+    end
+
+    // Page Address Resister359
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[359]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd359)
+               sr_paddr_dat[359]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[359]  <= sr_paddr_dat[359];
+        end
+    end
+
+    // Page Address Resister360
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[360]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd360)
+               sr_paddr_dat[360]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[360]  <= sr_paddr_dat[360];
+        end
+    end
+
+    // Page Address Resister361
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[361]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd361)
+               sr_paddr_dat[361]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[361]  <= sr_paddr_dat[361];
+        end
+    end
+
+    // Page Address Resister362
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[362]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd362)
+               sr_paddr_dat[362]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[362]  <= sr_paddr_dat[362];
+        end
+    end
+
+    // Page Address Resister363
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[363]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd363)
+               sr_paddr_dat[363]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[363]  <= sr_paddr_dat[363];
+        end
+    end
+
+    // Page Address Resister364
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[364]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd364)
+               sr_paddr_dat[364]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[364]  <= sr_paddr_dat[364];
+        end
+    end
+
+    // Page Address Resister365
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[365]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd365)
+               sr_paddr_dat[365]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[365]  <= sr_paddr_dat[365];
+        end
+    end
+
+    // Page Address Resister366
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[366]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd366)
+               sr_paddr_dat[366]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[366]  <= sr_paddr_dat[366];
+        end
+    end
+
+    // Page Address Resister367
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[367]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd367)
+               sr_paddr_dat[367]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[367]  <= sr_paddr_dat[367];
+        end
+    end
+
+    // Page Address Resister368
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[368]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd368)
+               sr_paddr_dat[368]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[368]  <= sr_paddr_dat[368];
+        end
+    end
+
+    // Page Address Resister369
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[369]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd369)
+               sr_paddr_dat[369]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[369]  <= sr_paddr_dat[369];
+        end
+    end
+
+    // Page Address Resister370
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[370]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd370)
+               sr_paddr_dat[370]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[370]  <= sr_paddr_dat[370];
+        end
+    end
+
+    // Page Address Resister371
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[371]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd371)
+               sr_paddr_dat[371]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[371]  <= sr_paddr_dat[371];
+        end
+    end
+
+    // Page Address Resister372
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[372]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd372)
+               sr_paddr_dat[372]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[372]  <= sr_paddr_dat[372];
+        end
+    end
+
+    // Page Address Resister373
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[373]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd373)
+               sr_paddr_dat[373]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[373]  <= sr_paddr_dat[373];
+        end
+    end
+
+    // Page Address Resister374
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[374]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd374)
+               sr_paddr_dat[374]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[374]  <= sr_paddr_dat[374];
+        end
+    end
+
+    // Page Address Resister375
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[375]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd375)
+               sr_paddr_dat[375]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[375]  <= sr_paddr_dat[375];
+        end
+    end
+
+    // Page Address Resister376
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[376]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd376)
+               sr_paddr_dat[376]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[376]  <= sr_paddr_dat[376];
+        end
+    end
+
+    // Page Address Resister377
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[377]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd377)
+               sr_paddr_dat[377]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[377]  <= sr_paddr_dat[377];
+        end
+    end
+
+    // Page Address Resister378
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[378]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd378)
+               sr_paddr_dat[378]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[378]  <= sr_paddr_dat[378];
+        end
+    end
+
+    // Page Address Resister379
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[379]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd379)
+               sr_paddr_dat[379]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[379]  <= sr_paddr_dat[379];
+        end
+    end
+
+    // Page Address Resister380
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[380]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd380)
+               sr_paddr_dat[380]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[380]  <= sr_paddr_dat[380];
+        end
+    end
+
+    // Page Address Resister381
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[381]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd381)
+               sr_paddr_dat[381]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[381]  <= sr_paddr_dat[381];
+        end
+    end
+
+    // Page Address Resister382
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[382]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd382)
+               sr_paddr_dat[382]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[382]  <= sr_paddr_dat[382];
+        end
+    end
+
+    // Page Address Resister383
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[383]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd383)
+               sr_paddr_dat[383]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[383]  <= sr_paddr_dat[383];
+        end
+    end
+
+    // Page Address Resister384
+    always_ff @(posedge CLK100M or negedge RESET_N) begin
+        if(!RESET_N)
+            sr_paddr_dat[384]   <= 24'h0;
+        else begin
+           if (PADDR_CNT == 9'd384)
+               sr_paddr_dat[384]  <= sr_page_paddr_buf;
+           else
+               sr_paddr_dat[384]  <= sr_paddr_dat[384];
         end
     end
 
@@ -3869,7 +5533,134 @@ module ptmch_reg(
                     p_paddr_254              : r_reg_readdata <= {8'd0,sr_paddr_dat[254]};
                     p_paddr_255              : r_reg_readdata <= {8'd0,sr_paddr_dat[255]};
                     p_paddr_256              : r_reg_readdata <= {8'd0,sr_paddr_dat[256]};
-
+                    p_paddr_257              : r_reg_readdata <= {8'd0,sr_paddr_dat[257]};
+                    p_paddr_258              : r_reg_readdata <= {8'd0,sr_paddr_dat[258]};
+                    p_paddr_259              : r_reg_readdata <= {8'd0,sr_paddr_dat[259]};
+                    p_paddr_260              : r_reg_readdata <= {8'd0,sr_paddr_dat[260]};
+                    p_paddr_261              : r_reg_readdata <= {8'd0,sr_paddr_dat[261]};
+                    p_paddr_262              : r_reg_readdata <= {8'd0,sr_paddr_dat[262]};
+                    p_paddr_263              : r_reg_readdata <= {8'd0,sr_paddr_dat[263]};
+                    p_paddr_264              : r_reg_readdata <= {8'd0,sr_paddr_dat[264]};
+                    p_paddr_265              : r_reg_readdata <= {8'd0,sr_paddr_dat[265]};
+                    p_paddr_266              : r_reg_readdata <= {8'd0,sr_paddr_dat[266]};
+                    p_paddr_267              : r_reg_readdata <= {8'd0,sr_paddr_dat[267]};
+                    p_paddr_268              : r_reg_readdata <= {8'd0,sr_paddr_dat[268]};
+                    p_paddr_269              : r_reg_readdata <= {8'd0,sr_paddr_dat[269]};
+                    p_paddr_270              : r_reg_readdata <= {8'd0,sr_paddr_dat[270]};
+                    p_paddr_271              : r_reg_readdata <= {8'd0,sr_paddr_dat[271]};
+                    p_paddr_272              : r_reg_readdata <= {8'd0,sr_paddr_dat[272]};
+                    p_paddr_273              : r_reg_readdata <= {8'd0,sr_paddr_dat[273]};
+                    p_paddr_274              : r_reg_readdata <= {8'd0,sr_paddr_dat[274]};
+                    p_paddr_275              : r_reg_readdata <= {8'd0,sr_paddr_dat[275]};
+                    p_paddr_276              : r_reg_readdata <= {8'd0,sr_paddr_dat[276]};
+                    p_paddr_277              : r_reg_readdata <= {8'd0,sr_paddr_dat[277]};
+                    p_paddr_278              : r_reg_readdata <= {8'd0,sr_paddr_dat[278]};
+                    p_paddr_279              : r_reg_readdata <= {8'd0,sr_paddr_dat[279]};
+                    p_paddr_280              : r_reg_readdata <= {8'd0,sr_paddr_dat[280]};
+                    p_paddr_281              : r_reg_readdata <= {8'd0,sr_paddr_dat[281]};
+                    p_paddr_282              : r_reg_readdata <= {8'd0,sr_paddr_dat[282]};
+                    p_paddr_283              : r_reg_readdata <= {8'd0,sr_paddr_dat[283]};
+                    p_paddr_284              : r_reg_readdata <= {8'd0,sr_paddr_dat[284]};
+                    p_paddr_285              : r_reg_readdata <= {8'd0,sr_paddr_dat[285]};
+                    p_paddr_286              : r_reg_readdata <= {8'd0,sr_paddr_dat[286]};
+                    p_paddr_287              : r_reg_readdata <= {8'd0,sr_paddr_dat[287]};
+                    p_paddr_288              : r_reg_readdata <= {8'd0,sr_paddr_dat[288]};
+                    p_paddr_289              : r_reg_readdata <= {8'd0,sr_paddr_dat[289]};
+                    p_paddr_290              : r_reg_readdata <= {8'd0,sr_paddr_dat[290]};
+                    p_paddr_291              : r_reg_readdata <= {8'd0,sr_paddr_dat[291]};
+                    p_paddr_292              : r_reg_readdata <= {8'd0,sr_paddr_dat[292]};
+                    p_paddr_293              : r_reg_readdata <= {8'd0,sr_paddr_dat[293]};
+                    p_paddr_294              : r_reg_readdata <= {8'd0,sr_paddr_dat[294]};
+                    p_paddr_295              : r_reg_readdata <= {8'd0,sr_paddr_dat[295]};
+                    p_paddr_296              : r_reg_readdata <= {8'd0,sr_paddr_dat[296]};
+                    p_paddr_297              : r_reg_readdata <= {8'd0,sr_paddr_dat[297]};
+                    p_paddr_298              : r_reg_readdata <= {8'd0,sr_paddr_dat[298]};
+                    p_paddr_299              : r_reg_readdata <= {8'd0,sr_paddr_dat[299]};
+                    p_paddr_300              : r_reg_readdata <= {8'd0,sr_paddr_dat[300]};
+                    p_paddr_301              : r_reg_readdata <= {8'd0,sr_paddr_dat[301]};
+                    p_paddr_302              : r_reg_readdata <= {8'd0,sr_paddr_dat[302]};
+                    p_paddr_303              : r_reg_readdata <= {8'd0,sr_paddr_dat[303]};
+                    p_paddr_304              : r_reg_readdata <= {8'd0,sr_paddr_dat[304]};
+                    p_paddr_305              : r_reg_readdata <= {8'd0,sr_paddr_dat[305]};
+                    p_paddr_306              : r_reg_readdata <= {8'd0,sr_paddr_dat[306]};
+                    p_paddr_307              : r_reg_readdata <= {8'd0,sr_paddr_dat[307]};
+                    p_paddr_308              : r_reg_readdata <= {8'd0,sr_paddr_dat[308]};
+                    p_paddr_309              : r_reg_readdata <= {8'd0,sr_paddr_dat[309]};
+                    p_paddr_310              : r_reg_readdata <= {8'd0,sr_paddr_dat[310]};
+                    p_paddr_311              : r_reg_readdata <= {8'd0,sr_paddr_dat[311]};
+                    p_paddr_312              : r_reg_readdata <= {8'd0,sr_paddr_dat[312]};
+                    p_paddr_313              : r_reg_readdata <= {8'd0,sr_paddr_dat[313]};
+                    p_paddr_314              : r_reg_readdata <= {8'd0,sr_paddr_dat[314]};
+                    p_paddr_315              : r_reg_readdata <= {8'd0,sr_paddr_dat[315]};
+                    p_paddr_316              : r_reg_readdata <= {8'd0,sr_paddr_dat[316]};
+                    p_paddr_317              : r_reg_readdata <= {8'd0,sr_paddr_dat[317]};
+                    p_paddr_318              : r_reg_readdata <= {8'd0,sr_paddr_dat[318]};
+                    p_paddr_319              : r_reg_readdata <= {8'd0,sr_paddr_dat[319]};
+                    p_paddr_320              : r_reg_readdata <= {8'd0,sr_paddr_dat[320]};
+                    p_paddr_321              : r_reg_readdata <= {8'd0,sr_paddr_dat[321]};
+                    p_paddr_322              : r_reg_readdata <= {8'd0,sr_paddr_dat[322]};
+                    p_paddr_323              : r_reg_readdata <= {8'd0,sr_paddr_dat[323]};
+                    p_paddr_324              : r_reg_readdata <= {8'd0,sr_paddr_dat[324]};
+                    p_paddr_325              : r_reg_readdata <= {8'd0,sr_paddr_dat[325]};
+                    p_paddr_326              : r_reg_readdata <= {8'd0,sr_paddr_dat[326]};
+                    p_paddr_327              : r_reg_readdata <= {8'd0,sr_paddr_dat[327]};
+                    p_paddr_328              : r_reg_readdata <= {8'd0,sr_paddr_dat[328]};
+                    p_paddr_329              : r_reg_readdata <= {8'd0,sr_paddr_dat[329]};
+                    p_paddr_330              : r_reg_readdata <= {8'd0,sr_paddr_dat[330]};
+                    p_paddr_331              : r_reg_readdata <= {8'd0,sr_paddr_dat[331]};
+                    p_paddr_332              : r_reg_readdata <= {8'd0,sr_paddr_dat[332]};
+                    p_paddr_333              : r_reg_readdata <= {8'd0,sr_paddr_dat[333]};
+                    p_paddr_334              : r_reg_readdata <= {8'd0,sr_paddr_dat[334]};
+                    p_paddr_335              : r_reg_readdata <= {8'd0,sr_paddr_dat[335]};
+                    p_paddr_336              : r_reg_readdata <= {8'd0,sr_paddr_dat[336]};
+                    p_paddr_337              : r_reg_readdata <= {8'd0,sr_paddr_dat[337]};
+                    p_paddr_338              : r_reg_readdata <= {8'd0,sr_paddr_dat[338]};
+                    p_paddr_339              : r_reg_readdata <= {8'd0,sr_paddr_dat[339]};
+                    p_paddr_340              : r_reg_readdata <= {8'd0,sr_paddr_dat[340]};
+                    p_paddr_341              : r_reg_readdata <= {8'd0,sr_paddr_dat[341]};
+                    p_paddr_342              : r_reg_readdata <= {8'd0,sr_paddr_dat[342]};
+                    p_paddr_343              : r_reg_readdata <= {8'd0,sr_paddr_dat[343]};
+                    p_paddr_344              : r_reg_readdata <= {8'd0,sr_paddr_dat[344]};
+                    p_paddr_345              : r_reg_readdata <= {8'd0,sr_paddr_dat[345]};
+                    p_paddr_346              : r_reg_readdata <= {8'd0,sr_paddr_dat[346]};
+                    p_paddr_347              : r_reg_readdata <= {8'd0,sr_paddr_dat[347]};
+                    p_paddr_348              : r_reg_readdata <= {8'd0,sr_paddr_dat[348]};
+                    p_paddr_349              : r_reg_readdata <= {8'd0,sr_paddr_dat[349]};
+                    p_paddr_350              : r_reg_readdata <= {8'd0,sr_paddr_dat[350]};
+                    p_paddr_351              : r_reg_readdata <= {8'd0,sr_paddr_dat[351]};
+                    p_paddr_352              : r_reg_readdata <= {8'd0,sr_paddr_dat[352]};
+                    p_paddr_353              : r_reg_readdata <= {8'd0,sr_paddr_dat[353]};
+                    p_paddr_354              : r_reg_readdata <= {8'd0,sr_paddr_dat[354]};
+                    p_paddr_355              : r_reg_readdata <= {8'd0,sr_paddr_dat[355]};
+                    p_paddr_356              : r_reg_readdata <= {8'd0,sr_paddr_dat[356]};
+                    p_paddr_357              : r_reg_readdata <= {8'd0,sr_paddr_dat[357]};
+                    p_paddr_358              : r_reg_readdata <= {8'd0,sr_paddr_dat[358]};
+                    p_paddr_359              : r_reg_readdata <= {8'd0,sr_paddr_dat[359]};
+                    p_paddr_360              : r_reg_readdata <= {8'd0,sr_paddr_dat[360]};
+                    p_paddr_361              : r_reg_readdata <= {8'd0,sr_paddr_dat[361]};
+                    p_paddr_362              : r_reg_readdata <= {8'd0,sr_paddr_dat[362]};
+                    p_paddr_363              : r_reg_readdata <= {8'd0,sr_paddr_dat[363]};
+                    p_paddr_364              : r_reg_readdata <= {8'd0,sr_paddr_dat[364]};
+                    p_paddr_365              : r_reg_readdata <= {8'd0,sr_paddr_dat[365]};
+                    p_paddr_366              : r_reg_readdata <= {8'd0,sr_paddr_dat[366]};
+                    p_paddr_367              : r_reg_readdata <= {8'd0,sr_paddr_dat[367]};
+                    p_paddr_368              : r_reg_readdata <= {8'd0,sr_paddr_dat[368]};
+                    p_paddr_369              : r_reg_readdata <= {8'd0,sr_paddr_dat[369]};
+                    p_paddr_370              : r_reg_readdata <= {8'd0,sr_paddr_dat[370]};
+                    p_paddr_371              : r_reg_readdata <= {8'd0,sr_paddr_dat[371]};
+                    p_paddr_372              : r_reg_readdata <= {8'd0,sr_paddr_dat[372]};
+                    p_paddr_373              : r_reg_readdata <= {8'd0,sr_paddr_dat[373]};
+                    p_paddr_374              : r_reg_readdata <= {8'd0,sr_paddr_dat[374]};
+                    p_paddr_375              : r_reg_readdata <= {8'd0,sr_paddr_dat[375]};
+                    p_paddr_376              : r_reg_readdata <= {8'd0,sr_paddr_dat[376]};
+                    p_paddr_377              : r_reg_readdata <= {8'd0,sr_paddr_dat[377]};
+                    p_paddr_378              : r_reg_readdata <= {8'd0,sr_paddr_dat[378]};
+                    p_paddr_379              : r_reg_readdata <= {8'd0,sr_paddr_dat[379]};
+                    p_paddr_380              : r_reg_readdata <= {8'd0,sr_paddr_dat[380]};
+                    p_paddr_381              : r_reg_readdata <= {8'd0,sr_paddr_dat[381]};
+                    p_paddr_382              : r_reg_readdata <= {8'd0,sr_paddr_dat[382]};
+                    p_paddr_383              : r_reg_readdata <= {8'd0,sr_paddr_dat[383]};
+                    p_paddr_384              : r_reg_readdata <= {8'd0,sr_paddr_dat[384]};
                     default                 : r_reg_readdata <= 32'h0000_0000;
                 endcase
             end
